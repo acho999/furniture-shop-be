@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.UserDto;
 import com.main.models.Role;
-import com.main.models.User;
+import com.main.models.Admin;
 import com.main.models.UserPrincipal;
 import com.main.repositories.RolesRepository;
 import com.main.repositories.UsersRepository;
@@ -46,7 +46,7 @@ public class UsersServiceImplementation implements UsersService{
 		
 		UserDto dto = this.getByUsername(username);
 		
-		User entity = mapper.map(dto, User.class);
+		Admin entity = mapper.map(dto, Admin.class);
 		
 		UserPrincipal userPrincipal = new UserPrincipal(entity);
 		
@@ -64,7 +64,7 @@ public class UsersServiceImplementation implements UsersService{
 			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
-			User entity = mapper.map(user, User.class);
+			Admin entity = mapper.map(user, Admin.class);
 			
 			String encPassword = encoder.encode(user.getPassword());
 			
@@ -132,7 +132,7 @@ public class UsersServiceImplementation implements UsersService{
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		Optional<User> userEntity = usersRepo.findAll().stream().filter(x->x.getUsername().equals(userName)).findFirst();
+		Optional<Admin> userEntity = usersRepo.findAll().stream().filter(x->x.getUsername().equals(userName)).findFirst();
 		
 		UserDto dtoToReturn = mapper.map(userEntity.get(), UserDto.class);
 		

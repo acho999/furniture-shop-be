@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 import oracle.sql.BlobDBAccess;
 
-
 @Entity
 @Table(name = "images")
 public class Image {

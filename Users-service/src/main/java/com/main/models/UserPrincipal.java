@@ -20,10 +20,10 @@ public class UserPrincipal implements UserDetails{
 	private String username;
 	private String password;
 	private String mail;
-	private User user;
+	private Admin user;
 	private List<GrantedAuthority> authorities;
 	
-	public UserPrincipal(User userEntity) {
+	public UserPrincipal(Admin userEntity) {
 		
 		this.user = userEntity;
 		this.id = this.user.getId();
@@ -36,7 +36,7 @@ public class UserPrincipal implements UserDetails{
 		this.init(userEntity);
 	}
 	
-	public void init(User userEntity) {
+	public void init(Admin userEntity) {
 		GrantedAuthority role = new SimpleGrantedAuthority(userEntity.getRole().getAuthority());
 		this.authorities.add(role);
 	}
@@ -113,11 +113,11 @@ public class UserPrincipal implements UserDetails{
 		this.mail = mail;
 	}
 
-	public User getUser() {
+	public Admin getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Admin user) {
 		this.user = user;
 	}
 
