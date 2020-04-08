@@ -1,31 +1,17 @@
-package com.main.models;
+package com.main.DTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.main.models.Product;
 
 import oracle.sql.BlobDBAccess;
 
-@Entity
-@Table(name = "images")
-public class Image {
+public class ImageDTO {
 	
-	@Id
-	@Column(name = "id")
 	private String id;
 	
-	@Column(name = "id")
 	private String name;
 	
-	@Column(name = "imageBytes")
 	private BlobDBAccess imageBytes;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "productId", referencedColumnName = "id")
 	private Product product;
 
 	public String getId() {
@@ -60,4 +46,5 @@ public class Image {
 		this.product = product;
 	}
 	
+
 }
