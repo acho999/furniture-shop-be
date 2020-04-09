@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,24 +14,25 @@ import org.springframework.transaction.annotation.Transactional;
 import com.main.DTO.UserDto;
 import com.main.models.Role;
 import com.main.models.Admin;
-import com.main.models.UserPrincipal;
+import com.main.models.AdminPrincipal;
 import com.main.repositories.RolesRepository;
-import com.main.repositories.UsersRepository;
+import com.main.repositories.AdminsRepository;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @Transactional(readOnly = true)
-public class UsersServiceImplementation implements UsersService{
+public class AdminsServiceImplementation implements AdminsService{
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 	@Autowired(required = true)
-	private UsersRepository usersRepo;
+	private AdminsRepository usersRepo;
 
 	@Autowired(required = true)
 	private RolesRepository rolesRepo;
@@ -44,18 +46,29 @@ public class UsersServiceImplementation implements UsersService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		UserDto dto = this.getByUsername(username);
+		try {
+			
 		
-		Admin entity = mapper.map(dto, Admin.class);
+		CompletableFuture<UserDto> dto = this.getByUsername(username);
 		
-		UserPrincipal userPrincipal = new UserPrincipal(entity);
+		Admin entity = mapper.map(dto.get(), Admin.class);
+		
+		AdminPrincipal userPrincipal = new AdminPrincipal(entity);
 		
 		return userPrincipal;
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getStackTrace());
+		}
+		
+		return null;
 	}
 
 	@Override
 	@Transactional(readOnly = false)
-	public UserDto createUser(UserDto user) {
+	@Async
+	public CompletableFuture<UserDto> createUser(UserDto user) {
 		try {
 			
 			Role role = null;
@@ -97,7 +110,7 @@ public class UsersServiceImplementation implements UsersService{
 			
 			UserDto returnDto = mapper.map(entity, UserDto.class);
 			
-			return returnDto;
+			return CompletableFuture.completedFuture(returnDto);
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -116,19 +129,19 @@ public class UsersServiceImplementation implements UsersService{
 
 	@Override
 	@Transactional(readOnly = false)
-	public void delete(long id) {
+	public void delete(String id) {
 		
 	}
 
 	@Override
 	@Transactional(readOnly = false)
-	public UserDto getUserDetails(long id) {
+	public CompletableFuture<UserDto> getUserDetails(String id) {
 		return null;
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public UserDto getByUsername(String userName) {
+	public CompletableFuture<UserDto> getByUsername(String userName) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
@@ -136,7 +149,7 @@ public class UsersServiceImplementation implements UsersService{
 		
 		UserDto dtoToReturn = mapper.map(userEntity.get(), UserDto.class);
 		
-		return dtoToReturn;
+		return CompletableFuture.completedFuture(dtoToReturn);
 	}
 
 }

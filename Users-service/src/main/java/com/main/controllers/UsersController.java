@@ -1,6 +1,7 @@
 package com.main.controllers;
 
 import java.text.ParseException;
+import java.util.concurrent.Future;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -21,28 +22,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.main.DTO.CreateUserDto;
 import com.main.DTO.UserDto;
 import com.main.models.LoginRequestModel;
-import com.main.services.UsersService;
+import com.main.services.AdminsService;
 
 @RestController
 @Transactional
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/admins")
 public class UsersController{
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 	@Autowired
-	private UsersService userService;
+	private AdminsService userService;
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
 			                       consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<UserDto> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException{
+	public ResponseEntity<Future<UserDto>> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException{
 		
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
 		UserDto userDto = mapper.map(user, UserDto.class);
 		
-		UserDto returnDto = this.userService.createUser(userDto);
+		Future<UserDto> returnDto = this.userService.createUser(userDto);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
 		
@@ -54,7 +55,7 @@ public class UsersController{
 	}
 	
 	@PostMapping(value = "/login",consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
-			produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+			                      produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<UserDetails> login(@Valid @RequestBody LoginRequestModel login) {
 		
 		UserDetails currentUserPrincipal = this.userService.loadUserByUsername(login.getUsername());

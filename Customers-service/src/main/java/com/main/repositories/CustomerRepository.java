@@ -3,9 +3,9 @@ package com.main.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.main.models.Admin;
+import com.main.models.Customer;
 
 @Repository
-public interface UsersRepository extends JpaRepository<Admin, Long>{
+public interface CustomerRepository extends JpaRepository<Customer, String>{
 
 }

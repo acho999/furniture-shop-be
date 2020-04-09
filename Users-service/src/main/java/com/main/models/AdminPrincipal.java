@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class UserPrincipal implements UserDetails{
+public class AdminPrincipal implements UserDetails{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -23,7 +23,7 @@ public class UserPrincipal implements UserDetails{
 	private Admin user;
 	private List<GrantedAuthority> authorities;
 	
-	public UserPrincipal(Admin userEntity) {
+	public AdminPrincipal(Admin userEntity) {
 		
 		this.user = userEntity;
 		this.id = this.user.getId();

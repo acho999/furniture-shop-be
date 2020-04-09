@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.main.services.UsersService;
+import com.main.services.AdminsService;
 
 
 @Configuration
@@ -21,12 +21,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private Environment env;
 	private UserDetailsService usersService;
-	private UsersService service;
+	private AdminsService service;
 	private String ip;
 	private String loginPath;
 	
 	@Autowired
-	public SecurityConfig(Environment env,UserDetailsService service,UsersService srv) {
+	public SecurityConfig(Environment env,UserDetailsService service,AdminsService srv) {
 		this.env = env;
 		this.usersService = service;
 		this.service = srv;

@@ -20,88 +20,83 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.main.models.LoginRequestModel;
-import com.main.models.UserPrincipal;
-import com.main.services.UsersService;
+import com.main.models.AdminPrincipal;
+import com.main.services.AdminsService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter{
-	
-    
-    private UserDetailsService usersService;
-    private UsersService service;
-    private String tokenSecret;
-    private Long tokenExpirationTime;
-    private Environment env;
-    
-    @Autowired
-    public AuthenticationFilter (Environment env, UserDetailsService usersService,AuthenticationManager manager,UsersService service) {
-    	this.env = env;
-    	this.usersService = usersService;
-    	super.setAuthenticationManager(manager);
-    	this.service = service;
-    	this.tokenExpirationTime = Long.parseLong(this.env.getProperty("token.expiration_time"));
-    	this.tokenSecret = this.env.getProperty("token.secret");
-    }
-	
+public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+	private UserDetailsService usersService;
+	private AdminsService service;
+	private String tokenSecret;
+	private Long tokenExpirationTime;
+	private Environment env;
+
+	@Autowired
+	public AuthenticationFilter(Environment env, UserDetailsService usersService, AuthenticationManager manager,
+			AdminsService service) {
+		this.env = env;
+		this.usersService = usersService;
+		super.setAuthenticationManager(manager);
+		this.service = service;
+		this.tokenExpirationTime = Long.parseLong(this.env.getProperty("token.expiration_time"));
+		this.tokenSecret = this.env.getProperty("token.secret");
+	}
+
 	@Override
-	public Authentication attemptAuthentication(HttpServletRequest request,
-			HttpServletResponse response) throws AuthenticationException  {
-		
+	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+			throws AuthenticationException {
+
 		try {
-			
-			LoginRequestModel credentials = new ObjectMapper()
-					.readValue(request.getInputStream(),LoginRequestModel.class);
-			
-			return getAuthenticationManager()
-					.authenticate(
-					new UsernamePasswordAuthenticationToken(
-							credentials.getUsername(), 
-							credentials.getPassword(),
-							new ArrayList<>()
-							)
-					);
-			
+
+			LoginRequestModel credentials = new ObjectMapper().readValue(request.getInputStream(),
+					LoginRequestModel.class);
+
+			return getAuthenticationManager().authenticate(new UsernamePasswordAuthenticationToken(
+					credentials.getUsername(), credentials.getPassword(), new ArrayList<>()));
+
 		} catch (IOException e) {
-			
+
 			throw new RuntimeException(e);
 		}
-		
-		
+
 	}
-	
+
 	@Override
-	protected void successfulAuthentication(HttpServletRequest request,
-			HttpServletResponse response,FilterChain chain,Authentication auth) {
+	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
+			Authentication auth) {
 		
-		String userId = String.valueOf(this.service.getByUsername(
-				((UserPrincipal)auth.getPrincipal())
-				.getUsername())
-				.getUser_id()
-				);
+		String userId = "";
+		try {
+
+			userId = String.valueOf(this.service.getByUsername(((AdminPrincipal) auth.getPrincipal())
+					.getUsername())
+					.get()
+					.getUser_id());
+
 		
-        Claims claims = Jwts.claims().setSubject(String.valueOf(userId));
-		
-		claims.put("roles",((UserPrincipal)auth.getPrincipal()).getAuthorities());
-		
+
+		Claims claims = Jwts.claims().setSubject(String.valueOf(userId));
+
+		claims.put("roles", ((AdminPrincipal) auth.getPrincipal()).getAuthorities());
+
 		Date nowDate = new Date();
-		
+
 		Date validity = new Date(System.currentTimeMillis() + tokenExpirationTime);
-		
-		String tokenString =  Jwts.builder()
-				.setClaims(claims)
-				.setIssuedAt(nowDate)
-				.setExpiration(validity)
-				.signWith(SignatureAlgorithm.HS512, this.tokenSecret)
-				.compact();
-		
-		
-		
+
+		String tokenString = Jwts.builder().setClaims(claims).setIssuedAt(nowDate).setExpiration(validity)
+				.signWith(SignatureAlgorithm.HS512, this.tokenSecret).compact();
+
 		response.setHeader("token", tokenString);
 		
-		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getStackTrace());
+		}
+
 	}
 
 }
