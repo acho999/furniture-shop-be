@@ -123,13 +123,19 @@ public class AdminsServiceImplementation implements AdminsService{
 
 	@Override
 	@Transactional(readOnly = false)
-	public void update(UserDto user) {
+	public boolean update(UserDto user) {
+		
+		return true;
 		
 	}
 
 	@Override
 	@Transactional(readOnly = false)
-	public void delete(String id) {
+	public boolean delete(String id) {
+		
+		this.usersRepo.deleteById(id);
+		
+		return true;
 		
 	}
 

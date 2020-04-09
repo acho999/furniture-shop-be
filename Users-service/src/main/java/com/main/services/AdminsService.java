@@ -13,9 +13,9 @@ public interface AdminsService extends UserDetailsService {
 	
 	public CompletableFuture<UserDto> getByUsername(String userName);
 	
-	public void update(UserDto user);
+	public boolean update(UserDto user);
 	
-	public void delete(String id);
+	public boolean delete(String id);
 	
 	public CompletableFuture<UserDto> getUserDetails(String id);
 
