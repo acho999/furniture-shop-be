@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-@Table(name="users")
+@Table(name="admins")
 public class Admin implements Serializable{
 	
 	private static final long serialVersionUID = 3085741895550329566L;
