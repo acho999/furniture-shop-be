@@ -51,7 +51,7 @@ public class Customer {
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
+	   targetEntity = Order.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)
@@ -59,7 +59,7 @@ public class Customer {
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
+	   targetEntity = Sale.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)

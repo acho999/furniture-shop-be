@@ -33,7 +33,7 @@ public class Product implements Serializable{
 	
 	//@JsonIgnore
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "productId",referencedColumnName = "id")
+	@JoinColumn(name = "product_Id",referencedColumnName = "id")
 	private Category category;
 	
 	//@JsonIgnore
@@ -47,16 +47,16 @@ public class Product implements Serializable{
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
         name = "Products_Orders", 
-        joinColumns = { @JoinColumn(name = "order_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id") }
+        joinColumns = { @JoinColumn(name = "order_id",referencedColumnName = "id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
     )
 	private List<Order> orders = new ArrayList<Order>();
 	
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
         name = "Products_Sales", 
-        joinColumns = { @JoinColumn(name = "sale_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id") }
+        joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
     )
 	private List<Sale> sales = new ArrayList<Sale>();
 	

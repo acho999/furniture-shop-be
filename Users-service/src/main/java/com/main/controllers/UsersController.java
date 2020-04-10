@@ -1,6 +1,8 @@
 package com.main.controllers;
 
 import java.text.ParseException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import javax.transaction.Transactional;
@@ -24,6 +26,7 @@ import com.main.DTO.UserDto;
 import com.main.models.LoginRequestModel;
 import com.main.services.AdminsService;
 
+
 @RestController
 @Transactional
 @RequestMapping(value = "/admins")
@@ -37,15 +40,21 @@ public class UsersController{
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
 			                       consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<Future<UserDto>> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException{
+	public CompletableFuture<ResponseEntity<UserDto>> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException, InterruptedException, ExecutionException{
 		
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
 		UserDto userDto = mapper.map(user, UserDto.class);
 		
-		Future<UserDto> returnDto = this.userService.createUser(userDto);
+		CompletableFuture<UserDto> future = new CompletableFuture<UserDto>();
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
+		//Future<UserDto> returnDto = this.userService.createUser(userDto);
+		
+		//return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
+		
+		future.complete(this.userService.createUser(userDto).get());
+		
+		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 		
 	}
 	
