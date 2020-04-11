@@ -13,12 +13,18 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "orders")
 public class Order {
 	
 	@Id
-	@GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
 	@Column(name = "id")
 	private String id;
 	

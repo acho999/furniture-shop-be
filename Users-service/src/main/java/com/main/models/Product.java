@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.core.sym.Name;
 
 @Entity
@@ -27,7 +29,11 @@ public class Product implements Serializable{
 	private static final long serialVersionUID = 1123019031040034555L;
 
 	@Id
-	@GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
 	@Column(name = "id")
 	private String id;
 	

@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import oracle.sql.BlobDBAccess;
 
 @Entity
@@ -18,7 +20,11 @@ import oracle.sql.BlobDBAccess;
 public class Image {
 	
 	@Id
-	@GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
 	@Column(name = "id")
 	private String id;
 	

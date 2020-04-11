@@ -18,5 +18,5 @@ public class UsersServiceApplication {
 		SpringApplication.run(UsersServiceApplication.class, args);
 		
 	}
-
+	
 }

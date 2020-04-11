@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -24,7 +26,12 @@ public class Admin implements Serializable{
 	private static final long serialVersionUID = 3085741895550329566L;
 
 	@Id
-	@GeneratedValue//(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
+	//@GeneratedValue//(strategy = GenerationType.IDENTITY)
 	@Column(name="id", nullable = false, unique = true)
 	private String id;
 	

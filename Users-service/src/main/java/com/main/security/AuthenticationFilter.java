@@ -75,7 +75,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 			userId = String.valueOf(this.service.getByUsername(((AdminPrincipal) auth.getPrincipal())
 					.getUsername())
 					.get()
-					.getUser_id());
+					.getId());
 
 		
 

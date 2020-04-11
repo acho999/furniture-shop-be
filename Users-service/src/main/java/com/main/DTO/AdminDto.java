@@ -14,7 +14,7 @@ public class AdminDto implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String user_id;
+	private String id;
 	private String first_name;
 	private String last_name;
 	private String username;
@@ -66,11 +66,11 @@ public class AdminDto implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getUser_id() {
-		return user_id;
+	public String getId() {
+		return this.id;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getAdminRegSecret() {
 		return adminRegSecret;

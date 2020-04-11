@@ -2,7 +2,6 @@ package com.main.services;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.modelmapper.spi.MatchingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.Async;
@@ -20,7 +19,9 @@ import com.main.repositories.RolesRepository;
 import com.main.repositories.AdminsRepository;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -69,7 +70,7 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async
-	public CompletableFuture<AdminDto> createUser(AdminDto user) {
+	public CompletableFuture<AdminDto> createAdmin(AdminDto admin) {
 		try {
 			
 			Role role = null;
@@ -78,11 +79,9 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
-			Admin entity = mapper.map(user, Admin.class);
+			Admin entity = mapper.map(admin, Admin.class);
 			
-			String encPassword = encoder.encode(user.getPassword());
-			
-			entity.setId(UUID.randomUUID().toString());
+			String encPassword = encoder.encode(admin.getPassword());
 			
 			entity.setEncryptedPassword(encPassword);
 			
@@ -94,7 +93,7 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 			entity.setDate_created(date);
 			
-			if (user.getAdminRegSecret().equals(adminRegSecret)) {
+			if (admin.getAdminRegSecret().equals(adminRegSecret)) {
 				
 				role = rolesRepo.findById(1L).get();
 				
@@ -133,7 +132,7 @@ public class AdminsServiceImplementation implements AdminsService{
 		
 		try {
 			
-			admin = this.adminsRepo.findById(user.getUser_id()).get();
+			admin = this.adminsRepo.findById(user.getId()).get();
 			
 		    this.mapper.map(user, admin);
 		    
@@ -179,7 +178,7 @@ public class AdminsServiceImplementation implements AdminsService{
 
 	@Override
 	@Transactional(readOnly = false)
-	public CompletableFuture<AdminDto> getUserDetails(String id) {
+	public CompletableFuture<AdminDto> getAdminDetails(String id) {
 		
 		AdminDto adminDetails = new AdminDto();
 		
@@ -208,6 +207,26 @@ public class AdminsServiceImplementation implements AdminsService{
 		AdminDto dtoToReturn = mapper.map(userEntity.get(), AdminDto.class);
 		
 		return CompletableFuture.completedFuture(dtoToReturn);
+	}
+	
+	@Override
+	@Transactional(readOnly = false)
+	public CompletableFuture<List<AdminDto>> getAdmins() {
+		
+		List<AdminDto> adminDetails = new ArrayList<AdminDto>();
+		
+		try {
+		
+			this.mapper.map(adminDetails, this.adminsRepo.findAll());
+			
+			return CompletableFuture.completedFuture(adminDetails);
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(e.getStackTrace());
+		}
+		return null;
 	}
 
 }

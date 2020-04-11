@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.registration.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.login.url.path")).permitAll()
-		.antMatchers("/**").hasRole("CUSTOMER").anyRequest().authenticated()
+		.antMatchers("/**").hasRole("ADMIN").anyRequest().authenticated()
 		.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment));
 
 		
