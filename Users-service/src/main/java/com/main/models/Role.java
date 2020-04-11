@@ -18,7 +18,7 @@ import org.springframework.security.core.GrantedAuthority;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="users_roles")
+@Table(name="roles")
 public class Role implements GrantedAuthority{
 	
 	private static final long serialVersionUID = -5273232412342674557L;

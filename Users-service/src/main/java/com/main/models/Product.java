@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.core.sym.Name;
+
 @Entity
 @Table(name = "products")
 public class Product implements Serializable{
@@ -26,6 +28,7 @@ public class Product implements Serializable{
 
 	@Id
 	@GeneratedValue
+	@Column(name = "id")
 	private String id;
 	
 	@Column(name = "productName")
@@ -33,7 +36,7 @@ public class Product implements Serializable{
 	
 	//@JsonIgnore
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_Id",referencedColumnName = "id")
+	@JoinColumn(name = "category_Id",referencedColumnName = "id")
 	private Category category;
 	
 	//@JsonIgnore

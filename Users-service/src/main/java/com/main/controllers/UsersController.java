@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.main.DTO.CreateUserDto;
-import com.main.DTO.UserDto;
+import com.main.DTO.CreateAdminDto;
+import com.main.DTO.AdminDto;
 import com.main.models.LoginRequestModel;
 import com.main.services.AdminsService;
 
@@ -40,13 +40,13 @@ public class UsersController{
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
 			                       consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
-	public CompletableFuture<ResponseEntity<UserDto>> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException, InterruptedException, ExecutionException{
+	public CompletableFuture<ResponseEntity<AdminDto>> createUser(@Valid @RequestBody CreateAdminDto user) throws ParseException, InterruptedException, ExecutionException{
 		
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		UserDto userDto = mapper.map(user, UserDto.class);
+		AdminDto userDto = mapper.map(user, AdminDto.class);
 		
-		CompletableFuture<UserDto> future = new CompletableFuture<UserDto>();
+		CompletableFuture<AdminDto> future = new CompletableFuture<AdminDto>();
 		
 		//Future<UserDto> returnDto = this.userService.createUser(userDto);
 		

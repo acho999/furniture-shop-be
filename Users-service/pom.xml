@@ -38,12 +38,12 @@
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
 
-		<!--  <dependency>
+		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<scope>test</scope>
 
-		</dependency>-->
+		</dependency>
 
 		<dependency>
 			<groupId>com.oracle</groupId>
