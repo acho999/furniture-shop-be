@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.Column;
@@ -17,8 +18,13 @@ import oracle.sql.BlobDBAccess;
 
 @Entity
 @Table(name = "images")
-public class Image {
+public class Image implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6616722223742012521L;
+
 	@Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -34,7 +40,7 @@ public class Image {
 	@Column(name = "imageBytes")
 	private Blob imageBytes;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_Id", referencedColumnName = "id")
 	private Product product;
 

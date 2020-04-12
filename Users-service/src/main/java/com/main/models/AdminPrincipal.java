@@ -18,7 +18,7 @@ public class AdminPrincipal implements UserDetails{
 	private String first_name;
 	private String last_name;
 	private String username;
-	private String password;
+	private String encryptedPassword;
 	private String mail;
 	private Admin user;
 	private List<GrantedAuthority> authorities;
@@ -30,7 +30,7 @@ public class AdminPrincipal implements UserDetails{
 		this.first_name = this.user.getFirst_name();
 		this.last_name = this.user.getLast_name();
 		this.username = this.user.getUsername();
-		this.password = this.user.getEncryptedPassword();
+		this.encryptedPassword = this.user.getEncryptedPassword();
 		this.mail = this.user.getEmail();
 		this.authorities = new ArrayList<GrantedAuthority>();
 		this.init(userEntity);
@@ -48,7 +48,7 @@ public class AdminPrincipal implements UserDetails{
 
 	@Override
 	public String getPassword() {
-		return this.password;
+		return this.encryptedPassword;
 	}
 
 	
@@ -130,8 +130,8 @@ public class AdminPrincipal implements UserDetails{
 		this.username = username;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEncryptedPassword(String password) {
+		this.encryptedPassword = password;
 	}
 
 }

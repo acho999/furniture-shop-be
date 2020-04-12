@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,8 +22,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "customers")
-public class Customer {
+public class Customer  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2544017588865526135L;
+
 	@Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -51,7 +57,7 @@ public class Customer {
 	private Date date_created;
 	
 	@JsonIgnore
-	@ManyToOne(optional=false, fetch = FetchType.LAZY)
+	@ManyToOne(optional=false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	public Role role;
 	

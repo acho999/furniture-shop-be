@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="roles")
-public class Role implements GrantedAuthority{
+public class Role implements GrantedAuthority,Serializable{
 	
 	private static final long serialVersionUID = -5273232412342674557L;
 

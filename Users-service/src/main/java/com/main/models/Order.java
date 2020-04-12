@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +18,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2025019082654076408L;
+
 	@Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -40,7 +46,7 @@ public class Order {
 	@Column(name = "sum")
 	private Number sumOfOrder;
 	
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id",referencedColumnName = "id" )
 	private Customer customer;
 

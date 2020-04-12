@@ -41,7 +41,7 @@ public class Product implements Serializable{
 	private String name;
 	
 	//@JsonIgnore
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_Id",referencedColumnName = "id")
 	private Category category;
 	

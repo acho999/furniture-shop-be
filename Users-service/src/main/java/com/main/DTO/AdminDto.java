@@ -22,6 +22,7 @@ public class AdminDto implements Serializable{
 	private Role role;
 	private Date date_created;
 	private String password;
+	private String encryptedPassword;
 	private String adminRegSecret;
 	
 	public String getFirst_name() {
@@ -77,6 +78,12 @@ public class AdminDto implements Serializable{
 	}
 	public void setAdminRegSecret(String adminRegSecret) {
 		this.adminRegSecret = adminRegSecret;
+	}
+	public String getEncryptedPassword() {
+		return encryptedPassword;
+	}
+	public void setEncryptedPassword(String encryptedPassword) {
+		this.encryptedPassword = encryptedPassword;
 	}
 	
 

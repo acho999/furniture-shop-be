@@ -54,7 +54,7 @@ public class Admin implements Serializable{
 	private Date date_created;
 	
 	@JsonIgnore
-	@ManyToOne(optional=false, fetch = FetchType.LAZY)
+	@ManyToOne(optional=false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	public Role role;
 

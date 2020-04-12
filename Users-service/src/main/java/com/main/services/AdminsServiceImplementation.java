@@ -1,6 +1,7 @@
 package com.main.services;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -9,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.AdminDto;
@@ -18,6 +20,7 @@ import com.main.models.AdminPrincipal;
 import com.main.repositories.RolesRepository;
 import com.main.repositories.AdminsRepository;
 
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -122,7 +125,7 @@ public class AdminsServiceImplementation implements AdminsService{
 	}
 
 	@Override
-	@Transactional(readOnly = false)
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	public CompletableFuture<AdminDto> update(AdminDto user) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -134,11 +137,17 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 			admin = this.adminsRepo.findById(user.getId()).get();
 			
+			Role role = admin.getRole();
+			
 		    this.mapper.map(user, admin);
+		    
+		    admin.role = role;
 		    
 		    returnObject = new AdminDto();
 		    
 		    this.mapper.map(admin, returnObject);
+		    
+		    this.adminsRepo.saveAndFlush(admin);
 		    
 		    return CompletableFuture.completedFuture(returnObject);
 			
@@ -180,14 +189,20 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Transactional(readOnly = false)
 	public CompletableFuture<AdminDto> getAdminDetails(String id) {
 		
-		AdminDto adminDetails = new AdminDto();
-		
+		AdminDto adminDetails = null;
+		Admin admin = null;
 		try {
+			
+			admin = this.adminsRepo.findById(id).get();
+			
+			if (admin != null) {
+				
+				adminDetails = this.mapper.map(admin, AdminDto.class);
+				
+				return CompletableFuture.completedFuture(adminDetails);
+				
+			}
 		
-			this.mapper.map(adminDetails, this.adminsRepo.findById(id).get());
-			
-			return CompletableFuture.completedFuture(adminDetails);
-			
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -214,10 +229,12 @@ public class AdminsServiceImplementation implements AdminsService{
 	public CompletableFuture<List<AdminDto>> getAdmins() {
 		
 		List<AdminDto> adminDetails = new ArrayList<AdminDto>();
+		Type listType = new TypeToken<List<AdminDto>>() {}.getType();
 		
 		try {
 		
-			this.mapper.map(adminDetails, this.adminsRepo.findAll());
+			adminDetails = this.mapper.map(this.adminsRepo.findAll(),listType);
+			
 			
 			return CompletableFuture.completedFuture(adminDetails);
 			
