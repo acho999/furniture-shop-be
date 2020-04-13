@@ -19,7 +19,9 @@ public class CustomerDTO implements Serializable{
 	
 	private String last_name;
 	
-	public String userName;
+	public String username;
+	
+	private String password;
 	
 	private String encryptedPassword;
 	
@@ -35,6 +37,14 @@ public class CustomerDTO implements Serializable{
 	
 	//@JsonIgnore
 	private List<Sale> sales = new ArrayList<Sale>();
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getId() {
 		return id;
@@ -93,11 +103,11 @@ public class CustomerDTO implements Serializable{
 	}
 
 	public String getUsername() {
-		return this.userName;
+		return this.username;
 	}
 
 	public void setUsername(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 
 

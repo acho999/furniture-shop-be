@@ -16,7 +16,7 @@ public interface ICustomersService extends UserDetailsService{
 	
 	public CompletableFuture<CustomerDTO> update(CustomerDTO customer);
 	
-	public void delete(String id);
+	public boolean delete(String id);
 	
 	public CompletableFuture<CustomerDTO> getCustomerDetails(String id);
 	

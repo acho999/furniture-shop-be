@@ -60,7 +60,7 @@ public class UsersController{
 	
 	@GetMapping(value = "/hello")
 	public String hello() {
-		return "Hello";
+		return "Hello customer";
 	}
 	
 	@PostMapping(value = "/login",consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
