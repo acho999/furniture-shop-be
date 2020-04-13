@@ -19,7 +19,7 @@ public class AdminPrincipal implements UserDetails{
 	private String last_name;
 	private String username;
 	private String encryptedPassword;
-	private String mail;
+	private String email;
 	private Admin user;
 	private List<GrantedAuthority> authorities;
 	
@@ -31,7 +31,7 @@ public class AdminPrincipal implements UserDetails{
 		this.last_name = this.user.getLast_name();
 		this.username = this.user.getUsername();
 		this.encryptedPassword = this.user.getEncryptedPassword();
-		this.mail = this.user.getEmail();
+		this.email = this.user.getEmail();
 		this.authorities = new ArrayList<GrantedAuthority>();
 		this.init(userEntity);
 	}
@@ -106,11 +106,11 @@ public class AdminPrincipal implements UserDetails{
 	}
 
 	public String getEmail() {
-		return mail;
+		return this.email;
 	}
 
-	public void setEmail(String mail) {
-		this.mail = mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Admin getUser() {

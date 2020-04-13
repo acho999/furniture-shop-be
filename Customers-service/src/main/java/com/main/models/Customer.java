@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,14 +17,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "customers")
-public class Customer {
+public class Customer  implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2544017588865526135L;
+
 	@Id
-	@GeneratedValue//(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
 	@Column(name="id", nullable = false, unique = true)
 	private String id;
 	
@@ -46,13 +59,13 @@ public class Customer {
 	private Date date_created;
 	
 	@JsonIgnore
-	@ManyToOne(optional=false, fetch = FetchType.LAZY)
+	@ManyToOne(optional=false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	public Role role;
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
+	   targetEntity = Order.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)
@@ -60,7 +73,7 @@ public class Customer {
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
+	   targetEntity = Sale.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)

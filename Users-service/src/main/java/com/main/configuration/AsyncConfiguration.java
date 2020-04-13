@@ -1,4 +1,4 @@
-package com.main.services;
+package com.main.configuration;
 
 import java.util.concurrent.Executor;
 
@@ -24,3 +24,4 @@ public class AsyncConfiguration {
 	}
 
 }
+

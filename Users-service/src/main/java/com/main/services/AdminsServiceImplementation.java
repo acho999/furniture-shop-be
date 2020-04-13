@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.AdminDto;
@@ -26,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 @Service
@@ -53,7 +51,8 @@ public class AdminsServiceImplementation implements AdminsService{
 		
 		try {
 			
-		
+		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+			
 		CompletableFuture<AdminDto> dto = this.getByUsername(username);
 		
 		Admin entity = mapper.map(dto.get(), Admin.class);
@@ -72,7 +71,7 @@ public class AdminsServiceImplementation implements AdminsService{
 
 	@Override
 	@Transactional(readOnly = false)
-	@Async
+	@Async("asyncExecutor")
 	public CompletableFuture<AdminDto> createAdmin(AdminDto admin) {
 		try {
 			
@@ -125,7 +124,8 @@ public class AdminsServiceImplementation implements AdminsService{
 	}
 
 	@Override
-	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+	@Transactional(readOnly = false)
+	@Async("asyncExecutor")
 	public CompletableFuture<AdminDto> update(AdminDto user) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -187,6 +187,7 @@ public class AdminsServiceImplementation implements AdminsService{
 
 	@Override
 	@Transactional(readOnly = false)
+	@Async("asyncExecutor")
 	public CompletableFuture<AdminDto> getAdminDetails(String id) {
 		
 		AdminDto adminDetails = null;
@@ -213,6 +214,7 @@ public class AdminsServiceImplementation implements AdminsService{
 
 	@Override
 	@Transactional(readOnly = true)
+	@Async("asyncExecutor")
 	public CompletableFuture<AdminDto> getByUsername(String userName) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -226,6 +228,7 @@ public class AdminsServiceImplementation implements AdminsService{
 	
 	@Override
 	@Transactional(readOnly = false)
+	@Async("asyncExecutor")
 	public CompletableFuture<List<AdminDto>> getAdmins() {
 		
 		List<AdminDto> adminDetails = new ArrayList<AdminDto>();
