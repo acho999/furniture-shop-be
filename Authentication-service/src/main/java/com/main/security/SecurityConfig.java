@@ -38,9 +38,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.headers().frameOptions().disable();
 		//.access("hasRole('ROLE_CUSTOMER')")
 		http.authorizeRequests()
-		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.registration.url.path")).permitAll()
-		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.login.url.path")).permitAll()
-		.antMatchers("/**").hasRole("ADMIN").anyRequest().authenticated()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.users.registration.url.path")).permitAll()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.users.login.url.path")).permitAll()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.registration.url.path")).permitAll()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.login.url.path")).permitAll()
+		.antMatchers("/users/**").hasRole("ADMIN").anyRequest().authenticated()
+		.antMatchers("/customers/**").hasRole("CUSTOMER").anyRequest().authenticated()
 		.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment));
 
 		

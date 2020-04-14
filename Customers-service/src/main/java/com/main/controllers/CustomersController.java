@@ -62,8 +62,9 @@ public class CustomersController {
 	}
 
 	@PostMapping(value = "/login", consumes = { MediaType.APPLICATION_XML_VALUE,
-			MediaType.APPLICATION_JSON_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE,
-					MediaType.APPLICATION_XML_VALUE })
+			                                    MediaType.APPLICATION_JSON_VALUE }, 
+			                       produces = { MediaType.APPLICATION_JSON_VALUE,
+					                            MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<UserDetails> login(@Valid @RequestBody LoginRequestModel login) {
 
 		UserDetails currentCustPrincipal = this.service.loadUserByUsername(login.getUsername());
@@ -95,7 +96,8 @@ public class CustomersController {
 
 	}
 
-	@PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE,
+			                        consumes = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<ResponseEntity<CustomerDTO>> update(@Valid @RequestBody CustomerDTO admin)
 			throws InterruptedException, ExecutionException {
 
