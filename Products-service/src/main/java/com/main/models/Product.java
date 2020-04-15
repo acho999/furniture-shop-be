@@ -17,9 +17,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.core.OrderComparator.OrderSourceProvider;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "products")
@@ -29,15 +31,20 @@ public class Product implements Serializable{
 	private static final long serialVersionUID = 1123019031040034555L;
 
 	@Id
-	@GeneratedValue
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
+	@Column(name = "id")
 	private String id;
 	
 	@Column(name = "productName")
 	private String name;
 	
 	//@JsonIgnore
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "productId",referencedColumnName = "id")
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@JoinColumn(name = "category_Id",referencedColumnName = "id")
 	private Category category;
 	
 	//@JsonIgnore
@@ -51,16 +58,16 @@ public class Product implements Serializable{
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
         name = "Products_Orders", 
-        joinColumns = { @JoinColumn(name = "order_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id") }
+        joinColumns = { @JoinColumn(name = "order_id",referencedColumnName = "id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
     )
 	private List<Order> orders = new ArrayList<Order>();
 	
 	@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
         name = "Products_Sales", 
-        joinColumns = { @JoinColumn(name = "sale_id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id") }
+        joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
+        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
     )
 	private List<Sale> sales = new ArrayList<Sale>();
 	

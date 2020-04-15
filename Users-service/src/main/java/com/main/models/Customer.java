@@ -19,22 +19,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "customers")
-public class Customer  implements Serializable{
+public class Customer {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2544017588865526135L;
-
 	@Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-        name = "UUID",
-    strategy = "org.hibernate.id.UUIDGenerator"
-    )
+	@GeneratedValue//(strategy = GenerationType.IDENTITY)
 	@Column(name="id", nullable = false, unique = true)
 	private String id;
 	
@@ -57,13 +47,13 @@ public class Customer  implements Serializable{
 	private Date date_created;
 	
 	@JsonIgnore
-	@ManyToOne(optional=false, fetch = FetchType.EAGER)
+	@ManyToOne(optional=false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "role_id", referencedColumnName = "id")
 	public Role role;
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Order.class,
+	   targetEntity = Image.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)
@@ -71,7 +61,7 @@ public class Customer  implements Serializable{
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Sale.class,
+	   targetEntity = Image.class,
 	   fetch = FetchType.LAZY,
 	   cascade = CascadeType.ALL,
 	   orphanRemoval = true)
@@ -144,3 +134,4 @@ public class Customer  implements Serializable{
 
 
 }
+

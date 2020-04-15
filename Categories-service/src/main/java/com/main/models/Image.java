@@ -1,32 +1,47 @@
 package com.main.models;
 
+import java.io.Serializable;
+import java.sql.Blob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import oracle.sql.BlobDBAccess;
+import org.hibernate.annotations.GenericGenerator;
 
+import oracle.sql.BlobDBAccess;
 
 @Entity
 @Table(name = "images")
-public class Image {
+public class Image implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6616722223742012521L;
+
 	@Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
 	@Column(name = "id")
 	private String id;
 	
-	@Column(name = "id")
+	@Column(name = "name")
 	private String name;
 	
 	@Column(name = "imageBytes")
-	private BlobDBAccess imageBytes;
+	private Blob imageBytes;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "productId", referencedColumnName = "id")
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@JoinColumn(name = "product_Id", referencedColumnName = "id")
 	private Product product;
 
 	public String getId() {
@@ -45,11 +60,11 @@ public class Image {
 		this.name = name;
 	}
 
-	public BlobDBAccess getImageBytes() {
+	public Blob getImageBytes() {
 		return imageBytes;
 	}
 
-	public void setImageBytes(BlobDBAccess imageBytes) {
+	public void setImageBytes(Blob imageBytes) {
 		this.imageBytes = imageBytes;
 	}
 

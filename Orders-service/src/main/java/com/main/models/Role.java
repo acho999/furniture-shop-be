@@ -1,5 +1,6 @@
 package com.main.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +18,16 @@ import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 @Entity
 @Table(name="roles")
-public class Role implements GrantedAuthority{
+public class Role implements GrantedAuthority,Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -5273232412342674557L;
 
 	@Id
-	@Column(name = "id", unique = true, nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	private long id;
 
 	@Column(name = "roleName", nullable = false)
@@ -41,7 +43,7 @@ public class Role implements GrantedAuthority{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "role",
-			   targetEntity = Admin.class,
+			   targetEntity = Customer.class,
 			   fetch = FetchType.LAZY,
 			   cascade = CascadeType.ALL,
 			   orphanRemoval = true)
