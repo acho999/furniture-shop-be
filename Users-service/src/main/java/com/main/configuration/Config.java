@@ -23,6 +23,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.main.services.AdminsService;
+import com.main.services.AdminsServiceImplementation;
+
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.main.repositories")
@@ -98,5 +101,6 @@ public class Config {
 		
 		
 	}
+	
 
 }

@@ -30,17 +30,16 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	private UserDetailsService usersService;
+	//private UserDetailsService usersService;
 	private AdminsService service;
 	private String tokenSecret;
 	private Long tokenExpirationTime;
 	private Environment env;
 
-	@Autowired
-	public AuthenticationFilter(Environment env, UserDetailsService usersService, AuthenticationManager manager,
-			AdminsService service) {
+	
+	public AuthenticationFilter(Environment env, AdminsService service, AuthenticationManager manager) {
 		this.env = env;
-		this.usersService = usersService;
+		//this.usersService = usersService;
 		super.setAuthenticationManager(manager);
 		this.service = service;
 		this.tokenExpirationTime = Long.parseLong(this.env.getProperty("token.expiration_time"));

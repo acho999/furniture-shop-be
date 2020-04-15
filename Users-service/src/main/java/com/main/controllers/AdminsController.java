@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,13 +31,18 @@ import com.main.services.AdminsService;
 @RestController
 @Transactional
 @RequestMapping(value = "/admins")
-public class UsersController{
+public class AdminsController{
 	
-	@Autowired
+	
 	private ModelMapper mapper;
+	private AdminsService adminsService;
 	
 	@Autowired
-	private AdminsService adminsService;
+	public AdminsController(AdminsService adminsService, ModelMapper mapper) {
+		this.mapper = mapper;
+		this.adminsService = adminsService;
+		
+	}
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
 			                       consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
@@ -60,7 +66,7 @@ public class UsersController{
 	
 	@GetMapping(value = "/hello")
 	public String hello() {
-		return "Hello customer";
+		return "Hello admin";
 	}
 	
 	@PostMapping(value = "/login",consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},

@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.main.models.CustomerPrincipal;
 import com.main.models.LoginRequestModel;
-import com.main.services.ICustomersService;
+import com.main.services.CustomersService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -29,14 +29,14 @@ import io.jsonwebtoken.SignatureAlgorithm;
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 	
 	private UserDetailsService usersService;
-	private ICustomersService service;
+	private CustomersService service;
 	private String tokenSecret;
 	private Long tokenExpirationTime;
 	private Environment env;
 
-	@Autowired
+	//@Autowired
 	public AuthenticationFilter(Environment env, UserDetailsService usersService, AuthenticationManager manager,
-			ICustomersService service) {
+			CustomersService service) {
 		this.env = env;
 		this.usersService = usersService;
 		super.setAuthenticationManager(manager);

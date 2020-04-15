@@ -28,7 +28,7 @@ import com.main.repositories.RolesRepository;
 
 @Service
 @Transactional(readOnly = true)
-public class CustomersServiceImplementation implements ICustomersService {
+public class CustomersServiceImplementation implements CustomersService {
 
 	@Autowired
 	private CustomersRepository repo;

@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import com.main.DTO.CustomerDTO;
 
 
-public interface ICustomersService extends UserDetailsService{
+public interface CustomersService extends UserDetailsService{
 	
     public CompletableFuture<CustomerDTO> createCustomer(CustomerDTO customer);
 	

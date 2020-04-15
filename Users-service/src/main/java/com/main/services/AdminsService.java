@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import com.main.DTO.AdminDto;
 
 
-public interface AdminsService extends UserDetailsService {
+public interface AdminsService extends UserDetailsService{
 	
 	public CompletableFuture<AdminDto> createAdmin(AdminDto user);
 	

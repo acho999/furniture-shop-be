@@ -1,6 +1,5 @@
 package com.main;
 
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -13,9 +12,10 @@ import org.springframework.context.annotation.ComponentScan;
 		"com.main.repositories","com.main.services","com.main.security","com.main.models"})
 //@EntityScan("com.main.models")
 @EnableDiscoveryClient
-public class UsersServiceApplication {
+public class AdminsServiceApplication {
+	
 	public static void main(String[] args) {
-		SpringApplication.run(UsersServiceApplication.class, args);
+		SpringApplication.run(AdminsServiceApplication.class, args);
 		
 	}
 	

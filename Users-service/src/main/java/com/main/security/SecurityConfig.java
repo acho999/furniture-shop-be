@@ -2,6 +2,7 @@ package com.main.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -20,16 +21,15 @@ import com.main.services.AdminsService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private Environment env;
-	private UserDetailsService usersService;
 	private AdminsService service;
 	private String ip;
 	private String loginPath;
 	
 	@Autowired
-	public SecurityConfig(Environment env,UserDetailsService service,AdminsService srv) {
+	public SecurityConfig(Environment env, @Lazy AdminsService service) {
+		
 		this.env = env;
-		this.usersService = service;
-		this.service = srv;
+		this.service = service;
 		this.loginPath = env.getProperty("users.login.url.path");
 		this.ip = env.getProperty("gateway.ip");
 	}
@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	protected AuthenticationFilter getAuthenticationFilter() throws Exception {
 		
-		AuthenticationFilter filter = new AuthenticationFilter(env,usersService, authenticationManagerBean(),service);
+		AuthenticationFilter filter = new AuthenticationFilter(this.env,this.service, authenticationManagerBean());
 		
 		filter.setFilterProcessesUrl(loginPath);
 		
@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public DaoAuthenticationProvider authProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 		provider.setPasswordEncoder(encoder());
-		provider.setUserDetailsService(usersService);
+		provider.setUserDetailsService(this.service);
 		
 		return provider;
 		

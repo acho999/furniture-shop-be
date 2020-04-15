@@ -74,6 +74,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	protected UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest req) {
 
 		String token = "";
+		
 		Jws<Claims> body = null;
 
 		try {
@@ -83,7 +84,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 			if (tokenWithPrefix != null) {
 
 				token = tokenWithPrefix.replace(this.headerPrefix, "");
-
+				
 				body = Jwts.parser().setSigningKey(this.tokenSecret).parseClaimsJws(token);
 			}
 

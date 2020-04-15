@@ -1,6 +1,5 @@
 package com.main.security;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,34 +13,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.main.services.ICustomersService;
+import com.main.services.CustomersService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
-	private Environment env;
-	private UserDetailsService detailsService;
-	private ICustomersService customersService;
-	private String ip;
-	private String loginPath;
-	
 	@Autowired
-	public SecurityConfiguration(Environment env,
-								ICustomersService customersService,
-								UserDetailsService detailsService) {
-		
-		this.env = env;
-		
-		this.detailsService = detailsService;
-		
-		this.customersService = customersService;
-		
-		this.ip = this.env.getProperty("gateway.ip");
-		
-		this.loginPath = this.env.getProperty("customers.login.url.path");
-		
-	}
+	private Environment env;
+	@Autowired
+	private UserDetailsService detailsService;
+	@Autowired
+	private CustomersService customersService;
+	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -51,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().disable();
 		
 		http.authorizeRequests()
-		.antMatchers("/**").hasIpAddress(ip)
+		.antMatchers("/**").hasIpAddress(this.env.getProperty("gateway.ip"))
 		.and().addFilter(this.authenticationFilter());
 		http.headers().frameOptions().disable();
 		
@@ -64,7 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				                                               this.authenticationManagerBean(),
 				                                               customersService);
 		
-		filter.setFilterProcessesUrl(loginPath);
+		filter.setFilterProcessesUrl(this.env.getProperty("customers.login.url.path"));
 		
 		return filter;
 	}

@@ -51,19 +51,19 @@ public class Customer {
 	
 	
 	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
-	   fetch = FetchType.LAZY,
-	   cascade = CascadeType.ALL,
-	   orphanRemoval = true)
-	private List<Order> orders = new ArrayList<Order>();
-	
-	
-	@OneToMany(mappedBy = "customer",
-	   targetEntity = Image.class,
-	   fetch = FetchType.LAZY,
-	   cascade = CascadeType.ALL,
-	   orphanRemoval = true)
-	private List<Sale> sales = new ArrayList<Sale>();
+			   targetEntity = Order.class,
+			   fetch = FetchType.LAZY,
+			   cascade = CascadeType.ALL,
+			   orphanRemoval = true)
+			private List<Order> orders = new ArrayList<Order>();
+			
+			
+			@OneToMany(mappedBy = "customer",
+			   targetEntity = Sale.class,
+			   fetch = FetchType.LAZY,
+			   cascade = CascadeType.ALL,
+			   orphanRemoval = true)
+			private List<Sale> sales = new ArrayList<Sale>();
 
 	public String getId() {
 		return id;

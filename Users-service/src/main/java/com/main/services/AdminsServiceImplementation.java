@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -46,6 +47,7 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Autowired
 	private Environment env;
 	
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
@@ -68,7 +70,8 @@ public class AdminsServiceImplementation implements AdminsService{
 		
 		return null;
 	}
-
+	
+	
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")

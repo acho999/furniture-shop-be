@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.main.DTO.CustomerDTO;
 import com.main.models.LoginRequestModel;
 import com.main.services.CustomersServiceImplementation;
+import com.main.services.CustomersService;
 
 @RestController
 @Transactional
@@ -35,7 +36,7 @@ public class CustomersController {
 	private ModelMapper mapper;
 
 	@Autowired
-	private CustomersServiceImplementation service;
+	private CustomersService service;
 
 	@PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_VALUE,
 			                                     MediaType.APPLICATION_XML_VALUE },
