@@ -2,6 +2,7 @@ package com.main.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -47,6 +48,9 @@ public class Order implements Serializable{
 	
 	@Column(name = "sum")
 	private Number sumOfOrder;
+	
+	@Column(name = "dateCreated")
+	private Date dateCreated;
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id",referencedColumnName = "id" )
@@ -98,6 +102,14 @@ public class Order implements Serializable{
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
 	}
 
 }

@@ -1,7 +1,9 @@
 package com.main.services;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -14,36 +16,42 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.main.DTO.CategoryDTO;
 import com.main.DTO.ProductDTO;
-import com.main.Repositories.CategoriesRepository;
-import com.main.models.Category;
 import com.main.models.Product;
+import com.main.repositories.ProductsRepository;
 
 @Service
 @Transactional(readOnly = true)
-public class CategoriesService implements ICategoriesService{
-	
+public class ProductsService implements IProductsService {
+
 	@Autowired
 	private ModelMapper mapper;
-	
+
 	@Autowired
-	private CategoriesRepository repo;
+	private ProductsRepository repo;
 
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<CategoryDTO> createCategory(CategoryDTO category) {
-		
+	public CompletableFuture<ProductDTO> createProduct(ProductDTO product) {
+
 		try {
 
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-			Category entity = mapper.map(category, Category.class);
+			Product entity = mapper.map(product, Product.class);
+
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+			String dateString = format.format(new Date());
+
+			Date date = format.parse(dateString);
+
+			entity.setDateCreated(date);
 
 			repo.saveAndFlush(entity);
 
-			CategoryDTO returnDto = mapper.map(entity, CategoryDTO.class);
+			ProductDTO returnDto = mapper.map(entity, ProductDTO.class);
 
 			return CompletableFuture.completedFuture(returnDto);
 
@@ -58,22 +66,22 @@ public class CategoriesService implements ICategoriesService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<CategoryDTO> update(CategoryDTO category) {
-		
+	public CompletableFuture<ProductDTO> update(ProductDTO product) {
+
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		Category categoryEntity = null;
-		CategoryDTO returnObject = null;
+		Product productEntity = null;
+		ProductDTO returnObject = null;
 
 		try {
 
-			this.mapper.map(categoryEntity, category);
+			this.mapper.map(productEntity, product);
 
-			returnObject = new CategoryDTO();
+			returnObject = new ProductDTO();
 
-			this.mapper.map(category, returnObject);
+			this.mapper.map(product, returnObject);
 
-			this.repo.saveAndFlush(categoryEntity);
+			this.repo.saveAndFlush(productEntity);
 
 			return CompletableFuture.completedFuture(returnObject);
 
@@ -87,17 +95,16 @@ public class CategoriesService implements ICategoriesService{
 
 	@Override
 	@Transactional(readOnly = false)
-	@Async("asyncExecutor")
 	public boolean delete(String id) {
-		
-		Optional<Category> categoryOptional = null;
+
+		Optional<Product> productOptional = null;
 
 		try {
 			this.repo.deleteById(id);
 
-			categoryOptional = this.repo.findById(id);
+			productOptional = this.repo.findById(id);
 
-			if (categoryOptional.get() != null) {
+			if (productOptional.get() != null) {
 				return false;
 			}
 
@@ -114,19 +121,19 @@ public class CategoriesService implements ICategoriesService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<CategoryDTO> getCategoryDetails(String id) {
+	public CompletableFuture<ProductDTO> getProductDetails(String id) {
 
-		CategoryDTO categoryDetails = null;
-		Category category = null;
+		ProductDTO productDetails = null;
+		Product order = null;
 		try {
 
-			category = this.repo.findById(id).get();
+			order = this.repo.findById(id).get();
 
-			if (category != null) {
+			if (order != null) {
 
-				categoryDetails = this.mapper.map(category, CategoryDTO.class);
+				productDetails = this.mapper.map(order, ProductDTO.class);
 
-				return CompletableFuture.completedFuture(categoryDetails);
+				return CompletableFuture.completedFuture(productDetails);
 
 			}
 
@@ -141,18 +148,18 @@ public class CategoriesService implements ICategoriesService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<List<CategoryDTO>> getCategories() {
+	public CompletableFuture<List<ProductDTO>> getProducts() {
+		
+		List<ProductDTO> products = new ArrayList<ProductDTO>();
 
-		List<CategoryDTO> categories = new ArrayList<CategoryDTO>();
-
-		Type listType = new TypeToken<List<CategoryDTO>>() {
+		Type listType = new TypeToken<List<ProductDTO>>() {
 		}.getType();
 
 		try {
 
-			categories = this.mapper.map(this.repo.findAll(), listType);
+			products = this.mapper.map(this.repo.findAll(), listType);
 
-			return CompletableFuture.completedFuture(categories);
+			return CompletableFuture.completedFuture(products);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -161,5 +168,5 @@ public class CategoriesService implements ICategoriesService{
 
 		return null;
 	}
-	
+
 }

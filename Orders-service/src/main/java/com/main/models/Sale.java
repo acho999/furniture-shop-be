@@ -2,6 +2,7 @@ package com.main.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -35,6 +36,9 @@ public class Sale implements Serializable{
 	@Column(name = "id")
 	private String id;
 	
+	@Column(name = "dateCreated")
+	private Date dateCreated;
+	
 	@ManyToMany(mappedBy = "sales",targetEntity = Product.class)
 	private List<Product> purchasedProducts = new ArrayList<Product>();
 	
@@ -45,4 +49,46 @@ public class Sale implements Serializable{
 	@JoinColumn(name = "customer_id", referencedColumnName = "id")
 	private Customer customer;
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date date) {
+		this.dateCreated = date;
+	}
+
+	public List<Product> getPurchasedProducts() {
+		return purchasedProducts;
+	}
+
+	public void setPurchasedProducts(List<Product> purchasedProducts) {
+		this.purchasedProducts = purchasedProducts;
+	}
+
+	public Number getSumOfSale() {
+		return sumOfSale;
+	}
+
+	public void setSumOfSale(Number sumOfSale) {
+		this.sumOfSale = sumOfSale;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 }
+
+

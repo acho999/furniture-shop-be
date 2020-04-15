@@ -95,7 +95,8 @@ public class UsersController{
 		
 	}
 	
-	@PostMapping(value = "/update",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/update",produces = MediaType.APPLICATION_JSON_VALUE,
+			                       consumes = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<ResponseEntity<AdminDto>> update(@Valid @RequestBody AdminDto admin) throws InterruptedException, ExecutionException{
 		
 		CompletableFuture<AdminDto> future = new CompletableFuture<AdminDto>();

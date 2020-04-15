@@ -3,7 +3,7 @@ package com.main.controllers;
 
 import java.util.concurrent.CompletableFuture;
 import org.springframework.http.MediaType;
-
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +18,9 @@ import com.main.services.ICategoriesService;
 @Transactional(readOnly = true)
 @RequestMapping(path = "/categories")
 public class CategoriesController {
+	
+	@Autowired
+	private ModelMapper mapper;
 	
 	@Autowired
 	private ICategoriesService categoryService;

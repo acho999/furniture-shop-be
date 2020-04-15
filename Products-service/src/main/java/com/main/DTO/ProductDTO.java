@@ -2,6 +2,7 @@ package com.main.DTO;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -20,6 +21,8 @@ public class ProductDTO implements Serializable{
 	private String id;
 	
 	private String name;
+	
+	private Date dateCreated;
 	
 	//@JsonIgnore
 	private Category category;
@@ -107,6 +110,14 @@ public class ProductDTO implements Serializable{
 
 	public void setMaterial(String material) {
 		this.material = material;
+	}
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
 	}
 
 }

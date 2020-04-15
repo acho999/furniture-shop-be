@@ -41,7 +41,7 @@ public class CustomersController {
 			                                     MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,
 					                             MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<CustomerDTO>> createUser(@Valid @RequestBody CustomerDTO customer)
+	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(@Valid @RequestBody CustomerDTO customer)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -74,7 +74,7 @@ public class CustomersController {
 	}
 
 	@GetMapping(value = "/details/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<CustomerDTO>> adminDetails(@PathVariable String id)
+	public CompletableFuture<ResponseEntity<CustomerDTO>> customerDetails(@PathVariable String id)
 			throws InterruptedException, ExecutionException {
 
 		CompletableFuture<CustomerDTO> future = new CompletableFuture<CustomerDTO>();
@@ -98,12 +98,12 @@ public class CustomersController {
 
 	@PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE,
 			                        consumes = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<CustomerDTO>> update(@Valid @RequestBody CustomerDTO admin)
+	public CompletableFuture<ResponseEntity<CustomerDTO>> update(@Valid @RequestBody CustomerDTO customer)
 			throws InterruptedException, ExecutionException {
 
 		CompletableFuture<CustomerDTO> future = new CompletableFuture<CustomerDTO>();
 
-		future.complete(this.service.update(admin).get());
+		future.complete(this.service.update(customer).get());
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 

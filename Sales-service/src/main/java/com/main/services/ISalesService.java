@@ -5,9 +5,9 @@ import java.util.concurrent.CompletableFuture;
 
 import com.main.DTO.SaleDTO;
 
-public interface ISaleService {
+public interface ISalesService {
 	
-    public CompletableFuture<SaleDTO> createAdmin(SaleDTO sale);
+    public CompletableFuture<SaleDTO> createSale(SaleDTO sale);
 	
 	public CompletableFuture<SaleDTO> update(SaleDTO sale);
 	

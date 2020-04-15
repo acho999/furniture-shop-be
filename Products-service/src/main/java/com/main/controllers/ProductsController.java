@@ -21,72 +21,73 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.main.DTO.SaleDTO;
-import com.main.services.ISalesService;
+import com.main.DTO.ProductDTO;
+import com.main.services.IProductsService;
 
 @RestController
 @Transactional
-@RequestMapping(value = "/sales")
-public class SalesController {
-
+@RequestMapping(value = "/products")
+public class ProductsController {
+	
 	@Autowired
 	private ModelMapper mapper;
-
+	
 	@Autowired
-	private ISalesService service;
+	private IProductsService service;
+	
 
 	@GetMapping(value = "/hello")
 	public String hello() {
-		return "Hello sale";
+		return "Hello order";
 	}
 
 	@PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<SaleDTO>> createUser(@Valid @RequestBody SaleDTO sale)
+	public CompletableFuture<ResponseEntity<ProductDTO>> createProduct(@Valid @RequestBody ProductDTO product)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		SaleDTO saleDto = mapper.map(sale, SaleDTO.class);
+		ProductDTO productDto = mapper.map(product, ProductDTO.class);
 
-		CompletableFuture<SaleDTO> future = new CompletableFuture<SaleDTO>();
+		CompletableFuture<ProductDTO> future = new CompletableFuture<ProductDTO>();
 
-		future.complete(this.service.createSale(saleDto).get());
+		future.complete(this.service.createProduct(productDto).get());
 
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 
 	}
 
 	@GetMapping(value = "/details/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<SaleDTO>> saleDetails(@PathVariable String id)
+	public CompletableFuture<ResponseEntity<ProductDTO>> productDetails(@PathVariable String id)
 			throws InterruptedException, ExecutionException {
 
-		CompletableFuture<SaleDTO> future = new CompletableFuture<SaleDTO>();
+		CompletableFuture<ProductDTO> future = new CompletableFuture<ProductDTO>();
 
-		future.complete(this.service.getSaleDetails(id).get());
+		future.complete(this.service.getProductDetails(id).get());
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 
 	}
 
 	@GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<List<SaleDTO>>> getAll() throws InterruptedException, ExecutionException {
+	public CompletableFuture<ResponseEntity<List<ProductDTO>>> getAll() throws InterruptedException, ExecutionException {
 
-		CompletableFuture<List<SaleDTO>> future = new CompletableFuture<List<SaleDTO>>();
+		CompletableFuture<List<ProductDTO>> future = new CompletableFuture<List<ProductDTO>>();
 
-		future.complete(this.service.getSales().get());
+		future.complete(this.service.getProducts().get());
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 
 	}
 
 	@PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<SaleDTO>> update(@Valid @RequestBody SaleDTO sale)
+	public CompletableFuture<ResponseEntity<ProductDTO>> update(@Valid @RequestBody ProductDTO product)
 			throws InterruptedException, ExecutionException {
 
-		CompletableFuture<SaleDTO> future = new CompletableFuture<SaleDTO>();
+		CompletableFuture<ProductDTO> future = new CompletableFuture<ProductDTO>();
 
-		future.complete(this.service.update(sale).get());
+		future.complete(this.service.update(product).get());
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 
@@ -100,5 +101,7 @@ public class SalesController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 
 	}
+
+
 
 }
