@@ -42,11 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.admins.login.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.registration.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.login.url.path")).permitAll()
-		.antMatchers("/**").hasRole("ADMIN").anyRequest().authenticated()
+		.antMatchers("/admins/**").hasRole("ADMIN")
+		.antMatchers("/customers/**").hasRole("CUSTOMER")
+		.anyRequest().authenticated()
 		.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment));
-		//.antMatchers("/customers/**").hasRole("CUSTOMER")
-		
-
 		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		

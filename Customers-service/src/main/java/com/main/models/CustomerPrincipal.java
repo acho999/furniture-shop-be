@@ -33,7 +33,7 @@ public class CustomerPrincipal implements UserDetails{
 		this.encryptedPassword = customer.getEncryptedPassword();
 		this.email = customer.getEmail();
 		
-		this.customer = this.customer;
+		this.customer = customer;
 		
 		this.authorities = new ArrayList<GrantedAuthority>();
 		
@@ -42,7 +42,7 @@ public class CustomerPrincipal implements UserDetails{
 	
 	private void init(Customer customer) {
 		
-		SimpleGrantedAuthority role = new SimpleGrantedAuthority(customer.getRole().getAuthority());
+		GrantedAuthority role = new SimpleGrantedAuthority(customer.getRole().getAuthority());
 		
 		this.authorities.add(role);
 		
@@ -69,7 +69,7 @@ public class CustomerPrincipal implements UserDetails{
 	@Override
 	public boolean isAccountNonExpired() {
 
-		return false;
+		return true;
 	}
 
 	@Override

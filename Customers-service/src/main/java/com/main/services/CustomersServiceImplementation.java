@@ -44,7 +44,6 @@ public class CustomersServiceImplementation implements CustomersService {
 
 	@Override
 	@Transactional(readOnly = false)
-	@Async("asyncExecutor")
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		try {
 

@@ -85,6 +85,8 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 
 				token = tokenWithPrefix.replace(this.headerPrefix, "");
 				
+				token = token.trim();
+				
 				body = Jwts.parser().setSigningKey(this.tokenSecret).parseClaimsJws(token);
 			}
 

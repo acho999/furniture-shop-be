@@ -26,12 +26,12 @@ public class AdminPrincipal implements UserDetails{
 	public AdminPrincipal(Admin userEntity) {
 		
 		this.user = userEntity;
-		this.id = this.user.getId();
-		this.first_name = this.user.getFirst_name();
-		this.last_name = this.user.getLast_name();
-		this.username = this.user.getUsername();
-		this.encryptedPassword = this.user.getEncryptedPassword();
-		this.email = this.user.getEmail();
+		this.id = userEntity.getId();
+		this.first_name = userEntity.getFirst_name();
+		this.last_name = userEntity.getLast_name();
+		this.username = userEntity.getUsername();
+		this.encryptedPassword = userEntity.getEncryptedPassword();
+		this.email = userEntity.getEmail();
 		this.authorities = new ArrayList<GrantedAuthority>();
 		this.init(userEntity);
 	}

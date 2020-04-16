@@ -3,6 +3,7 @@ package com.main.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -22,8 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private Environment env;
 	@Autowired
-	private UserDetailsService detailsService;
-	@Autowired
+	@Lazy
 	private CustomersService customersService;
 	
 	
@@ -43,8 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	protected AuthenticationFilter authenticationFilter() throws Exception {
 		
-		AuthenticationFilter filter = new AuthenticationFilter(env,
-				                                               detailsService, 
+		AuthenticationFilter filter = new AuthenticationFilter(env, 
 				                                               this.authenticationManagerBean(),
 				                                               customersService);
 		
@@ -75,7 +74,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		prov.setPasswordEncoder(this.encoder());
 		
-		prov.setUserDetailsService(this.detailsService);
+		prov.setUserDetailsService(this.customersService);
 		
 		return prov;
 		
