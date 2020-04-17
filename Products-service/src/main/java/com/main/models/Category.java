@@ -30,10 +30,10 @@ public class Category implements Serializable{
         name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator"
     )
-	@Column(name = "id")
+	@Column(name = "id",unique = true)
 	private String id;
 	
-	@Column(name = "categoryName")
+	@Column(name = "categoryName", unique = true)
 	private String name;
 	
 	@JsonIgnore

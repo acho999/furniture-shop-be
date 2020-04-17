@@ -62,7 +62,7 @@ public class CategoriesService implements ICategoriesService{
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		Category categoryEntity = null;
+		Category categoryEntity = this.repo.findById(category.getId()).get();
 		CategoryDTO returnObject = null;
 
 		try {

@@ -13,9 +13,6 @@ import com.main.models.Sale;
 
 public class ProductDTO implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5428167838808451593L;
 	
 	private String id;
@@ -25,14 +22,15 @@ public class ProductDTO implements Serializable{
 	private Date dateCreated;
 	
 	//@JsonIgnore
-	private Category category;
+	//private Category category;
+	private String categoryId;
 	
 	//@JsonIgnore
-	private List<Image> images = new ArrayList<Image>();
+	//private List<Image> images = new ArrayList<Image>();
 	
-	private List<Order> orders = new ArrayList<Order>();
+	//private List<Order> orders = new ArrayList<Order>();
 	
-	private List<Sale> sales = new ArrayList<Sale>();
+	//private List<Sale> sales = new ArrayList<Sale>();
 	
 	private Number price;
 	
@@ -55,7 +53,7 @@ public class ProductDTO implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-
+/*
 	public Category getCategory() {
 		return category;
 	}
@@ -87,7 +85,7 @@ public class ProductDTO implements Serializable{
 	public void setSales(List<Sale> sales) {
 		this.sales = sales;
 	}
-
+*/
 	public Number getPrice() {
 		return price;
 	}
@@ -118,6 +116,14 @@ public class ProductDTO implements Serializable{
 
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String category) {
+		this.categoryId = category;
 	}
 
 }

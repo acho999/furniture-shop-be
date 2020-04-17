@@ -26,7 +26,17 @@ public class OrderDTO implements Serializable{
 	
 	private Number sumOfOrder;
 	
-	private Customer customer;
+	//private Customer customer;
+	
+	private String customerId;
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 
 	public String getId() {
 		return id;
@@ -68,12 +78,5 @@ public class OrderDTO implements Serializable{
 		this.sumOfOrder = sumOfOrder;
 	}
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
 
 }

@@ -21,9 +21,19 @@ public class SaleDTO implements Serializable{
 	
 	private Number sumOfSale;
 	
-	private Customer customer;
-	
+	private String customerId;
+
 	private Date dateCreated;
+	
+	
+	
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
 
 	public String getId() {
 		return id;
@@ -47,14 +57,6 @@ public class SaleDTO implements Serializable{
 
 	public void setSumOfSale(Number sumOfSale) {
 		this.sumOfSale = sumOfSale;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 
 	public Date getDateCreated() {

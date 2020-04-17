@@ -44,6 +44,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.login.url.path")).permitAll()
 		.antMatchers("/admins/**").hasRole("ADMIN")
 		.antMatchers("/customers/**").hasRole("CUSTOMER")
+		.antMatchers("/categories/**").hasRole("ADMIN")
+		.antMatchers("/sales/**").hasRole("ADMIN")
+		.antMatchers("/orders/**").hasRole("ADMIN")
+		.antMatchers("/products/getAll").hasAnyRole("ADMIN","CUSTOMER")
+		.antMatchers("/products/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
+		.antMatchers("/products/update").hasRole("ADMIN")
+		.antMatchers("/products/create").hasRole("ADMIN")
+		.antMatchers("/products/delete/{id}").hasRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment));
 		

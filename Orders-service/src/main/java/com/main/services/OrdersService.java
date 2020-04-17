@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.OrderDTO;
+import com.main.models.Customer;
 import com.main.models.Order;
+import com.main.repositories.CustomerRepository;
 import com.main.repositories.OrdersRepository;
 
 @Service
@@ -26,6 +28,9 @@ public class OrdersService implements IOrdersService {
 
 	@Autowired
 	private OrdersRepository repo;
+	
+	@Autowired
+	private CustomerRepository customerRepo;
 
 	@Autowired
 	private ModelMapper mapper;
@@ -48,6 +53,10 @@ public class OrdersService implements IOrdersService {
 			Date date = format.parse(dateString);
 
 			entity.setDateCreated(date);
+			
+			Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
+			
+			entity.setCustomer(customer);
 
 			repo.saveAndFlush(entity);
 
@@ -71,7 +80,7 @@ public class OrdersService implements IOrdersService {
 
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		Order orderEntity = null;
+		Order orderEntity = this.repo.findById(order.getId()).get();
 		OrderDTO returnObject = null;
 
 		try {
@@ -79,6 +88,10 @@ public class OrdersService implements IOrdersService {
 			this.mapper.map(orderEntity, order);
 
 			returnObject = new OrderDTO();
+			
+            Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
+			
+			orderEntity.setCustomer(customer);
 
 			this.mapper.map(order, returnObject);
 

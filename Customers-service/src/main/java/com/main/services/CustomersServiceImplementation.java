@@ -128,9 +128,9 @@ public class CustomersServiceImplementation implements CustomersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<CustomerDTO> update(CustomerDTO customer) {
 		
-this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		Customer cust = null; 
+		Customer cust = this.repo.findById(customer.getId()).get(); 
 		CustomerDTO returnObject = null;
 		
 		try {

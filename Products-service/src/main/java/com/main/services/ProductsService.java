@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.ProductDTO;
+import com.main.models.Category;
 import com.main.models.Product;
+import com.main.repositories.CategoriesRepository;
 import com.main.repositories.ProductsRepository;
 
 @Service
@@ -29,6 +31,9 @@ public class ProductsService implements IProductsService {
 
 	@Autowired
 	private ProductsRepository repo;
+	
+	@Autowired
+	private CategoriesRepository categoriesRepo;
 
 	@Override
 	@Transactional(readOnly = false)
@@ -48,6 +53,10 @@ public class ProductsService implements IProductsService {
 			Date date = format.parse(dateString);
 
 			entity.setDateCreated(date);
+			
+			Category category = this.categoriesRepo.findById(product.getCategoryId()).get();
+			
+			entity.setCategory(category);
 
 			repo.saveAndFlush(entity);
 
@@ -70,12 +79,17 @@ public class ProductsService implements IProductsService {
 
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		Product productEntity = null;
+		Product productEntity = this.repo.findById(product.getId()).get();
+		
 		ProductDTO returnObject = null;
 
 		try {
 
 			this.mapper.map(productEntity, product);
+			
+			Category category = this.categoriesRepo.findById(product.getCategoryId()).get();
+
+            productEntity.setCategory(category);
 
 			returnObject = new ProductDTO();
 
