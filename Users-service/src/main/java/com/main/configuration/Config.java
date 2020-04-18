@@ -23,8 +23,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.main.services.AdminsService;
-import com.main.services.AdminsServiceImplementation;
+import com.main.services.UsersService;
+import com.main.services.UsersServiceImplementation;
 
 
 @Configuration

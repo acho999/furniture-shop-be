@@ -62,17 +62,6 @@ public class CustomersController {
 		return "Hello customer";
 	}
 
-	@PostMapping(value = "/login", consumes = { MediaType.APPLICATION_XML_VALUE,
-			                                    MediaType.APPLICATION_JSON_VALUE }, 
-			                       produces = { MediaType.APPLICATION_JSON_VALUE,
-					                            MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<UserDetails> login(@Valid @RequestBody LoginRequestModel login) {
-
-		UserDetails currentCustPrincipal = this.service.loadUserByUsername(login.getUsername());
-
-		return ResponseEntity.status(HttpStatus.OK).body(currentCustPrincipal);
-
-	}
 
 	@GetMapping(value = "/details/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<ResponseEntity<CustomerDTO>> customerDetails(@PathVariable String id)

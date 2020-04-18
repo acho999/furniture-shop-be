@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.main.models.Order;
-import com.main.models.Role;
 import com.main.models.Sale;
 
 public class CustomerDTO implements Serializable{
@@ -28,9 +27,6 @@ public class CustomerDTO implements Serializable{
 	private String email;
 	
 	private Date date_created;
-	
-	//@JsonIgnore
-	public Role role;
 	
 	//@JsonIgnore
 	private List<Order> orders = new ArrayList<Order>();
@@ -92,14 +88,6 @@ public class CustomerDTO implements Serializable{
 
 	public void setDate_created(Date date_created) {
 		this.date_created = date_created;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
 	}
 
 	public String getUsername() {

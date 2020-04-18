@@ -13,12 +13,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.main.DTO.AdminDto;
+import com.main.DTO.UserDto;
 import com.main.models.Role;
-import com.main.models.Admin;
-import com.main.models.AdminPrincipal;
+import com.main.models.User;
+import com.main.models.UserPrincipal;
 import com.main.repositories.RolesRepository;
-import com.main.repositories.AdminsRepository;
+import com.main.repositories.UsersRepository;
 
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
@@ -30,13 +30,13 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 @Transactional(readOnly = true)
-public class AdminsServiceImplementation implements AdminsService{
+public class UsersServiceImplementation implements UsersService{
 	
 	@Autowired
 	private ModelMapper mapper;
 	
 	@Autowired(required = true)
-	private AdminsRepository adminsRepo;
+	private UsersRepository usersRepo;
 
 	@Autowired(required = true)
 	private RolesRepository rolesRepo;
@@ -55,11 +55,11 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
-		CompletableFuture<AdminDto> dto = this.getByUsername(username);
+		CompletableFuture<UserDto> dto = this.getByUsername(username);
 		
-		Admin entity = mapper.map(dto.get(), Admin.class);
+		User entity = mapper.map(dto.get(), User.class);
 		
-		AdminPrincipal userPrincipal = new AdminPrincipal(entity);
+		UserPrincipal userPrincipal = new UserPrincipal(entity);
 		
 		return userPrincipal;
 		
@@ -75,7 +75,7 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<AdminDto> createAdmin(AdminDto admin) {
+	public CompletableFuture<UserDto> createUser(UserDto user) {
 		try {
 			
 			Role role = null;
@@ -84,9 +84,9 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
-			Admin entity = mapper.map(admin, Admin.class);
+			User entity = mapper.map(user, User.class);
 			
-			String encPassword = encoder.encode(admin.getPassword());
+			String encPassword = encoder.encode(user.getPassword());
 			
 			entity.setEncryptedPassword(encPassword);
 			
@@ -98,7 +98,7 @@ public class AdminsServiceImplementation implements AdminsService{
 			
 			entity.setDate_created(date);
 			
-			if (admin.getAdminRegSecret().equals(adminRegSecret)) {
+			if (user.getAdminRegSecret().equals(adminRegSecret)) {
 				
 				role = rolesRepo.findById(1L).get();
 				
@@ -111,9 +111,9 @@ public class AdminsServiceImplementation implements AdminsService{
 				entity.setRole(role);
 			}
 			
-			adminsRepo.saveAndFlush(entity);
+			usersRepo.saveAndFlush(entity);
 			
-			AdminDto returnDto = mapper.map(entity, AdminDto.class);
+			UserDto returnDto = mapper.map(entity, UserDto.class);
 			
 			return CompletableFuture.completedFuture(returnDto);
 			
@@ -129,28 +129,28 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<AdminDto> update(AdminDto user) {
+	public CompletableFuture<UserDto> update(UserDto user) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		Admin admin = null; 
-		AdminDto returnObject = null;
+		User userEntity = null; 
+		UserDto returnObject = null;
 		
 		try {
 			
-			admin = this.adminsRepo.findById(user.getId()).get();
+			userEntity = this.usersRepo.findById(user.getId()).get();
 			
-			Role role = admin.getRole();
+			Role role = user.getRole();
 			
-		    this.mapper.map(user, admin);
+		    this.mapper.map(user, userEntity);
 		    
-		    admin.role = role;
+		    userEntity.role = role;
 		    
-		    returnObject = new AdminDto();
+		    returnObject = new UserDto();
 		    
-		    this.mapper.map(admin, returnObject);
+		    this.mapper.map(userEntity, returnObject);
 		    
-		    this.adminsRepo.saveAndFlush(admin);
+		    this.usersRepo.saveAndFlush(userEntity);
 		    
 		    return CompletableFuture.completedFuture(returnObject);
 			
@@ -166,14 +166,14 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Transactional(readOnly = false)
 	public boolean delete(String id) {
 		
-		Optional<Admin> adminOptional = null;
+		Optional<User> userOptional = null;
 		
 		try {
-			this.adminsRepo.deleteById(id);
+			this.usersRepo.deleteById(id);
 			
-			adminOptional = this.adminsRepo.findById(id);
+			userOptional = this.usersRepo.findById(id);
 			
-			if(adminOptional.get() != null) {
+			if(userOptional.get() != null) {
 				return false;
 			}
 			
@@ -191,19 +191,19 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<AdminDto> getAdminDetails(String id) {
+	public CompletableFuture<UserDto> getUserDetails(String id) {
 		
-		AdminDto adminDetails = null;
-		Admin admin = null;
+		UserDto userDetails = null;
+		User user = null;
 		try {
 			
-			admin = this.adminsRepo.findById(id).get();
+			user = this.usersRepo.findById(id).get();
 			
-			if (admin != null) {
+			if (user != null) {
 				
-				adminDetails = this.mapper.map(admin, AdminDto.class);
+				userDetails = this.mapper.map(user, UserDto.class);
 				
-				return CompletableFuture.completedFuture(adminDetails);
+				return CompletableFuture.completedFuture(userDetails);
 				
 			}
 		
@@ -218,13 +218,13 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = true)
 	@Async("asyncExecutor")
-	public CompletableFuture<AdminDto> getByUsername(String userName) {
+	public CompletableFuture<UserDto> getByUsername(String userName) {
 		
 		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		Optional<Admin> userEntity = adminsRepo.findAll().stream().filter(x->x.getUsername().equals(userName)).findFirst();
+		Optional<User> userEntity = usersRepo.findAll().stream().filter(x->x.getUsername().equals(userName)).findFirst();
 		
-		AdminDto dtoToReturn = mapper.map(userEntity.get(), AdminDto.class);
+		UserDto dtoToReturn = mapper.map(userEntity.get(), UserDto.class);
 		
 		return CompletableFuture.completedFuture(dtoToReturn);
 	}
@@ -232,17 +232,17 @@ public class AdminsServiceImplementation implements AdminsService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<List<AdminDto>> getAdmins() {
+	public CompletableFuture<List<UserDto>> getUsers() {
 		
-		List<AdminDto> adminDetails = new ArrayList<AdminDto>();
-		Type listType = new TypeToken<List<AdminDto>>() {}.getType();
+		List<UserDto> userDetails = new ArrayList<UserDto>();
+		Type listType = new TypeToken<List<UserDto>>() {}.getType();
 		
 		try {
 		
-			adminDetails = this.mapper.map(this.adminsRepo.findAll(),listType);
+			userDetails = this.mapper.map(this.usersRepo.findAll(),listType);
 			
 			
-			return CompletableFuture.completedFuture(adminDetails);
+			return CompletableFuture.completedFuture(userDetails);
 			
 			
 		} catch (Exception e) {

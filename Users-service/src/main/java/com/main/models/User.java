@@ -1,5 +1,6 @@
 package com.main.models;
 
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,9 +18,10 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 @Entity
 @Table(name="admins")
-public class Admin implements Serializable{
+public class User implements Serializable{
 	
 	private static final long serialVersionUID = 3085741895550329566L;
 

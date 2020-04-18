@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class AdminPrincipal implements UserDetails{
+public class UserPrincipal implements UserDetails{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -20,10 +20,10 @@ public class AdminPrincipal implements UserDetails{
 	private String username;
 	private String encryptedPassword;
 	private String email;
-	private Admin user;
+	private User user;
 	private List<GrantedAuthority> authorities;
 	
-	public AdminPrincipal(Admin userEntity) {
+	public UserPrincipal(User userEntity) {
 		
 		this.user = userEntity;
 		this.id = userEntity.getId();
@@ -36,7 +36,7 @@ public class AdminPrincipal implements UserDetails{
 		this.init(userEntity);
 	}
 	
-	public void init(Admin userEntity) {
+	public void init(User userEntity) {
 		GrantedAuthority role = new SimpleGrantedAuthority(userEntity.getRole().getAuthority());
 		this.authorities.add(role);
 	}
@@ -113,11 +113,11 @@ public class AdminPrincipal implements UserDetails{
 		this.email = email;
 	}
 
-	public Admin getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(Admin user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

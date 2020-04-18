@@ -18,7 +18,6 @@ import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 @Table(name="roles")
 public class Role implements GrantedAuthority,Serializable{
@@ -35,19 +34,12 @@ public class Role implements GrantedAuthority,Serializable{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "role",
-			   targetEntity = Admin.class,
+			   targetEntity = User.class,
 			   fetch = FetchType.LAZY,
 			   cascade = CascadeType.ALL,
 			   orphanRemoval = true)
-	public List<Admin> admins = new ArrayList<>();
+	public List<User> admins = new ArrayList<>();
 	
-	@JsonIgnore
-	@OneToMany(mappedBy = "role",
-			   targetEntity = Customer.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
-	public List<Customer> customers = new ArrayList<>();
 	
 	@Override
 	public String getAuthority() {
@@ -66,11 +58,11 @@ public class Role implements GrantedAuthority,Serializable{
 		this.roleName = roleName;
 	}
 
-	public List<Admin> getAdmins() {
+	public List<User> getAdmins() {
 		return this.admins;
 	}
 
-	public void setAdmins(List<Admin> admins) {
+	public void setAdmins(List<User> admins) {
 		this.admins = admins;
 	}
 

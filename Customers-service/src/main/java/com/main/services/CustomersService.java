@@ -8,11 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import com.main.DTO.CustomerDTO;
 
 
-public interface CustomersService extends UserDetailsService{
+public interface CustomersService {
 	
     public CompletableFuture<CustomerDTO> createCustomer(CustomerDTO customer);
-	
-	public CompletableFuture<CustomerDTO> getByUsername(String userName);
 	
 	public CompletableFuture<CustomerDTO> update(CustomerDTO customer);
 	

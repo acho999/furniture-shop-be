@@ -44,11 +44,6 @@ public class Customer {
 	@Column(name = "date_created", nullable = false)
 	private Date date_created;
 
-	@JsonIgnore
-	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "role_id", referencedColumnName = "id")
-	public Role role;
-
 	@OneToMany(mappedBy = "customer", targetEntity = Order.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Order> orders = new ArrayList<Order>();
 
@@ -101,14 +96,6 @@ public class Customer {
 
 	public void setDate_created(Date date_created) {
 		this.date_created = date_created;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
-
-	public void setRole(Role role) {
-		this.role = role;
 	}
 
 	public String getUsername() {

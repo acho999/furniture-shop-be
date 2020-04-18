@@ -21,8 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.main.models.LoginRequestModel;
-import com.main.models.AdminPrincipal;
-import com.main.services.AdminsService;
+import com.main.models.UserPrincipal;
+import com.main.services.UsersService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -30,16 +30,14 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	//private UserDetailsService usersService;
-	private AdminsService service;
+	private UsersService service;
 	private String tokenSecret;
 	private Long tokenExpirationTime;
 	private Environment env;
 
 	
-	public AuthenticationFilter(Environment env, AdminsService service, AuthenticationManager manager) {
+	public AuthenticationFilter(Environment env, UsersService service, AuthenticationManager manager) {
 		this.env = env;
-		//this.usersService = usersService;
 		super.setAuthenticationManager(manager);
 		this.service = service;
 		this.tokenExpirationTime = Long.parseLong(this.env.getProperty("token.expiration_time"));
@@ -72,7 +70,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 		String userId = "";
 		try {
 
-			userId = String.valueOf(this.service.getByUsername(((AdminPrincipal) auth.getPrincipal())
+			userId = String.valueOf(this.service.getByUsername(((UserPrincipal) auth.getPrincipal())
 					.getUsername())
 					.get()
 					.getId());
@@ -81,7 +79,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
 		Claims claims = Jwts.claims().setSubject(String.valueOf(userId));
 
-		claims.put("roles", ((AdminPrincipal) auth.getPrincipal()).getAuthorities());
+		claims.put("roles", ((UserPrincipal) auth.getPrincipal()).getAuthorities());
 
 		Date nowDate = new Date();
 

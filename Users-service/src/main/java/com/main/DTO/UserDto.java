@@ -10,7 +10,7 @@ import com.main.models.Role;
 
 import antlr.Token;
 
-public class AdminDto implements Serializable{
+public class UserDto implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	

@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.lang.Nullable;
 
-public class CreateAdminDto {
+public class CreateUserDto {
 	
 	@NotNull
 	@Size(min=2,max=20)

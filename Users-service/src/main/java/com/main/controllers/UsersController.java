@@ -22,43 +22,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.main.DTO.CreateAdminDto;
-import com.main.DTO.AdminDto;
+import com.main.DTO.CreateUserDto;
+import com.main.DTO.UserDto;
 import com.main.models.LoginRequestModel;
-import com.main.services.AdminsService;
+import com.main.services.UsersService;
 
 
 @RestController
 @Transactional
-@RequestMapping(value = "/admins")
-public class AdminsController{
+@RequestMapping(value = "/users")
+public class UsersController{
 	
 	
 	private ModelMapper mapper;
-	private AdminsService adminsService;
+	private UsersService usersService;
 	
 	@Autowired
-	public AdminsController(AdminsService adminsService, ModelMapper mapper) {
+	public UsersController(UsersService usersService, ModelMapper mapper) {
 		this.mapper = mapper;
-		this.adminsService = adminsService;
+		this.usersService = usersService;
 		
 	}
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
 			                       consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
-	public CompletableFuture<ResponseEntity<AdminDto>> createUser(@Valid @RequestBody CreateAdminDto user) throws ParseException, InterruptedException, ExecutionException{
+	public CompletableFuture<ResponseEntity<UserDto>> createUser(@Valid @RequestBody CreateUserDto user) throws ParseException, InterruptedException, ExecutionException{
 		
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		
-		AdminDto userDto = mapper.map(user, AdminDto.class);
+		UserDto userDto = mapper.map(user, UserDto.class);
 		
-		CompletableFuture<AdminDto> future = new CompletableFuture<AdminDto>();
+		CompletableFuture<UserDto> future = new CompletableFuture<UserDto>();
 		
 		//Future<UserDto> returnDto = this.userService.createUser(userDto);
 		
 		//return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
 		
-		future.complete(this.adminsService.createAdmin(userDto).get());
+		future.complete(this.usersService.createUser(userDto).get());
 		
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 		
@@ -66,36 +66,36 @@ public class AdminsController{
 	
 	@GetMapping(value = "/hello")
 	public String hello() {
-		return "Hello admin";
+		return "Hello user";
 	}
 	
 	@PostMapping(value = "/login",consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
 			                      produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<UserDetails> login(@Valid @RequestBody LoginRequestModel login) {
 		
-		UserDetails currentUserPrincipal = this.adminsService.loadUserByUsername(login.getUsername());
+		UserDetails currentUserPrincipal = this.usersService.loadUserByUsername(login.getUsername());
 		
 		return ResponseEntity.status(HttpStatus.OK).body(currentUserPrincipal);
 		
 	}
 	
 	@GetMapping(value = "/details/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<AdminDto>> adminDetails(@PathVariable String id) throws InterruptedException, ExecutionException{
+	public CompletableFuture<ResponseEntity<UserDto>> userDetails(@PathVariable String id) throws InterruptedException, ExecutionException{
 		
-		CompletableFuture<AdminDto> future = new CompletableFuture<AdminDto>();
+		CompletableFuture<UserDto> future = new CompletableFuture<UserDto>();
 		
-		future.complete(this.adminsService.getAdminDetails(id).get());
+		future.complete(this.usersService.getUserDetails(id).get());
 		
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 		
 	}
 	
 	@GetMapping(value = "/getAll",produces = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<List<AdminDto>>> getAll() throws InterruptedException, ExecutionException{
+	public CompletableFuture<ResponseEntity<List<UserDto>>> getAll() throws InterruptedException, ExecutionException{
 		
-		CompletableFuture<List<AdminDto>> future = new CompletableFuture<List<AdminDto>>();
+		CompletableFuture<List<UserDto>> future = new CompletableFuture<List<UserDto>>();
 		
-		future.complete(this.adminsService.getAdmins().get());
+		future.complete(this.usersService.getUsers().get());
 		
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 		
@@ -103,11 +103,11 @@ public class AdminsController{
 	
 	@PostMapping(value = "/update",produces = MediaType.APPLICATION_JSON_VALUE,
 			                       consumes = MediaType.APPLICATION_JSON_VALUE)
-	public CompletableFuture<ResponseEntity<AdminDto>> update(@Valid @RequestBody AdminDto admin) throws InterruptedException, ExecutionException{
+	public CompletableFuture<ResponseEntity<UserDto>> update(@Valid @RequestBody UserDto user) throws InterruptedException, ExecutionException{
 		
-		CompletableFuture<AdminDto> future = new CompletableFuture<AdminDto>();
+		CompletableFuture<UserDto> future = new CompletableFuture<UserDto>();
 		
-		future.complete(this.adminsService.update(admin).get());
+		future.complete(this.usersService.update(user).get());
 		
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 		
@@ -116,7 +116,7 @@ public class AdminsController{
 	@PostMapping(value = "/delete/{id}")
 	public ResponseEntity<Void> delete(@PathVariable String id) throws InterruptedException, ExecutionException{
 		
-		this.adminsService.delete(id);
+		this.usersService.delete(id);
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		
