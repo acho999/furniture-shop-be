@@ -104,8 +104,6 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 				// 
 			}
 			
-			
-			
 			UsernamePasswordAuthenticationToken authenticationToken = 
 					new UsernamePasswordAuthenticationToken(body.getBody().getSubject(),null,roles);
 			

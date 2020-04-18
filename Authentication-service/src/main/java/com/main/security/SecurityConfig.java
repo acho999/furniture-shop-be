@@ -23,13 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		this.environment = environment;
 	}
 	
-	
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
 
-	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
@@ -43,7 +41,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.registration.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.login.url.path")).permitAll()
 		.antMatchers("/admins/**").hasRole("ADMIN")
-		.antMatchers("/customers/**").hasRole("CUSTOMER")
+		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
+		.antMatchers(HttpMethod.GET,"/customers/getAll").hasRole("Ceco")
+		.antMatchers("/customers/update").hasRole("CUSTOMER")
+		//.antMatchers("/customers/create").hasRole("CUSTOMER")
+		.antMatchers("/customers/delete/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/categories/**").hasRole("ADMIN")
 		.antMatchers("/sales/**").hasRole("ADMIN")
 		.antMatchers("/orders/**").hasRole("ADMIN")
@@ -58,7 +60,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 	}
-	
-	
 	
 }
