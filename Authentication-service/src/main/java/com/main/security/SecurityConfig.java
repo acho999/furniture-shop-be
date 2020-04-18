@@ -39,17 +39,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		
 		http.headers().frameOptions().disable();
-		//.access("hasRole('ROLE_CUSTOMER')")
+		//.access("hasRole('ROLE_CUSTOMER')") wrong
 		http.authorizeRequests()
-		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.admins.registration.url.path")).permitAll()
-		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.admins.login.url.path")).permitAll()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.users.registration.url.path")).permitAll()
+		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.users.login.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.registration.url.path")).permitAll()
-		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.login.url.path")).permitAll()
-		.antMatchers("/admins/**").hasRole("ADMIN")
+		.antMatchers("/users/**").hasRole("ADMIN")
 		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/customers/getAll").hasRole("ADMIN")
 		.antMatchers("/customers/update").hasRole("CUSTOMER")
-		//.antMatchers("/customers/create").hasRole("CUSTOMER")
 		.antMatchers("/customers/delete/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/categories/**").hasRole("ADMIN")
 		.antMatchers("/sales/**").hasRole("ADMIN")

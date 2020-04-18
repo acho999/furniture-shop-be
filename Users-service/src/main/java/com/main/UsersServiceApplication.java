@@ -12,10 +12,10 @@ import org.springframework.context.annotation.ComponentScan;
 		"com.main.repositories","com.main.services","com.main.security","com.main.models"})
 //@EntityScan("com.main.models")
 @EnableDiscoveryClient
-public class AdminsServiceApplication {
+public class UsersServiceApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(AdminsServiceApplication.class, args);
+		SpringApplication.run(UsersServiceApplication.class, args);
 		
 	}
 	

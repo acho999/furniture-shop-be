@@ -26,7 +26,6 @@ public class UsersServiceImplementation implements UsersService {
 	@Autowired(required = true)
 	private UsersRepository usersRepo;
 
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
@@ -34,9 +33,9 @@ public class UsersServiceImplementation implements UsersService {
 
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-			CompletableFuture<User> dto = this.getByUsername(username);
+			CompletableFuture<User> user = this.getByUsername(username);
 
-			User entity = mapper.map(dto.get(), User.class);
+			User entity = mapper.map(user.get(), User.class);
 
 			UserPrincipal userPrincipal = new UserPrincipal(entity);
 
