@@ -66,18 +66,20 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication auth) {
-		
+		String userName = "";
 		String userId = "";
 		try {
 
-			userId = String.valueOf(this.service.getByUsername(((UserPrincipal) auth.getPrincipal())
+			/*userId = String.valueOf(this.service.getByUsername(((UserPrincipal) auth.getPrincipal())
 					.getUsername())
 					.get()
-					.getId());
-
+					.getId());*/
+			
+			
+            userName = ((UserPrincipal) auth.getPrincipal()).getUsername();
 		
 
-		Claims claims = Jwts.claims().setSubject(String.valueOf(userId));
+		Claims claims = Jwts.claims().setSubject(String.valueOf(userName));
 
 		claims.put("roles", ((UserPrincipal) auth.getPrincipal()).getAuthorities());
 

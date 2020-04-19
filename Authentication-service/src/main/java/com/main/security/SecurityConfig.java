@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -46,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST,this.environment.getProperty("api.customers.registration.url.path")).permitAll()
 		.antMatchers("/users/**").hasRole("ADMIN")
 		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
-		.antMatchers("/customers/getAll").hasRole("ADMIN")
+		.antMatchers("/customers/getAll").hasAnyRole("ADMIN")
 		.antMatchers("/customers/update").hasRole("CUSTOMER")
 		.antMatchers("/customers/delete/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/categories/**").hasRole("ADMIN")
@@ -58,7 +59,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/products/create").hasRole("ADMIN")
 		.antMatchers("/products/delete/{id}").hasRole("ADMIN")
 		.anyRequest().authenticated()
-		.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment));
+		.and().addFilterBefore(new AuthorizaionFilter(authenticationManagerBean(),this.environment,this.service), 
+				BasicAuthenticationFilter.class);
+		//.and().addFilter(new AuthorizaionFilter(authenticationManagerBean(),this.environment,this.service));
 		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		

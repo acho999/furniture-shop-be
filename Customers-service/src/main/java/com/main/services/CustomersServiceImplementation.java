@@ -31,8 +31,6 @@ public class CustomersServiceImplementation implements CustomersService {
 	@Autowired
 	private ModelMapper mapper;
 
-	@Autowired
-	private BCryptPasswordEncoder encoder;
 
 
 	@Override
@@ -44,10 +42,6 @@ public class CustomersServiceImplementation implements CustomersService {
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 			Customer cust = mapper.map(customer, Customer.class);
-
-			String encPassword = encoder.encode(customer.getPassword());
-
-			cust.setEncryptedPassword(encPassword);
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

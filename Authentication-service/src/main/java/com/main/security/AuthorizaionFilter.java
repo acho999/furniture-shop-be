@@ -18,6 +18,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import io.jsonwebtoken.Claims;
@@ -30,16 +32,18 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	private String headerName;
 	private String headerPrefix;
 	private String tokenSecret;
+	private UserDetailsService service;
 
 	private Environment env;
 
-	@Autowired
-	public AuthorizaionFilter(AuthenticationManager manager, Environment env) {
+	//@Autowired
+	public AuthorizaionFilter(AuthenticationManager manager, Environment env,UserDetailsService service) {
 		super(manager);
 		this.env = env;
 		this.tokenSecret = this.env.getProperty("token.secret");
 		this.headerPrefix = this.env.getProperty("authorization.token.header.prefix");
 		this.headerName = this.env.getProperty("authorization.token.header.name");
+		this.service = service;
 
 	}
 
@@ -101,10 +105,18 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 				// 
 			}
 			
-			UsernamePasswordAuthenticationToken authenticationToken = 
+			UserDetails details = service.loadUserByUsername(body.getBody().getSubject());
+			
+			System.out.println(req.isUserInRole("ROLE_ADMIN"));
+			
+			//List<GrantedAuthority> r = (List<GrantedAuthority>) details.getAuthorities();
+			
+			return new UsernamePasswordAuthenticationToken(details.getUsername(), details.getPassword(), roles);
+			
+			/*UsernamePasswordAuthenticationToken authenticationToken = 
 					new UsernamePasswordAuthenticationToken(body.getBody().getSubject(),null,roles);
 			
-			return authenticationToken;
+			return authenticationToken;*/
 
 		} catch (JwtException | IllegalArgumentException e) {
 			System.out.println(e.getMessage());

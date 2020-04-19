@@ -13,6 +13,7 @@ import com.main.models.User;
 import com.main.models.UserPrincipal;
 import com.main.repositories.UsersRepository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -54,7 +55,7 @@ public class UsersServiceImplementation implements UsersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<User> getByUsername(String userName) {
 
-		Optional<User> userEntity = usersRepo.findAll().stream().filter(x -> x.getUsername().equals(userName))
+		Optional<User> userEntity = this.usersRepo.findAll().stream().filter(x -> x.getUsername().equals(userName))
 				.findFirst();
 		
 		User user = userEntity.get();
