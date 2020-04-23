@@ -105,18 +105,18 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 				// 
 			}
 			
-			UserDetails details = service.loadUserByUsername(body.getBody().getSubject());
+			//UserDetails details = service.loadUserByUsername(body.getBody().getSubject());
 			
-			System.out.println(req.isUserInRole("ROLE_ADMIN"));
+			//System.out.println(req.isUserInRole("ROLE_ADMIN"));
 			
 			//List<GrantedAuthority> r = (List<GrantedAuthority>) details.getAuthorities();
 			
-			return new UsernamePasswordAuthenticationToken(details.getUsername(), details.getPassword(), roles);
+			//return new UsernamePasswordAuthenticationToken(details.getUsername(), details.getPassword(), roles);
 			
-			/*UsernamePasswordAuthenticationToken authenticationToken = 
+			UsernamePasswordAuthenticationToken authenticationToken = 
 					new UsernamePasswordAuthenticationToken(body.getBody().getSubject(),null,roles);
 			
-			return authenticationToken;*/
+			return authenticationToken;
 
 		} catch (JwtException | IllegalArgumentException e) {
 			System.out.println(e.getMessage());
