@@ -54,7 +54,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 
 		String id = req.getHeader("X-Zuul-UserId");
 		
-		String[] roles1 = req.getHeader("X-Zuul-UserRoles").split("[.{}]");
+		String[] roles1 = req.getHeader("X-Zuul-UserRoles").split(" ");
 
 		if (id == null || roles1 == null) {//|| !authHeader.startsWith(this.headerPrefix)) {
 
@@ -66,7 +66,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 		
 		for (int i = 0; i < roles1.length; i++) {
 			
-			roles.add(new SimpleGrantedAuthority("ROLE_" + (roles1[i].toUpperCase())));
+			roles.add(new SimpleGrantedAuthority(roles1[i].toUpperCase()));//"ROLE_" + (roles1[i].toUpperCase())));
 			// 
 		}
 
