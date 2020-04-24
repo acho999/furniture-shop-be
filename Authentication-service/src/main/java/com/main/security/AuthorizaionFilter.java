@@ -105,7 +105,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 				// 
 			}
 			
-			//UserDetails details = service.loadUserByUsername(body.getBody().getSubject());
+			//UserDetails userPrincipal = service.loadUserByUsername(body.getBody().getSubject());
 			
 			//System.out.println(req.isUserInRole("ROLE_ADMIN"));
 			
