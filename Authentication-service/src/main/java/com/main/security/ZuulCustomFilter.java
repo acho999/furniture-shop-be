@@ -1,6 +1,5 @@
 package com.main.security;
 
-import java.security.Principal;
 
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.security.core.Authentication;
@@ -16,6 +15,7 @@ import com.netflix.zuul.exception.ZuulException;
 public class ZuulCustomFilter extends ZuulFilter {
 
     private static final String ZULL_HEADER_USER_ID = "X-Zuul-UserId";
+    private static final String ZULL_HEADER_USER_ROLES = "X-Zuul-UserRoles";
 
     @Override
     public String filterType() {
@@ -43,7 +43,7 @@ public class ZuulCustomFilter extends ZuulFilter {
             RequestContext ctx = RequestContext.getCurrentContext();
 
             ctx.addZuulRequestHeader(ZULL_HEADER_USER_ID, onlineUser.getId());
-            ctx.addZuulRequestHeader(ZULL_HEADER_USER_ID, onlineUser.getAuthorities().toString());
+            ctx.addZuulRequestHeader(ZULL_HEADER_USER_ROLES, onlineUser.getAuthorities().toString());
 
         }
         return null;

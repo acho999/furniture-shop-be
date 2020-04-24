@@ -2,6 +2,7 @@ package com.main.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -19,6 +20,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+
+import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -49,9 +52,9 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 
-		String id = req.getHeader("Authorization");
+		String id = req.getHeader("X-Zuul-UserId");
 		
-		String[] roles1 = {"asdsad","asdas"};
+		String[] roles1 = req.getHeader("X-Zuul-UserRoles").split("[.{}]");
 
 		if (id == null || roles1 == null) {//|| !authHeader.startsWith(this.headerPrefix)) {
 
