@@ -16,6 +16,8 @@ public interface ISalesService {
 	public CompletableFuture<SaleDTO> getSaleDetails(String id);
 	
 	public CompletableFuture<List<SaleDTO>> getSales();
+	
+	public CompletableFuture<List<SaleDTO>> getSalesForCurrentUser(String userId);
 
 
 }

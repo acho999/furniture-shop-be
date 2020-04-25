@@ -12,7 +12,6 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
-	
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
@@ -25,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
-		.antMatchers("/customers/create").permitAll()
-		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
-		.antMatchers("/customers/getAll").hasAnyRole("ADMIN")
-		.antMatchers("/customers/update").hasRole("CUSTOMER")
-		.antMatchers("/customers/delete/{id}").hasAnyRole("ADMIN","CUSTOMER")
+		.antMatchers("/categories/details/{id}").hasAnyRole("ADMIN")
+		.antMatchers("/categories/create").hasAnyRole("ADMIN")
+		.antMatchers("/categories/getAll").hasAnyRole("ADMIN")
+		.antMatchers("/categories/update").hasRole("ADMIN")
+		.antMatchers("/categories/delete/{id}").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().addFilterBefore(new AuthorizaionFilter(authenticationManagerBean()), 
 				BasicAuthenticationFilter.class);
@@ -38,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 	}
+	
 	
 }
 

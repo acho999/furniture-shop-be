@@ -183,4 +183,10 @@ public class SalesService implements ISalesService {
 		return null;
 	}
 
+	@Override
+	public CompletableFuture<List<SaleDTO>> getSalesForCurrentUser(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -42,7 +42,7 @@ public class SalesController {
 
 	@PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<SaleDTO>> createUser(@Valid @RequestBody SaleDTO sale)
+	public CompletableFuture<ResponseEntity<SaleDTO>> createSale(@Valid @RequestBody SaleDTO sale)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -75,6 +75,17 @@ public class SalesController {
 		CompletableFuture<List<SaleDTO>> future = new CompletableFuture<List<SaleDTO>>();
 
 		future.complete(this.service.getSales().get());
+
+		return future.thenApply(result -> ResponseEntity.ok().body(result));
+
+	}
+	
+	@GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
+	public CompletableFuture<ResponseEntity<List<SaleDTO>>> getAllForCurrentUser(String userId) throws InterruptedException, ExecutionException {
+
+		CompletableFuture<List<SaleDTO>> future = new CompletableFuture<List<SaleDTO>>();
+
+		future.complete(this.service.getSalesForCurrentUser(userId).get());
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 

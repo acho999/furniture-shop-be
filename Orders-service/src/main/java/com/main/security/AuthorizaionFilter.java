@@ -2,9 +2,6 @@ package com.main.security;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.servlet.FilterChain;
@@ -12,24 +9,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
 
 public class AuthorizaionFilter extends BasicAuthenticationFilter {
 
+	
 	public AuthorizaionFilter(AuthenticationManager manager) {
 		super(manager);
 
@@ -39,11 +30,11 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 
-		String id = req.getHeader("X-Zuul-UserId");
+		String userName = req.getHeader("X-Zuul-UserId");
 		
-		String[] roles1 = req.getHeader("X-Zuul-UserRoles").split(" ");
+		String[] rolesString = req.getHeader("X-Zuul-UserRoles").split(" ");
 
-		if (id == null || roles1 == null) {//|| !authHeader.startsWith(this.headerPrefix)) {
+		if (userName == null || rolesString == null) {//|| !authHeader.startsWith(this.headerPrefix)) {
 
 			chain.doFilter(req, res);
 			return;
@@ -51,13 +42,13 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 		
 		List<GrantedAuthority> roles = new ArrayList<>();
 		
-		for (int i = 0; i < roles1.length; i++) {
+		for (int i = 0; i < rolesString.length; i++) {
 			
-			roles.add(new SimpleGrantedAuthority(roles1[i].toUpperCase()));//"ROLE_" + (roles1[i].toUpperCase())));
+			roles.add(new SimpleGrantedAuthority(rolesString[i].toUpperCase()));//"ROLE_" + (roles1[i].toUpperCase())));
 			// 
 		}
 
-		UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(id,null, roles);
+		UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userName,null, roles);
 
 		if (auth == null ) {
 
