@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -36,12 +37,13 @@ public class UsersController{
 	
 	private ModelMapper mapper;
 	private UsersService usersService;
+	private Environment env;
 	
 	@Autowired
-	public UsersController(UsersService usersService, ModelMapper mapper) {
+	public UsersController(UsersService usersService, ModelMapper mapper,Environment env) {
 		this.mapper = mapper;
 		this.usersService = usersService;
-		
+		this.env = env;
 	}
 	
 	@PostMapping(value = "/create",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE},
@@ -66,7 +68,7 @@ public class UsersController{
 	
 	@GetMapping(value = "/hello")
 	public String hello() {
-		return "Hello user";
+		return this.env.getProperty("gateway.ip") + this.env.getProperty("token.secret");
 	}
 	
 	@PostMapping(value = "/login",consumes = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
