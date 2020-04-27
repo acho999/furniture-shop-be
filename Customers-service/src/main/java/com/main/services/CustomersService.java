@@ -10,7 +10,7 @@ import com.main.DTO.CustomerDTO;
 
 public interface CustomersService {
 	
-    public CompletableFuture<CustomerDTO> createCustomer(CustomerDTO customer);
+    public CompletableFuture<CustomerDTO> createCustomer(String userName);
 	
 	public CompletableFuture<CustomerDTO> update(CustomerDTO customer);
 	

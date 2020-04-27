@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 		"com.main.repositories","com.main.services","com.main.security","com.main.models"})
 //@EntityScan("com.main.models")
 @EnableDiscoveryClient
+@EnableFeignClients
 public class UsersServiceApplication {
 	
 	public static void main(String[] args) {

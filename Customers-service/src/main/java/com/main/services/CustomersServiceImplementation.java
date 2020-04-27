@@ -19,7 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.CustomerDTO;
 import com.main.models.Customer;
+import com.main.models.User;
 import com.main.repositories.CustomersRepository;
+import com.main.repositories.UsersRepository;
 
 @Service
 @Transactional(readOnly = true)
@@ -27,6 +29,9 @@ public class CustomersServiceImplementation implements CustomersService {
 
 	@Autowired
 	private CustomersRepository repo;
+	
+	@Autowired
+	private UsersRepository userRepo;
 
 	@Autowired
 	private ModelMapper mapper;
@@ -36,20 +41,22 @@ public class CustomersServiceImplementation implements CustomersService {
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public CompletableFuture<CustomerDTO> createCustomer(CustomerDTO customer) {
+	public CompletableFuture<CustomerDTO> createCustomer(String username) {
 		try {
 
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+			
+			User user = this.userRepo.findAll().stream().filter(x->x.getUsername() == username).findFirst().get();
 
-			Customer cust = mapper.map(customer, Customer.class);
+			Customer cust = mapper.map(user, Customer.class);
 
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-			String dateString = format.format(new Date());
+			//String dateString = format.format(new Date());
 
-			Date date = format.parse(dateString);
+			//Date date = format.parse(dateString);
 
-			cust.setDate_created(date);
+			//cust.setDate_created(date);
 
 			repo.saveAndFlush(cust);
 

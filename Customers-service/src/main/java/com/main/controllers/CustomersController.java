@@ -1,5 +1,6 @@
 package com.main.controllers;
 
+import java.security.Principal;
 import java.text.ParseException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -42,16 +43,16 @@ public class CustomersController {
 			                                     MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,
 					                             MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(@Valid @RequestBody CustomerDTO customer)
+	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(Principal principal)//@Valid @RequestBody CustomerDTO customer)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-		CustomerDTO custDto = mapper.map(customer, CustomerDTO.class);
+		//CustomerDTO custDto = mapper.map(customer, CustomerDTO.class);
 
 		CompletableFuture<CustomerDTO> future = new CompletableFuture<CustomerDTO>();
 
-		future.complete(this.service.createCustomer(custDto).get());
+		future.complete(this.service.createCustomer(principal.getName()).get());
 
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 
