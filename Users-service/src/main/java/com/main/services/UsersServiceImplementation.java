@@ -17,6 +17,7 @@ import com.main.DTO.UserDto;
 import com.main.models.Role;
 import com.main.models.User;
 import com.main.models.UserPrincipal;
+import com.main.repositories.CustomersServiceClient;
 import com.main.repositories.RolesRepository;
 import com.main.repositories.UsersRepository;
 
@@ -46,6 +47,9 @@ public class UsersServiceImplementation implements UsersService{
 	
 	@Autowired
 	private Environment env;
+	
+	@Autowired
+	private CustomersServiceClient client;
 	
 	
 	@Override
@@ -114,6 +118,8 @@ public class UsersServiceImplementation implements UsersService{
 			usersRepo.saveAndFlush(entity);
 			
 			UserDto returnDto = mapper.map(entity, UserDto.class);
+			
+			this.client.createCustomer();
 			
 			return CompletableFuture.completedFuture(returnDto);
 			

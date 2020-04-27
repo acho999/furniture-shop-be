@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.main.DTO.CreateUserDto;
 import com.main.DTO.UserDto;
 import com.main.models.LoginRequestModel;
+import com.main.repositories.CustomersServiceClient;
 import com.main.services.UsersService;
 
 
@@ -61,6 +62,8 @@ public class UsersController{
 		//return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
 		
 		future.complete(this.usersService.createUser(userDto).get());
+		
+		
 		
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 		
