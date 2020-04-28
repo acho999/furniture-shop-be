@@ -9,6 +9,7 @@ import javax.sql.DataSource;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.logging.LoggingApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -23,8 +24,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.main.exception.models.FeignErrorDecoder;
 import com.main.services.UsersService;
 import com.main.services.UsersServiceImplementation;
+
+import feign.Logger;
 
 
 @Configuration
@@ -100,6 +104,16 @@ public class Config {
 		return transactionManager;
 		
 		
+	}
+	
+	@Bean
+	public Logger.Level feignLoggerLevel(){
+		return Logger.Level.FULL;
+	}
+	
+	@Bean
+	public FeignErrorDecoder getFeignErrorDecoder() {
+		return new FeignErrorDecoder();
 	}
 	
 
