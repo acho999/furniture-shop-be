@@ -116,5 +116,9 @@ public class Config {
 		return new FeignErrorDecoder();
 	}
 	
+	@Bean
+	public Throwable geThrowable() {
+		return new Throwable();
+	}
 
 }

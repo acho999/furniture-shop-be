@@ -40,13 +40,6 @@ public class Role implements GrantedAuthority,Serializable{
 			   orphanRemoval = true)
 	public List<User> admins = new ArrayList<>();
 	
-	@JsonIgnore
-	@OneToMany(mappedBy = "role",
-			   targetEntity = Customer.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
-	public List<Customer> customers = new ArrayList<>();
 	
 	@Override
 	public String getAuthority() {
