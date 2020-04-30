@@ -39,11 +39,13 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 
+		System.out.println(req.getHeader("X-Zuul-UserId") + " " + req.getHeader("X-Zuul-UserRoles"));
+		
 		String id = "";
 		
 		String[] roles1 = null;
 		
-		if (id != null && roles1 != null) {
+		if (req.getHeader("X-Zuul-UserId") != null && req.getHeader("X-Zuul-UserRoles") != null) {
 			
 			id = req.getHeader("X-Zuul-UserId");
 			
