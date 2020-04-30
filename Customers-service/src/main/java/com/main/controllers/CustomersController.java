@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,7 @@ import com.main.models.LoginRequestModel;
 import com.main.services.CustomersServiceImplementation;
 import com.main.services.CustomersService;
 
+@RefreshScope
 @RestController
 @Transactional
 @RequestMapping(value = "/customers")
