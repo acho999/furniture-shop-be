@@ -24,6 +24,7 @@ import com.main.repositories.RolesRepository;
 import com.main.repositories.UsersRepository;
 
 import java.lang.reflect.Type;
+import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -123,7 +124,7 @@ public class UsersServiceImplementation implements UsersService{
 			
 			UserDto returnDto = mapper.map(entity, UserDto.class);
 			
-			this.client.createCustomer();
+			String user1  = this.client.createCustomer(entity.getUsername());
 			
 			return CompletableFuture.completedFuture(returnDto);
 			

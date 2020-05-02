@@ -1,6 +1,7 @@
 package com.main.controllers;
 
 import java.util.List;
+import java.security.Principal;
 import java.text.ParseException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -63,8 +64,6 @@ public class UsersController{
 		//return ResponseEntity.status(HttpStatus.CREATED).body(returnDto);
 		
 		future.complete(this.usersService.createUser(userDto).get());
-		
-		
 		
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 		

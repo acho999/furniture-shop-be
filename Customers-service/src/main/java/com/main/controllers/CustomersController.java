@@ -1,6 +1,5 @@
 package com.main.controllers;
 
-import java.security.Principal;
 import java.text.ParseException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -16,7 +15,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.main.DTO.CustomerDTO;
-import com.main.models.LoginRequestModel;
-import com.main.services.CustomersServiceImplementation;
 import com.main.services.CustomersService;
 
 @RefreshScope
@@ -45,16 +44,16 @@ public class CustomersController {
 			                                     MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,
 					                             MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(Principal principal)//@Valid @RequestBody CustomerDTO customer)
+	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(String username)//@Valid @RequestBody CustomerDTO customer)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 		//CustomerDTO custDto = mapper.map(customer, CustomerDTO.class);
-
+		
 		CompletableFuture<CustomerDTO> future = new CompletableFuture<CustomerDTO>();
 
-		future.complete(this.service.createCustomer(principal.getName()).get());
+		future.complete(this.service.createCustomer(username).get());
 
 		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
 

@@ -1,22 +1,20 @@
 package com.main.repositories;
 
-import java.security.Principal;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 import feign.FeignException;
 import feign.hystrix.FallbackFactory;
 
-@FeignClient(name = "customers-service",fallback = CustomersServiceFallback.class)
+@FeignClient(name = "customers-service",fallbackFactory = CustomersServiceFallbackFactory.class)
 public interface CustomersServiceClient {
 	
-	@PostMapping(value = "/customers/create")
-	public void createCustomer();
+	@GetMapping(value = "/customers/hello")
+	public String createCustomer(String username);
 
 }
 
@@ -31,7 +29,7 @@ class CustomersServiceFallbackFactory implements FallbackFactory<CustomersServic
 
 }
 
-@Component
+
 class CustomersServiceFallback implements CustomersServiceClient{
 	
 	private final Throwable cause;
@@ -43,7 +41,7 @@ class CustomersServiceFallback implements CustomersServiceClient{
 	}
 
 	@Override
-	public void createCustomer() {
+	public String createCustomer(String username) {
 		
 		if (this.cause instanceof FeignException && ((FeignException) cause).status() == 404) {
 			
@@ -52,6 +50,8 @@ class CustomersServiceFallback implements CustomersServiceClient{
 		} else {
 			 this.logger.error("Other error took place" + this.cause.getLocalizedMessage());
 		}
+		
+		return "Empty";
 		
 	}
 	

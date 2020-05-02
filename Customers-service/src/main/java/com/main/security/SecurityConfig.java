@@ -1,6 +1,9 @@
 package com.main.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -8,9 +11,20 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	private Environment env;
+	private String ip;
+	
+	@Autowired
+	public SecurityConfig(Environment env) {
+		
+		this.env = env;
+		this.ip = env.getProperty("gateway.ip");
+	}
 	
 	
 	@Override
@@ -25,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
+		.antMatchers("/**").hasIpAddress(ip)
 		.antMatchers("/customers/create").permitAll()
 		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/customers/getAll").hasAnyRole("ADMIN")
