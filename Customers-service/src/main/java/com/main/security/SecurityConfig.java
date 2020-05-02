@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
-		.antMatchers("/**").hasIpAddress(ip)
+		.antMatchers("/customers/**").hasIpAddress(ip)
 		.antMatchers("/customers/create").permitAll()
 		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/customers/getAll").hasAnyRole("ADMIN")
