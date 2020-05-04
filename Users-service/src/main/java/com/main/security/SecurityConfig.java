@@ -1,5 +1,6 @@
 package com.main.security;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -10,7 +11,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.main.services.UsersService;
@@ -37,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-        http.csrf().disable();
+        http.csrf().disable().cors().disable();
 		
 		http.headers().frameOptions().disable();
 		
@@ -45,8 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/**").hasIpAddress(ip)
 		.and().addFilter(getAuthenticationFilter());
 		http.headers().frameOptions().disable();
-		
-		
+		http.sessionManagement()
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 	
 	protected AuthenticationFilter getAuthenticationFilter() throws Exception {

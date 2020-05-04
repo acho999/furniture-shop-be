@@ -39,37 +39,51 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 
-		System.out.println(req.getHeader("X-Zuul-UserId") + " " + req.getHeader("X-Zuul-UserRoles"));
-		
+		System.out.println(
+				req.getHeader("X-Zuul-UserId") + " " + req.getHeader("X-Zuul-UserRoles") + req.getHeader("client"));
+
 		String id = "";
-		
-		String[] roles1 = null;
-		
-		if (req.getHeader("X-Zuul-UserId") != null && req.getHeader("X-Zuul-UserRoles") != null) {
-			
+
+		String[] rolesArr = null;
+
+		String clientString = null;
+
+		if (req.getHeader("X-Zuul-UserId") != null && req.getHeader("X-Zuul-UserRoles") != null
+				&& req.getHeader("client") == null) {
+
 			id = req.getHeader("X-Zuul-UserId");
-			
-			roles1 = req.getHeader("X-Zuul-UserRoles").split(" ");
-			
+
+			rolesArr = req.getHeader("X-Zuul-UserRoles").split(" ");
+
 		}
 
-		if (id == null || roles1 == null) {//|| !authHeader.startsWith(this.headerPrefix)) {
+		if (id == null && rolesArr == null && clientString == null) {// || !authHeader.startsWith(this.headerPrefix)) {
 
 			chain.doFilter(req, res);
 			return;
 		}
-		
+
 		List<GrantedAuthority> roles = new ArrayList<>();
-		
-		for (int i = 0; i < roles1.length; i++) {
+
+		if (req.getHeader("client").equals("users")) {
+
+			id = "user";
+			roles.add(new SimpleGrantedAuthority("ROLE_CUSTOMER"));
+
+		} else {
 			
-			roles.add(new SimpleGrantedAuthority(roles1[i].toUpperCase()));//"ROLE_" + (roles1[i].toUpperCase())));
-			// 
+			for (int i = 0; i < rolesArr.length; i++) {
+
+				roles.add(new SimpleGrantedAuthority(rolesArr[i].toUpperCase()));// "ROLE_" +
+																					// (roles1[i].toUpperCase())));
+				//
+			}
+
 		}
 
-		UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(id,null, roles);
+		UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(id, null, roles);
 
-		if (auth == null ) {
+		if (auth == null) {
 
 			chain.doFilter(req, res);
 			return;
@@ -79,7 +93,5 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 		chain.doFilter(req, res);
 
 	}
-
-	
 
 }

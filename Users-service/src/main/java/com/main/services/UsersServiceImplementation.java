@@ -126,6 +126,8 @@ public class UsersServiceImplementation implements UsersService{
 			
 			String user1  = this.client.createCustomer(entity.getUsername());
 			
+			System.out.println(user1);
+			
 			return CompletableFuture.completedFuture(returnDto);
 			
 		} catch (Exception e) {

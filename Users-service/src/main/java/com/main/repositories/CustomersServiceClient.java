@@ -13,7 +13,7 @@ import feign.hystrix.FallbackFactory;
 @FeignClient(name = "customers-service",fallbackFactory = CustomersServiceFallbackFactory.class)
 public interface CustomersServiceClient {
 	
-	@GetMapping(value = "/customers/hello")
+	@GetMapping(value = "/customers/hello",headers = {"client=users"})
 	public String createCustomer(String username);
 
 }
