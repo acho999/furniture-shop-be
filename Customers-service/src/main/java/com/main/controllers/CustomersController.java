@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.main.DTO.CustomerDTO;
@@ -44,7 +45,7 @@ public class CustomersController {
 			                                     MediaType.APPLICATION_XML_VALUE },
 			                        consumes = { MediaType.APPLICATION_XML_VALUE,
 					                             MediaType.APPLICATION_JSON_VALUE })
-	public CompletableFuture<ResponseEntity<CustomerDTO>> createCustomer(String username)//@Valid @RequestBody CustomerDTO customer)
+	public ResponseEntity<CustomerDTO> createCustomer(@RequestParam String username)//@Valid @RequestBody CustomerDTO customer)
 			throws ParseException, InterruptedException, ExecutionException {
 
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -55,7 +56,7 @@ public class CustomersController {
 
 		future.complete(this.service.createCustomer(username).get());
 
-		return future.thenApply(x -> ResponseEntity.status(HttpStatus.CREATED).body(x));
+		return ResponseEntity.ok().body(future.get());
 
 	}
 

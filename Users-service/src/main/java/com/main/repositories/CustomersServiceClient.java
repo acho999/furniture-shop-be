@@ -3,18 +3,26 @@ package com.main.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.main.DTO.CustomerDTO;
 
 import feign.FeignException;
+import feign.Param;
 import feign.hystrix.FallbackFactory;
 
 @FeignClient(name = "customers-service",fallbackFactory = CustomersServiceFallbackFactory.class)
 public interface CustomersServiceClient {
 	
-	@GetMapping(value = "/customers/hello",headers = {"client=users"})
-	public String createCustomer(String username);
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/customers/create", consumes = "application/json",headers = {"client=users"})
+	public ResponseEntity<CustomerDTO> createCustomer(@RequestParam String username);
 
 }
 
@@ -29,7 +37,6 @@ class CustomersServiceFallbackFactory implements FallbackFactory<CustomersServic
 
 }
 
-
 class CustomersServiceFallback implements CustomersServiceClient{
 	
 	private final Throwable cause;
@@ -41,7 +48,7 @@ class CustomersServiceFallback implements CustomersServiceClient{
 	}
 
 	@Override
-	public String createCustomer(String username) {
+	public ResponseEntity<CustomerDTO> createCustomer(String username) {
 		
 		if (this.cause instanceof FeignException && ((FeignException) cause).status() == 404) {
 			
@@ -51,7 +58,7 @@ class CustomersServiceFallback implements CustomersServiceClient{
 			 this.logger.error("Other error took place" + this.cause.getLocalizedMessage());
 		}
 		
-		return "Empty";
+		return ResponseEntity.ok().body(new CustomerDTO());
 		
 	}
 	

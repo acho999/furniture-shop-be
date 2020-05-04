@@ -46,9 +46,11 @@ public class CustomersServiceImplementation implements CustomersService {
 
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
-			User user = this.userRepo.findAll().stream().filter(x->x.getUsername() == username).findFirst().get();
+			List<User> users = this.userRepo.findAll();
+			
+			Optional<User> user = users.stream().filter(x->x.getUsername().equals(username)).findFirst();
 
-			Customer cust = mapper.map(user, Customer.class);
+			Customer cust = mapper.map(user.get(), Customer.class);
 
 			//SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

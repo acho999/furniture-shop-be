@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.main.DTO.CustomerDTO;
 import com.main.DTO.UserDto;
 import com.main.models.Role;
 import com.main.models.User;
@@ -91,6 +93,8 @@ public class UsersServiceImplementation implements UsersService{
 			
 			String adminRegSecret = this.env.getProperty("admin.registration.secret");
 			
+			System.out.println(user.getAdminRegSecret() + "=" + adminRegSecret);
+			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
 			User entity = mapper.map(user, User.class);
@@ -107,7 +111,7 @@ public class UsersServiceImplementation implements UsersService{
 			
 			entity.setDate_created(date);
 			
-			if (user.getAdminRegSecret().equals(adminRegSecret)) {
+			if (user.getAdminRegSecret()!= null && user.getAdminRegSecret().equals(adminRegSecret)) {
 				
 				role = rolesRepo.findById(1L).get();
 				
@@ -124,9 +128,13 @@ public class UsersServiceImplementation implements UsersService{
 			
 			UserDto returnDto = mapper.map(entity, UserDto.class);
 			
-			String user1  = this.client.createCustomer(entity.getUsername());
+			if (returnDto.getRole().getAuthority().equals("CUSTOMER")) {
+				ResponseEntity<CustomerDTO> user1  = this.client.createCustomer(entity.getUsername());
+			}
 			
-			System.out.println(user1);
+			
+			
+			//System.out.println(user1.get().toString());
 			
 			return CompletableFuture.completedFuture(returnDto);
 			

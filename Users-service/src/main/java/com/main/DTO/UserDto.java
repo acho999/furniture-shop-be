@@ -69,7 +69,7 @@ public class UserDto implements Serializable{
 		this.id = id;
 	}
 	public String getAdminRegSecret() {
-		return "";
+		return this.adminRegSecret;
 	}
 	public void setAdminRegSecret(String adminRegSecret) {
 		this.adminRegSecret = adminRegSecret;

@@ -38,6 +38,8 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
+		
+		System.out.println(req);
 
 		System.out.println(
 				req.getHeader("X-Zuul-UserId") + " " + req.getHeader("X-Zuul-UserRoles") + req.getHeader("client"));
@@ -65,10 +67,10 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 
 		List<GrantedAuthority> roles = new ArrayList<>();
 
-		if (req.getHeader("client").equals("users")) {
+		if (req.getHeader("client") != null && req.getHeader("client").equals("users")) {
 
 			id = "user";
-			roles.add(new SimpleGrantedAuthority("ROLE_CUSTOMER"));
+			roles.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 
 		} else {
 			
