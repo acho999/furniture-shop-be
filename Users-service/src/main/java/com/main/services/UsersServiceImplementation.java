@@ -93,8 +93,6 @@ public class UsersServiceImplementation implements UsersService{
 			
 			String adminRegSecret = this.env.getProperty("admin.registration.secret");
 			
-			System.out.println(user.getAdminRegSecret() + "=" + adminRegSecret);
-			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 			
 			User entity = mapper.map(user, User.class);
