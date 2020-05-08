@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import oracle.sql.BlobDBAccess;
 @Entity
 @Table(name = "images")
 public class Image implements Serializable{

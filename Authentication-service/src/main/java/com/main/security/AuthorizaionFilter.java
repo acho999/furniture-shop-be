@@ -32,7 +32,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 	private String headerName;
 	private String headerPrefix;
 	private String tokenSecret;
-	private UserDetailsService service;
+	//private UserDetailsService service;
 
 	private Environment env;
 
@@ -43,7 +43,7 @@ public class AuthorizaionFilter extends BasicAuthenticationFilter {
 		this.tokenSecret = this.env.getProperty("token.secret");
 		this.headerPrefix = this.env.getProperty("authorization.token.header.prefix");
 		this.headerName = this.env.getProperty("authorization.token.header.name");
-		this.service = service;
+		//this.service = service;
 
 	}
 

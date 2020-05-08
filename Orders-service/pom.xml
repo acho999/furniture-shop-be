@@ -44,13 +44,11 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-		</dependency>
-		<!-- <dependency> <groupId>com.microsoft.sqlserver</groupId> <artifactId>mssql-jdbc</artifactId> 
-			<scope>test</scope> </dependency> -->
+			</dependency>
 		<dependency>
-			<groupId>com.oracle.ojdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
-			<scope>runtime</scope>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
