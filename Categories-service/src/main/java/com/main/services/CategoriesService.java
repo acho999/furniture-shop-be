@@ -86,18 +86,11 @@ public class CategoriesService implements ICategoriesService{
 	@Override
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
-	public boolean delete(String id) {
+	public Boolean delete(String id) {
 		
-		Optional<Category> categoryOptional = null;
-
 		try {
 			this.repo.deleteById(id);
 
-			categoryOptional = this.repo.findById(id);
-
-			if (categoryOptional.get() != null) {
-				return false;
-			}
 
 			return true;
 

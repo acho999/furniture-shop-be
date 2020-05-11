@@ -11,7 +11,7 @@ public CompletableFuture<CategoryDTO> createCategory(CategoryDTO category);
 	
 	public CompletableFuture<CategoryDTO> update(CategoryDTO category);
 	
-	public boolean delete(String id);
+	public Boolean delete(String id);
 	
 	public CompletableFuture<CategoryDTO> getCategoryDetails(String id);
 	
