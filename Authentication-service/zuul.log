@@ -157,3 +157,29 @@ java.lang.NullPointerException: null
 	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
 
+2020-05-10 15:15:53.969  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-10 15:15:53.970  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ZUUL with eureka with status DOWN
+2020-05-10 15:15:53.970  WARN [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589112953970, current=DOWN, previous=UP]
+2020-05-10 15:15:53.970  INFO [zuul,,,] 23864 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL/192.168.0.101:zuul:8011: registering service...
+2020-05-10 15:15:53.975  INFO [zuul,,,] 23864 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL/192.168.0.101:zuul:8011 - registration status: 204
+2020-05-10 15:15:53.990  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-10 15:15:54.312  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-10 15:15:54.313  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.1-flXHzOSQ6JcxgwLvEopg'
+2020-05-10 15:15:54.319  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.1-flXHzOSQ6JcxgwLvEopg.errors' has 1 subscriber(s).
+2020-05-10 15:15:54.320  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.1-flXHzOSQ6JcxgwLvEopg.errors' has 0 subscriber(s).
+2020-05-10 15:15:54.324  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-10 15:15:54.324  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-10 15:15:54.324  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-10 15:15:54.326  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.n.zuul.ZuulFilterInitializer       : Stopping filter initializer
+2020-05-10 15:15:54.335  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 15:15:54.346  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-10 15:15:54.643  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@5db73ce1
+2020-05-10 15:15:54.644  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-10 15:15:57.646  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-10 15:15:57.651  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ZUUL/192.168.0.101:zuul:8011 - deregister  status: 200
+2020-05-10 15:15:57.657  INFO [zuul,,,] 23864 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

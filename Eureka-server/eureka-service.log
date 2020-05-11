@@ -329,3 +329,52 @@
 2020-05-10 15:13:54.203  INFO 21202 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.101:zuul:8011 with status UP (replication=true)
 2020-05-10 15:14:09.917  INFO 21202 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
 2020-05-10 15:15:09.919  INFO 21202 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-10 15:15:53.974  INFO 21202 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.101:zuul:8011 with status DOWN (replication=false)
+2020-05-10 15:15:54.440  INFO 21202 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.101:zuul:8011 with status DOWN (replication=true)
+2020-05-10 15:15:54.444  WARN 21202 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.cluster.ReplicationTask       : The replication of task ZUUL/192.168.0.101:zuul:8011:Heartbeat@localhost failed with response code 409
+2020-05-10 15:15:54.444  WARN 21202 --- [TaskBatchingWorker-target_localhost-14] c.netflix.eureka.cluster.PeerEurekaNode  : Peer wants us to take the instance information from it, since the timestamp differs,Id : 192.168.0.101:zuul:8011 My Timestamp : 1589112833910, Peer's timestamp: 1589112953970
+2020-05-10 15:15:54.444  INFO 21202 --- [TaskBatchingWorker-target_localhost-14] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.101:zuul:8011 with status DOWN (replication=true)
+2020-05-10 15:15:57.650  INFO 21202 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.101:zuul:8011 (replication=false)
+2020-05-10 15:15:58.159  WARN 21202 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: ZUUL/192.168.0.101:zuul:8011
+2020-05-10 15:15:58.159  INFO 21202 --- [http-nio-8001-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): ZUUL - 192.168.0.101:zuul:8011
+2020-05-10 15:15:58.160  WARN 21202 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.cluster.ReplicationTask       : The replication of task ZUUL/192.168.0.101:zuul:8011:Cancel@localhost failed with response code 404
+2020-05-10 15:15:58.160  WARN 21202 --- [TaskBatchingWorker-target_localhost-16] c.netflix.eureka.cluster.PeerEurekaNode  : ZUUL/192.168.0.101:zuul:8011:Cancel@localhost: missing entry.
+2020-05-10 15:16:02.004  INFO 21202 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b with status DOWN (replication=false)
+2020-05-10 15:16:02.512  INFO 21202 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b with status DOWN (replication=true)
+2020-05-10 15:16:05.814  INFO 21202 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b (replication=false)
+2020-05-10 15:16:06.324  WARN 21202 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b
+2020-05-10 15:16:06.324  INFO 21202 --- [http-nio-8001-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CUSTOMERS-SERVICE - customers-service:aa1a993fecbd68a127b68f5994ba654b
+2020-05-10 15:16:06.325  WARN 21202 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.cluster.ReplicationTask       : The replication of task CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b:Cancel@localhost failed with response code 404
+2020-05-10 15:16:06.326  WARN 21202 --- [TaskBatchingWorker-target_localhost-4] c.netflix.eureka.cluster.PeerEurekaNode  : CUSTOMERS-SERVICE/customers-service:aa1a993fecbd68a127b68f5994ba654b:Cancel@localhost: missing entry.
+2020-05-10 15:16:08.170  INFO 21202 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac with status DOWN (replication=false)
+2020-05-10 15:16:08.676  INFO 21202 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac with status DOWN (replication=true)
+2020-05-10 15:16:09.921  INFO 21202 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-10 15:16:11.911  INFO 21202 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac (replication=false)
+2020-05-10 15:16:12.418  WARN 21202 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac
+2020-05-10 15:16:12.419  INFO 21202 --- [http-nio-8001-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:aaaf6c5a06abd71418e59a82bf0ad2ac
+2020-05-10 15:16:12.420  WARN 21202 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac:Cancel@localhost failed with response code 404
+2020-05-10 15:16:12.420  WARN 21202 --- [TaskBatchingWorker-target_localhost-14] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:aaaf6c5a06abd71418e59a82bf0ad2ac:Cancel@localhost: missing entry.
+2020-05-10 15:16:14.239  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-10 15:16:14.241  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-DISCOVERY-SERVICE with eureka with status DOWN
+2020-05-10 15:16:14.265  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-10 15:16:14.295  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-10 15:16:14.295  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.FLdpFI_hTQO1BQCVb9gZdg'
+2020-05-10 15:16:14.299  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.FLdpFI_hTQO1BQCVb9gZdg.errors' has 1 subscriber(s).
+2020-05-10 15:16:14.300  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.FLdpFI_hTQO1BQCVb9gZdg.errors' has 0 subscriber(s).
+2020-05-10 15:16:14.304  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-10 15:16:14.304  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-10 15:16:14.305  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-10 15:16:14.305  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2020-05-10 15:16:14.308  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2020-05-10 15:16:14.313  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-10 15:16:14.315  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-10 15:16:14.324  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@48860139
+2020-05-10 15:16:14.325  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-10 15:16:14.325  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-10 15:16:14.334  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-10 15:16:14.337  INFO 21202 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
