@@ -15,10 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.main.DTO.CategoryDTO;
-import com.main.DTO.ProductDTO;
 import com.main.Repositories.CategoriesRepository;
 import com.main.models.Category;
-import com.main.models.Product;
 
 @Service
 @Transactional(readOnly = true)
@@ -67,7 +65,7 @@ public class CategoriesService implements ICategoriesService{
 
 		try {
 
-			this.mapper.map(categoryEntity, category);
+			this.mapper.map(category, categoryEntity);
 
 			returnObject = new CategoryDTO();
 
