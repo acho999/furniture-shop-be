@@ -18,6 +18,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable{
@@ -42,6 +44,7 @@ public class Order implements Serializable{
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
+	@JsonIgnore
 	@ManyToMany(mappedBy = "orders",targetEntity = Product.class)
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	

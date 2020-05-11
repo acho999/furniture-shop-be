@@ -41,12 +41,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.headers().frameOptions().disable();
 		
 		http.authorizeRequests()
+		.antMatchers("/customers/**").hasIpAddress(ip)
 		.antMatchers("/customers/create").hasAnyRole("ADMIN")
 		.antMatchers("/customers/hello").hasAnyRole("ADMIN")
-		//.antMatchers("/customers/**").hasIpAddress(ip)
 		.antMatchers("/customers/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/customers/getAll").hasAnyRole("ADMIN")
-		.antMatchers("/customers/update").hasRole("CUSTOMER")
+		.antMatchers("/customers/update").hasAnyRole("CUSTOMER","ADMIN")
 		.antMatchers("/customers/delete/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.anyRequest().authenticated()
 		.and().addFilterBefore(new AuthorizaionFilter(authenticationManagerBean()), 

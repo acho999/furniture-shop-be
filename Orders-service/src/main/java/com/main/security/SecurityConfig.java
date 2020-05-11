@@ -1,6 +1,8 @@
 package com.main.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,6 +13,9 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	@Autowired
+	private Environment env;
 	
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -24,11 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
-		.antMatchers("/categories/details/{id}").hasAnyRole("ADMIN")
-		.antMatchers("/categories/create").hasAnyRole("ADMIN")
-		.antMatchers("/categories/getAll").hasAnyRole("ADMIN")
-		.antMatchers("/categories/update").hasRole("ADMIN")
-		.antMatchers("/categories/delete/{id}").hasAnyRole("ADMIN")
+		.antMatchers("/orders/**").hasIpAddress(this.env.getProperty("gateway.ip"))
+		.antMatchers("/orders/details/{id}").hasAnyRole("ADMIN")
+		.antMatchers("/orders/create").hasAnyRole("ADMIN")
+		.antMatchers("/orders/getAll").hasAnyRole("ADMIN")
+		.antMatchers("/orders/update").hasRole("ADMIN")
+		.antMatchers("/orders/delete/{id}").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
 		.and().addFilterBefore(new AuthorizaionFilter(authenticationManagerBean()), 
 				BasicAuthenticationFilter.class);

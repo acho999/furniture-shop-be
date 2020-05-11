@@ -36,7 +36,6 @@ public class CategoriesController {
 	@Autowired
 	private ICategoriesService categoryService;
 	
-
 	@GetMapping(value = "/hello")
 	public String hello() {
 		return "Hello order";
@@ -103,6 +102,5 @@ public class CategoriesController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 
 	}
-
 
 }
