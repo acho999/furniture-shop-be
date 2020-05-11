@@ -30,9 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
 		.antMatchers("/orders/**").hasIpAddress(this.env.getProperty("gateway.ip"))
-		.antMatchers("/orders/details/{id}").hasAnyRole("ADMIN")
+		.antMatchers("/orders/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/orders/create").hasAnyRole("ADMIN")
 		.antMatchers("/orders/getAll").hasAnyRole("ADMIN")
+		.antMatchers("/orders/getAllCustomerOrders{customerId}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/orders/update").hasRole("ADMIN")
 		.antMatchers("/orders/delete/{id}").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
@@ -43,7 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 	}
-	
 	
 }
 

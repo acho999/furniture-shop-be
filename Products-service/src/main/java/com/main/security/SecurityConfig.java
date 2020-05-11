@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/products/**").hasIpAddress(this.env.getProperty("gateway.ip"))
 		.antMatchers("/products/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/products/create").hasAnyRole("ADMIN")
-		.antMatchers("/products/getAll").hasAnyRole("ADMIN")
+		.antMatchers("/products/getAll").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/products/update").hasRole("ADMIN")
 		.antMatchers("/products/delete/{id}").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()

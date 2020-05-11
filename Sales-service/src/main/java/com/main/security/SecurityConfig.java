@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/sales/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/sales/create").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/sales/getAll").hasAnyRole("ADMIN")
+		.antMatchers("/orders/getAllCustomerSales{customerId}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/sales/update").hasRole("ADMIN")
 		.antMatchers("/sales/delete/{id}").hasAnyRole("ADMIN")
 		.anyRequest().authenticated()
@@ -43,7 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
 	}
-	
 	
 }
 
