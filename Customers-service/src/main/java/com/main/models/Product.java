@@ -48,8 +48,7 @@ public class Product implements Serializable{
 	@OneToMany(mappedBy = "product",
 			   targetEntity = Image.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   cascade = CascadeType.ALL)
 	private List<Image> images = new ArrayList<Image>();
 	
 	@ManyToMany(cascade = { CascadeType.ALL })
@@ -76,6 +75,78 @@ public class Product implements Serializable{
 	
 	@Column(name = "material")
 	private String material;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+	public List<Sale> getSales() {
+		return sales;
+	}
+
+	public void setSales(List<Sale> sales) {
+		this.sales = sales;
+	}
+
+	public Number getPrice() {
+		return price;
+	}
+
+	public void setPrice(Number price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
 	
 }
 

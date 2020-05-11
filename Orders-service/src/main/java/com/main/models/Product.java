@@ -50,8 +50,7 @@ public class Product implements Serializable{
 	@OneToMany(mappedBy = "product",
 			   targetEntity = Image.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   cascade = CascadeType.ALL)
 	private List<Image> images = new ArrayList<Image>();
 	
 	@ManyToMany(cascade = { CascadeType.ALL })

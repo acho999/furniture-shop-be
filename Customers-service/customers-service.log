@@ -98,3 +98,487 @@ Using generated security password: fb218b33-608c-448e-a18e-bb0353db4d8d
 2020-05-11 12:23:08.413  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-05-11 12:56:54.468  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-05-11 13:01:54.463  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:06:54.456  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:11:54.450  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:16:54.441  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:21:54.433  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:26:54.426  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:31:54.421  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:36:54.415  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:41:54.412  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:46:54.409  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:51:54.403  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 13:56:54.400  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:01:54.394  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:13:20.454  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:18:20.448  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:23:20.440  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:28:20.431  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:33:20.420  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:38:20.410  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:43:20.403  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:48:19.321  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CUSTOMERS-SERVICE with eureka with status DOWN
+2020-05-11 14:48:19.323  WARN [customers-service,,,] 27089 --- [Thread-3] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589197699323, current=DOWN, previous=UP]
+2020-05-11 14:48:19.323  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83: registering service...
+2020-05-11 14:48:19.327  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83 - registration status: 204
+2020-05-11 14:48:19.352  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-11 14:48:20.272  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-11 14:48:20.272  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.zlWbg5nLQOCorjX_nqm5fA'
+2020-05-11 14:48:20.280  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.zlWbg5nLQOCorjX_nqm5fA.errors' has 1 subscriber(s).
+2020-05-11 14:48:20.281  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.zlWbg5nLQOCorjX_nqm5fA.errors' has 0 subscriber(s).
+2020-05-11 14:48:20.285  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-11 14:48:20.286  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-11 14:48:20.286  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-11 14:48:20.295  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-11 14:48:20.300  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-11 14:48:20.395  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-11 14:48:21.277  INFO [customers-service,,,] 27089 --- [Thread-3] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@9c4926c
+2020-05-11 14:48:21.278  INFO [customers-service,,,] 27089 --- [Thread-3] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-11 14:48:24.280  INFO [customers-service,,,] 27089 --- [Thread-3] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-11 14:48:24.280  WARN [customers-service,,,] 27089 --- [DiscoveryClient-1] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2020-05-11 14:48:24.287  INFO [customers-service,,,] 27089 --- [Thread-3] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83 - deregister  status: 200
+2020-05-11 14:48:24.294  INFO [customers-service,,,] 27089 --- [Thread-3] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-11 14:48:34.833  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:48:35.456  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:48:35.456  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:48:35.467  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : No active profile set, falling back to default profiles: default
+2020-05-11 14:48:35.776  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-11 14:48:35.785  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 2 JPA repository interfaces.
+2020-05-11 14:48:36.084  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e852aca-af0d-3ef5-8c7a-7c7db75fd2fb
+2020-05-11 14:48:36.102  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-11 14:48:36.103  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-11 14:48:36.104  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-11 14:48:36.157  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.160  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.178  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.185  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.191  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.194  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:48:36.462  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-11 14:48:36.463  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 14:48:36.463  INFO [customers-service,,,] 27089 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-11 14:48:36.473  INFO [customers-service,,,] 27089 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-11 14:48:36.473  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1003 ms
+2020-05-11 14:48:36.891  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@27ca8d27}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-11 14:48:37.301  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-11 14:48:37.668  INFO [customers-service,,,] 27089 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-11 14:48:42.712  INFO [customers-service,,,] 27089 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-11 14:48:48.351  INFO [customers-service,,,] 27089 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-11 14:48:48.351  INFO [customers-service,,,] 27089 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-11 14:48:48.523  WARN [customers-service,,,] 27089 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-11 14:48:48.587  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-11 14:48:48.588  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-11 14:48:48.649  INFO [customers-service,,,] 27089 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c3ffe6ff-0f42-4e89-a852-9659fa21e16d
+
+2020-05-11 14:48:48.692  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66aec340, org.springframework.security.web.context.SecurityContextPersistenceFilter@7a51952b, org.springframework.security.web.header.HeaderWriterFilter@7a8b5677, org.springframework.security.web.authentication.logout.LogoutFilter@6e62dd7a, com.main.security.AuthorizaionFilter@6fa765b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@397bb521, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@261d8106, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a0b9cf9, org.springframework.security.web.session.SessionManagementFilter@6edab92d, org.springframework.security.web.access.ExceptionTranslationFilter@1a968ba8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5da8b61e]
+2020-05-11 14:48:48.710  WARN [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-11 14:48:48.710  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-11 14:48:49.375  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-11 14:48:49.432  WARN [customers-service,,,] 27089 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-11 14:48:49.591  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-11 14:48:49.716  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-11 14:48:49.746  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-11 14:48:49.754  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-11 14:48:49.761  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-11 14:48:49.770  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-11 14:48:49.784  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2c69ce70
+2020-05-11 14:48:49.792  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-11 14:48:49.808  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-11 14:48:49.808  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-11 14:48:49.808  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-11 14:48:54.852  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:48:55.439  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:48:55.439  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:48:55.501  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-11 14:48:55.509  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#2f3f1eda:0/SimpleConnection@1bc026d6 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52599]
+2020-05-11 14:48:55.513  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-11 14:48:55.540  INFO [customers-service,,,] 27089 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA, bound to: springCloudBus
+2020-05-11 14:48:55.543  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA.errors' has 1 subscriber(s).
+2020-05-11 14:48:55.543  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA.errors' has 2 subscriber(s).
+2020-05-11 14:48:55.545  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA'
+2020-05-11 14:48:55.579  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA.errors
+2020-05-11 14:48:55.627  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52600 (http) with context path ''
+2020-05-11 14:48:55.628  INFO [customers-service,,,] 27089 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52600
+2020-05-11 14:48:55.629  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-11 14:48:55.634  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-11 14:48:55.636  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-11 14:48:55.636  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-11 14:48:55.636  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-11 14:48:55.636  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-11 14:48:55.696  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-11 14:48:55.703  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-11 14:48:55.808  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-11 14:48:55.808  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-11 14:48:55.809  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-11 14:48:55.810  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589197735810 with initial instances count: 3
+2020-05-11 14:48:55.819  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CUSTOMERS-SERVICE with eureka with status UP
+2020-05-11 14:48:55.819  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589197735819, current=UP, previous=STARTING]
+2020-05-11 14:48:55.819  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96: registering service...
+2020-05-11 14:48:55.823  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : Started CustomersServiceApplication in 31.107 seconds (JVM running for 6978.095)
+2020-05-11 14:48:55.824  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 - registration status: 204
+2020-05-11 14:48:55.827  INFO [customers-service,,,] 27089 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-11 14:49:07.904  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CUSTOMERS-SERVICE with eureka with status DOWN
+2020-05-11 14:49:07.904  WARN [customers-service,,,] 27089 --- [Thread-14] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589197747904, current=DOWN, previous=UP]
+2020-05-11 14:49:07.904  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96: registering service...
+2020-05-11 14:49:07.908  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 - registration status: 204
+2020-05-11 14:49:07.921  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-11 14:49:08.578  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-11 14:49:08.578  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA'
+2020-05-11 14:49:08.582  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA.errors' has 1 subscriber(s).
+2020-05-11 14:49:08.583  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.kPZQAmTKQqWix3urzQeztA.errors' has 0 subscriber(s).
+2020-05-11 14:49:08.584  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-11 14:49:08.584  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-11 14:49:08.585  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-11 14:49:08.587  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-11 14:49:08.589  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2c69ce70
+2020-05-11 14:49:08.952  INFO [customers-service,,,] 27089 --- [Thread-14] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-11 14:49:08.953  INFO [customers-service,,,] 27089 --- [Thread-14] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-11 14:49:11.955  INFO [customers-service,,,] 27089 --- [Thread-14] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-11 14:49:11.960  INFO [customers-service,,,] 27089 --- [Thread-14] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 - deregister  status: 200
+2020-05-11 14:49:11.966  INFO [customers-service,,,] 27089 --- [Thread-14] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-11 14:49:22.581  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:49:23.173  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:49:23.173  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:49:23.179  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : No active profile set, falling back to default profiles: default
+2020-05-11 14:49:23.481  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-11 14:49:23.489  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 2 JPA repository interfaces.
+2020-05-11 14:49:23.763  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e852aca-af0d-3ef5-8c7a-7c7db75fd2fb
+2020-05-11 14:49:23.776  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-11 14:49:23.776  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-11 14:49:23.777  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-11 14:49:23.817  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:23.820  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:23.837  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:23.842  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:23.848  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:23.850  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:24.083  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-11 14:49:24.084  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 14:49:24.084  INFO [customers-service,,,] 27089 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-11 14:49:24.092  INFO [customers-service,,,] 27089 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-11 14:49:24.093  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 911 ms
+2020-05-11 14:49:24.452  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@127b4629}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-11 14:49:24.818  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-11 14:49:25.134  INFO [customers-service,,,] 27089 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-11 14:49:30.176  INFO [customers-service,,,] 27089 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-11 14:49:35.851  INFO [customers-service,,,] 27089 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-11 14:49:35.851  INFO [customers-service,,,] 27089 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-11 14:49:36.066  WARN [customers-service,,,] 27089 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-11 14:49:36.150  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-11 14:49:36.150  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-11 14:49:36.207  INFO [customers-service,,,] 27089 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 45eac113-1173-4125-91df-58c5b4b5a545
+
+2020-05-11 14:49:36.248  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a8daf67, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b2fa32d, org.springframework.security.web.header.HeaderWriterFilter@24de1442, org.springframework.security.web.authentication.logout.LogoutFilter@2e6d0e95, com.main.security.AuthorizaionFilter@534b24a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a19b5a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54c566e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f5c16f2, org.springframework.security.web.session.SessionManagementFilter@28f83bec, org.springframework.security.web.access.ExceptionTranslationFilter@53e0d734, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e80d617]
+2020-05-11 14:49:36.265  WARN [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-11 14:49:36.265  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-11 14:49:36.909  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-11 14:49:36.968  WARN [customers-service,,,] 27089 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-11 14:49:37.134  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-11 14:49:37.300  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-11 14:49:37.328  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-11 14:49:37.336  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-11 14:49:37.342  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-11 14:49:37.349  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-11 14:49:37.363  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@59c89315
+2020-05-11 14:49:37.372  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-11 14:49:37.386  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-11 14:49:37.386  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-11 14:49:37.386  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-11 14:49:42.430  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:49:43.047  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:49:43.047  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:49:43.104  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-11 14:49:43.111  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#42ec0ea7:0/SimpleConnection@683b305c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52611]
+2020-05-11 14:49:43.116  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-11 14:49:43.141  INFO [customers-service,,,] 27089 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw, bound to: springCloudBus
+2020-05-11 14:49:43.144  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw.errors' has 1 subscriber(s).
+2020-05-11 14:49:43.145  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw.errors' has 2 subscriber(s).
+2020-05-11 14:49:43.147  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw'
+2020-05-11 14:49:43.182  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw.errors
+2020-05-11 14:49:43.228  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52612 (http) with context path ''
+2020-05-11 14:49:43.228  INFO [customers-service,,,] 27089 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52612
+2020-05-11 14:49:43.229  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-11 14:49:43.235  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-11 14:49:43.239  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-11 14:49:43.239  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-11 14:49:43.239  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-11 14:49:43.239  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-11 14:49:43.294  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-11 14:49:43.296  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-11 14:49:43.402  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-11 14:49:43.403  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-11 14:49:43.404  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-11 14:49:43.404  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589197783404 with initial instances count: 3
+2020-05-11 14:49:43.412  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CUSTOMERS-SERVICE with eureka with status UP
+2020-05-11 14:49:43.412  INFO [customers-service,,,] 27089 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589197783412, current=UP, previous=STARTING]
+2020-05-11 14:49:43.413  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d: registering service...
+2020-05-11 14:49:43.416  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : Started CustomersServiceApplication in 30.917 seconds (JVM running for 7025.69)
+2020-05-11 14:49:43.417  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d - registration status: 204
+2020-05-11 14:49:43.419  INFO [customers-service,,,] 27089 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-11 14:49:52.468  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:49:53.041  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:49:53.041  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:49:53.047  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : No active profile set, falling back to default profiles: default
+2020-05-11 14:49:53.338  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-11 14:49:53.347  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 2 JPA repository interfaces.
+2020-05-11 14:49:53.617  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e852aca-af0d-3ef5-8c7a-7c7db75fd2fb
+2020-05-11 14:49:53.630  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-11 14:49:53.630  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-11 14:49:53.631  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-11 14:49:53.677  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.681  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.698  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.704  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.710  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.712  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:49:53.962  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-11 14:49:53.962  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 14:49:53.963  INFO [customers-service,,,] 27089 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-11 14:49:53.971  INFO [customers-service,,,] 27089 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-05-11 14:49:53.971  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 921 ms
+2020-05-11 14:49:54.360  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@a1e9d0e}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-11 14:49:54.743  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-11 14:49:55.071  INFO [customers-service,,,] 27089 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-11 14:50:00.112  INFO [customers-service,,,] 27089 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-11 14:50:05.742  INFO [customers-service,,,] 27089 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-11 14:50:05.744  INFO [customers-service,,,] 27089 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-11 14:50:05.925  WARN [customers-service,,,] 27089 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-11 14:50:05.989  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-11 14:50:05.989  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-11 14:50:06.046  INFO [customers-service,,,] 27089 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 90fab6dd-6090-412e-908b-7bd48e885b1d
+
+2020-05-11 14:50:06.089  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c70048f, org.springframework.security.web.context.SecurityContextPersistenceFilter@129fd7b2, org.springframework.security.web.header.HeaderWriterFilter@74354147, org.springframework.security.web.authentication.logout.LogoutFilter@1f7a9592, com.main.security.AuthorizaionFilter@38ace11f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ee01f33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79db08c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76524b7c, org.springframework.security.web.session.SessionManagementFilter@7289b8cc, org.springframework.security.web.access.ExceptionTranslationFilter@2f9a775f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c460998]
+2020-05-11 14:50:06.106  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2020-05-11 14:50:06.704  WARN [customers-service,,,] 27089 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+2020-05-11 14:50:06.705  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'tomcatMetricsBinder': java.lang.NullPointerException
+2020-05-11 14:50:06.705  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-11 14:50:06.706  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-11 14:50:07.388  WARN [customers-service,,,] 27089 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@a1e9d0e}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-11 14:50:07.397  WARN [customers-service,,,] 27089 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@a1e9d0e}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-11 14:50:07.399  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-11 14:50:07.413  INFO [customers-service,,,] 27089 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-11 14:50:07.422 ERROR [customers-service,,,] 27089 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at com.main.CustomersServiceApplication.main(CustomersServiceApplication.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_241]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_241]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 21 common frames omitted
+
+2020-05-11 14:50:32.045  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-11 14:50:32.700  INFO [customers-service,,,] 27089 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=customers-service, profiles=[default], label=null, version=c3ab5984c663b2a0d6fcf212f71d624c618bd4d6, state=null
+2020-05-11 14:50:32.700  INFO [customers-service,,,] 27089 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/customers-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-11 14:50:32.705  INFO [customers-service,,,] 27089 --- [restartedMain] com.main.CustomersServiceApplication     : No active profile set, falling back to default profiles: default
+2020-05-11 14:50:32.987  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-11 14:50:32.995  INFO [customers-service,,,] 27089 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 2 JPA repository interfaces.
+2020-05-11 14:50:33.260  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5e852aca-af0d-3ef5-8c7a-7c7db75fd2fb
+2020-05-11 14:50:33.273  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-11 14:50:33.273  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-11 14:50:33.275  INFO [customers-service,,,] 27089 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-11 14:50:33.319  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.322  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.338  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.344  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.350  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.352  INFO [customers-service,,,] 27089 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-11 14:50:33.595  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-11 14:50:33.596  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-11 14:50:33.596  INFO [customers-service,,,] 27089 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-11 14:50:33.604  INFO [customers-service,,,] 27089 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-05-11 14:50:33.604  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 896 ms
+2020-05-11 14:50:33.967  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@ba27984}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-11 14:50:34.348  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-11 14:50:34.706  INFO [customers-service,,,] 27089 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-11 14:50:39.742  INFO [customers-service,,,] 27089 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-11 14:50:45.356  INFO [customers-service,,,] 27089 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-11 14:50:45.358  INFO [customers-service,,,] 27089 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-11 14:50:45.507  WARN [customers-service,,,] 27089 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-11 14:50:45.565  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-11 14:50:45.565  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-11 14:50:45.621  INFO [customers-service,,,] 27089 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 08d17d4f-ba80-47e5-8384-d064fb6affe2
+
+2020-05-11 14:50:45.663  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@511f5047, org.springframework.security.web.context.SecurityContextPersistenceFilter@7073fa72, org.springframework.security.web.header.HeaderWriterFilter@106206e0, org.springframework.security.web.authentication.logout.LogoutFilter@1176b443, com.main.security.AuthorizaionFilter@523d313f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@620c598b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2caac837, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52f98d7, org.springframework.security.web.session.SessionManagementFilter@5e377a0d, org.springframework.security.web.access.ExceptionTranslationFilter@72a632f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d65b032]
+2020-05-11 14:50:45.681  WARN [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-11 14:50:45.681  INFO [customers-service,,,] 27089 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-11 14:50:46.265  WARN [customers-service,,,] 27089 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+2020-05-11 14:50:46.265  WARN [customers-service,,,] 27089 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'tomcatMetricsBinder': java.lang.NullPointerException
+2020-05-11 14:50:46.266  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-11 14:50:46.267  INFO [customers-service,,,] 27089 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-11 14:50:46.998  WARN [customers-service,,,] 27089 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@ba27984}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-11 14:50:47.000  WARN [customers-service,,,] 27089 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@ba27984}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-11 14:50:47.002  INFO [customers-service,,,] 27089 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-11 14:50:47.018  INFO [customers-service,,,] 27089 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-11 14:50:47.019 ERROR [customers-service,,,] 27089 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at com.main.CustomersServiceApplication.main(CustomersServiceApplication.java:16) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.boot:type=Admin,name=SpringApplication
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900) ~[na:1.8.0_241]
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324) ~[na:1.8.0_241]
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522) ~[na:1.8.0_241]
+	at org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar.afterPropertiesSet(SpringApplicationAdminMXBeanRegistrar.java:129) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 21 common frames omitted
+
+2020-05-11 14:54:43.287  INFO [customers-service,,,] 27089 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-11 14:58:08.546  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-11 14:58:08.549  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application CUSTOMERS-SERVICE with eureka with status DOWN
+2020-05-11 14:58:08.549  WARN [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589198288549, current=DOWN, previous=UP]
+2020-05-11 14:58:08.549  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d: registering service...
+2020-05-11 14:58:08.553  INFO [customers-service,,,] 27089 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d - registration status: 204
+2020-05-11 14:58:08.563  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-11 14:58:09.534  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-11 14:58:09.534  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw'
+2020-05-11 14:58:09.542  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw.errors' has 1 subscriber(s).
+2020-05-11 14:58:09.542  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Hp-4lIhIT523F37KVPKnnw.errors' has 0 subscriber(s).
+2020-05-11 14:58:09.544  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-11 14:58:09.544  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-11 14:58:09.544  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-11 14:58:09.547  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-11 14:58:09.548  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@59c89315
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-11 14:58:10.077  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-11 14:58:13.079  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-11 14:58:13.083  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d - deregister  status: 200
+2020-05-11 14:58:13.089  INFO [customers-service,,,] 27089 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

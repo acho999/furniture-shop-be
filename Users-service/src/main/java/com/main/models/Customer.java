@@ -55,16 +55,14 @@ public class Customer {
 	@OneToMany(mappedBy = "customer",
 	   targetEntity = Order.class,
 	   fetch = FetchType.LAZY,
-	   cascade = CascadeType.ALL,
-	   orphanRemoval = true)
+	   cascade = CascadeType.ALL)
 	private List<Order> orders = new ArrayList<Order>();
 	
 	
 	@OneToMany(mappedBy = "customer",
 	   targetEntity = Sale.class,
 	   fetch = FetchType.LAZY,
-	   cascade = CascadeType.ALL,
-	   orphanRemoval = true)
+	   cascade = CascadeType.ALL)
 	private List<Sale> sales = new ArrayList<Sale>();
 
 	public String getId() {

@@ -39,7 +39,7 @@ public class CategoriesService implements ICategoriesService{
 
 			Category entity = mapper.map(category, Category.class);
 
-			repo.saveAndFlush(entity);
+			repo.save(entity);
 
 			CategoryDTO returnDto = mapper.map(entity, CategoryDTO.class);
 
@@ -70,8 +70,8 @@ public class CategoriesService implements ICategoriesService{
 			returnObject = new CategoryDTO();
 
 			this.mapper.map(category, returnObject);
-
-			this.repo.saveAndFlush(categoryEntity);
+			
+			this.repo.save(categoryEntity);
 
 			return CompletableFuture.completedFuture(returnObject);
 

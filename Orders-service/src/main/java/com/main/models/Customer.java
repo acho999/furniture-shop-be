@@ -44,10 +44,10 @@ public class Customer {
 	@Column(name = "date_created", nullable = false)
 	private Date date_created;
 
-	@OneToMany(mappedBy = "customer", targetEntity = Order.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "customer", targetEntity = Order.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Order> orders = new ArrayList<Order>();
 
-	@OneToMany(mappedBy = "customer", targetEntity = Sale.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "customer", targetEntity = Sale.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Sale> sales = new ArrayList<Sale>();
 
 	public String getId() {

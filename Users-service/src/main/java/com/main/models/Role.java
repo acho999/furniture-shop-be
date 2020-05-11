@@ -36,8 +36,7 @@ public class Role implements GrantedAuthority,Serializable{
 	@OneToMany(mappedBy = "role",
 			   targetEntity = User.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   cascade = CascadeType.ALL)
 	public List<User> admins = new ArrayList<>();
 	
 	

@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -41,8 +43,7 @@ public class Category implements Serializable{
 	@OneToMany(mappedBy = "category",
 			   targetEntity = Product.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   cascade = CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 
 
@@ -69,5 +70,19 @@ public class Category implements Serializable{
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	} 
+	
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (id == null || obj == null || getClass() != obj.getClass())
+            return false;
+        Category that = (Category) obj;
+        return id.equals(that.id);
+    }
+    @Override
+    public int hashCode() {
+        return id == null ? 0 : id.hashCode();
+    }
 
 }

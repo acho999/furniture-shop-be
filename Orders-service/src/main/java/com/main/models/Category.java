@@ -40,8 +40,7 @@ public class Category implements Serializable{
 	@OneToMany(mappedBy = "category",
 			   targetEntity = Product.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   cascade = CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 
 

@@ -44,5 +44,37 @@ public class Sale implements Serializable{
 	@JoinColumn(name = "customer_id", referencedColumnName = "id")
 	private Customer customer;
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public List<Product> getPurchasedProducts() {
+		return purchasedProducts;
+	}
+
+	public void setPurchasedProducts(List<Product> purchasedProducts) {
+		this.purchasedProducts = purchasedProducts;
+	}
+
+	public Number getSumOfSale() {
+		return sumOfSale;
+	}
+
+	public void setSumOfSale(Number sumOfSale) {
+		this.sumOfSale = sumOfSale;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 }
 

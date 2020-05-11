@@ -154,3 +154,279 @@
 2020-05-11 13:05:15.418  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
 2020-05-11 13:05:31.907  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb with status UP (replication=false)
 2020-05-11 13:05:32.414  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb with status UP (replication=true)
+2020-05-11 13:06:15.418  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:07:15.419  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:08:15.419  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:09:15.422  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 13:10:15.422  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:11:15.423  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:11:20.595  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb with status DOWN (replication=false)
+2020-05-11 13:11:21.106  INFO 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb with status DOWN (replication=true)
+2020-05-11 13:11:24.912  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb (replication=false)
+2020-05-11 13:11:25.425  WARN 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb
+2020-05-11 13:11:25.425  INFO 24408 --- [http-nio-8001-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:c587f4a4c07a70abe5f72957e56a57eb
+2020-05-11 13:11:25.426  WARN 24408 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb:Cancel@localhost failed with response code 404
+2020-05-11 13:11:25.426  WARN 24408 --- [TaskBatchingWorker-target_localhost-14] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:c587f4a4c07a70abe5f72957e56a57eb:Cancel@localhost: missing entry.
+2020-05-11 13:12:15.423  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 13:12:15.512  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0 with status UP (replication=false)
+2020-05-11 13:12:16.023  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0 with status UP (replication=true)
+2020-05-11 13:13:15.424  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:14:15.425  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:15:15.426  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:16:15.429  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 13:17:15.353  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0 with status DOWN (replication=false)
+2020-05-11 13:17:15.430  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:17:15.859  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0 with status DOWN (replication=true)
+2020-05-11 13:17:19.585  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0 (replication=false)
+2020-05-11 13:17:20.094  WARN 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0
+2020-05-11 13:17:20.095  INFO 24408 --- [http-nio-8001-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:3cc20fd48926320a70dcc04e115d54c0
+2020-05-11 13:17:20.096  WARN 24408 --- [TaskBatchingWorker-target_localhost-11] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0:Cancel@localhost failed with response code 404
+2020-05-11 13:17:20.096  WARN 24408 --- [TaskBatchingWorker-target_localhost-11] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:3cc20fd48926320a70dcc04e115d54c0:Cancel@localhost: missing entry.
+2020-05-11 13:17:51.430  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb with status UP (replication=false)
+2020-05-11 13:17:51.939  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb with status UP (replication=true)
+2020-05-11 13:18:09.021  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-11 13:18:15.430  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:19:15.431  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:20:15.432  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 13:21:15.432  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:22:15.433  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:23:15.433  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:24:15.433  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:25:15.434  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:25:20.687  INFO 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb with status DOWN (replication=false)
+2020-05-11 13:25:21.193  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb with status DOWN (replication=true)
+2020-05-11 13:25:24.430  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb (replication=false)
+2020-05-11 13:25:24.937  WARN 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb
+2020-05-11 13:25:24.938  INFO 24408 --- [http-nio-8001-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:d7e74456e382e327abdbe69697f952cb
+2020-05-11 13:25:24.938  WARN 24408 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb:Cancel@localhost failed with response code 404
+2020-05-11 13:25:24.938  WARN 24408 --- [TaskBatchingWorker-target_localhost-10] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:d7e74456e382e327abdbe69697f952cb:Cancel@localhost: missing entry.
+2020-05-11 13:25:56.686  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73 with status UP (replication=false)
+2020-05-11 13:25:57.201  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73 with status UP (replication=true)
+2020-05-11 13:26:15.435  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:27:15.436  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:28:15.438  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:29:15.438  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:30:15.439  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:31:15.440  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:32:11.235  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73 with status DOWN (replication=false)
+2020-05-11 13:32:11.742  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73 with status DOWN (replication=true)
+2020-05-11 13:32:15.430  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73 (replication=false)
+2020-05-11 13:32:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 13:32:15.935  WARN 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73
+2020-05-11 13:32:15.936  INFO 24408 --- [http-nio-8001-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:95d021432244f1c9c4155458b2b40a73
+2020-05-11 13:32:15.936  WARN 24408 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73:Cancel@localhost failed with response code 404
+2020-05-11 13:32:15.936  WARN 24408 --- [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:95d021432244f1c9c4155458b2b40a73:Cancel@localhost: missing entry.
+2020-05-11 13:32:47.410  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18 with status UP (replication=false)
+2020-05-11 13:32:47.914  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18 with status UP (replication=true)
+2020-05-11 13:33:09.021  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-11 13:33:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:34:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:35:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:36:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 13:37:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 13:38:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:39:15.443  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 13:40:15.445  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:41:15.448  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 13:42:15.449  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:43:15.452  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 13:44:15.455  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 13:45:15.457  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:46:15.457  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:47:15.457  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:48:09.022  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-11 13:48:15.457  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:49:15.458  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:50:15.460  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 13:51:15.462  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:52:15.464  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 13:53:15.465  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 13:54:15.466  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:55:15.468  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 13:56:15.469  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:57:15.470  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:58:15.471  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 13:58:18.408  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18 with status DOWN (replication=false)
+2020-05-11 13:58:18.916  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18 with status DOWN (replication=true)
+2020-05-11 13:58:22.487  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18 (replication=false)
+2020-05-11 13:58:22.991  WARN 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18
+2020-05-11 13:58:22.991  INFO 24408 --- [http-nio-8001-exec-4] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:a51b853cf57a5a0cd40e3df0f0122b18
+2020-05-11 13:58:22.991  WARN 24408 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18:Cancel@localhost failed with response code 404
+2020-05-11 13:58:22.992  WARN 24408 --- [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:a51b853cf57a5a0cd40e3df0f0122b18:Cancel@localhost: missing entry.
+2020-05-11 13:59:15.474  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 14:00:03.733  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3 with status UP (replication=false)
+2020-05-11 14:00:04.241  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3 with status UP (replication=true)
+2020-05-11 14:00:15.476  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:01:15.476  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 14:02:15.477  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:09:35.065  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-11 14:09:41.549  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 14:10:41.549  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:11:41.550  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:12:41.552  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:13:41.553  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:14:41.553  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:15:41.555  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:16:41.555  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:17:41.558  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:18:41.558  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:19:41.559  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:20:41.559  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:21:41.559  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:22:39.878  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3 with status DOWN (replication=false)
+2020-05-11 14:22:40.414  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3 with status DOWN (replication=true)
+2020-05-11 14:22:41.559  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:22:44.628  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3 (replication=false)
+2020-05-11 14:22:45.135  WARN 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3
+2020-05-11 14:22:45.136  INFO 24408 --- [http-nio-8001-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:0d693d266a8c9ba51004fffbadcd8eb3
+2020-05-11 14:22:45.136  WARN 24408 --- [TaskBatchingWorker-target_localhost-19] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3:Cancel@localhost failed with response code 404
+2020-05-11 14:22:45.137  WARN 24408 --- [TaskBatchingWorker-target_localhost-19] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:0d693d266a8c9ba51004fffbadcd8eb3:Cancel@localhost: missing entry.
+2020-05-11 14:23:16.412  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a with status UP (replication=false)
+2020-05-11 14:23:16.916  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a with status UP (replication=true)
+2020-05-11 14:23:41.560  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:24:35.067  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-11 14:24:41.560  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:25:38.364  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a with status DOWN (replication=false)
+2020-05-11 14:25:38.629  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a with status DOWN (replication=true)
+2020-05-11 14:25:41.560  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 14:25:41.651  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a (replication=false)
+2020-05-11 14:25:42.157  WARN 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a
+2020-05-11 14:25:42.157  INFO 24408 --- [http-nio-8001-exec-6] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a
+2020-05-11 14:25:42.158  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a:Cancel@localhost failed with response code 404
+2020-05-11 14:25:42.158  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:70db01ee11c3fd3dd6a98c4f09e61f1a:Cancel@localhost: missing entry.
+2020-05-11 14:26:15.831  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de with status UP (replication=false)
+2020-05-11 14:26:16.340  INFO 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de with status UP (replication=true)
+2020-05-11 14:26:41.563  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 14:27:41.565  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:28:41.565  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:29:41.565  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:30:41.565  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 14:31:41.566  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:31:54.059  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de with status DOWN (replication=false)
+2020-05-11 14:31:54.574  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de with status DOWN (replication=true)
+2020-05-11 14:31:57.477  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de (replication=false)
+2020-05-11 14:31:57.987  WARN 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de
+2020-05-11 14:31:57.987  INFO 24408 --- [http-nio-8001-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:9df4527a16936fbd07abd4a12f5b44de
+2020-05-11 14:31:57.988  WARN 24408 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de:Cancel@localhost failed with response code 404
+2020-05-11 14:31:57.988  WARN 24408 --- [TaskBatchingWorker-target_localhost-3] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:9df4527a16936fbd07abd4a12f5b44de:Cancel@localhost: missing entry.
+2020-05-11 14:32:31.332  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39 with status UP (replication=false)
+2020-05-11 14:32:31.846  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39 with status UP (replication=true)
+2020-05-11 14:32:41.566  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:33:41.566  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:33:58.865  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39 with status DOWN (replication=false)
+2020-05-11 14:33:59.370  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39 with status DOWN (replication=true)
+2020-05-11 14:34:41.566  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:34:44.801  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9e51b1a62e5bd68c0af24022fcc9ad2d with status UP (replication=false)
+2020-05-11 14:34:45.315  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:9e51b1a62e5bd68c0af24022fcc9ad2d with status UP (replication=true)
+2020-05-11 14:35:41.568  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:35:41.569  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=1, evictionLimit=1)
+2020-05-11 14:35:41.569  WARN 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39
+2020-05-11 14:35:41.569  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:47de5a5d00aa47d66794f9a799c88f39 (replication=false)
+2020-05-11 14:36:41.569  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:37:41.571  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:38:41.574  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-11 14:39:35.072  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 10
+2020-05-11 14:39:41.575  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:40:41.575  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:40:41.576  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=1, evictionLimit=1)
+2020-05-11 14:40:41.576  WARN 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for CATEGORIES-SERVICE/categories-service:9e51b1a62e5bd68c0af24022fcc9ad2d
+2020-05-11 14:40:41.576  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:9e51b1a62e5bd68c0af24022fcc9ad2d (replication=false)
+2020-05-11 14:41:41.576  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:42:41.576  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:43:06.534  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb with status UP (replication=false)
+2020-05-11 14:43:07.043  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb with status UP (replication=true)
+2020-05-11 14:43:41.578  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:44:41.579  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:45:02.421  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb with status DOWN (replication=false)
+2020-05-11 14:45:02.925  INFO 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb with status DOWN (replication=true)
+2020-05-11 14:45:07.068  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb (replication=false)
+2020-05-11 14:45:07.578  WARN 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb
+2020-05-11 14:45:07.578  INFO 24408 --- [http-nio-8001-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:e620d899a73db8d8c0709bce0ee96bcb
+2020-05-11 14:45:07.579  WARN 24408 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb:Cancel@localhost failed with response code 404
+2020-05-11 14:45:07.579  WARN 24408 --- [TaskBatchingWorker-target_localhost-5] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:e620d899a73db8d8c0709bce0ee96bcb:Cancel@localhost: missing entry.
+2020-05-11 14:45:38.318  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059 with status UP (replication=false)
+2020-05-11 14:45:38.829  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059 with status UP (replication=true)
+2020-05-11 14:45:41.580  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:46:41.582  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-11 14:47:41.584  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:48:19.327  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83 with status DOWN (replication=false)
+2020-05-11 14:48:19.838  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83 with status DOWN (replication=true)
+2020-05-11 14:48:24.284  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83 (replication=false)
+2020-05-11 14:48:24.795  WARN 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83
+2020-05-11 14:48:24.795  INFO 24408 --- [http-nio-8001-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CUSTOMERS-SERVICE - customers-service:d98e288d0fb5690972610bff1b8b5c83
+2020-05-11 14:48:24.796  WARN 24408 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83:Cancel@localhost failed with response code 404
+2020-05-11 14:48:24.796  WARN 24408 --- [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : CUSTOMERS-SERVICE/customers-service:d98e288d0fb5690972610bff1b8b5c83:Cancel@localhost: missing entry.
+2020-05-11 14:48:41.584  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:48:55.824  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 with status UP (replication=false)
+2020-05-11 14:48:56.331  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 with status UP (replication=true)
+2020-05-11 14:49:07.907  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 with status DOWN (replication=false)
+2020-05-11 14:49:08.415  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 with status DOWN (replication=true)
+2020-05-11 14:49:11.959  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96 (replication=false)
+2020-05-11 14:49:12.467  WARN 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96
+2020-05-11 14:49:12.467  INFO 24408 --- [http-nio-8001-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CUSTOMERS-SERVICE - customers-service:649e9c551695a9ccd45cbedcffc71a96
+2020-05-11 14:49:12.468  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96:Cancel@localhost failed with response code 404
+2020-05-11 14:49:12.468  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : CUSTOMERS-SERVICE/customers-service:649e9c551695a9ccd45cbedcffc71a96:Cancel@localhost: missing entry.
+2020-05-11 14:49:41.584  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:49:43.417  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d with status UP (replication=false)
+2020-05-11 14:49:43.928  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d with status UP (replication=true)
+2020-05-11 14:50:41.585  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:51:41.585  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:52:41.586  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:53:41.586  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 14:54:35.073  INFO 24408 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 11
+2020-05-11 14:54:41.587  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:54:52.471  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2 with status DOWN (replication=false)
+2020-05-11 14:54:52.974  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2 with status DOWN (replication=true)
+2020-05-11 14:54:57.251  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2 (replication=false)
+2020-05-11 14:54:57.757  WARN 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2
+2020-05-11 14:54:57.759  INFO 24408 --- [http-nio-8001-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:11cdf9c828189cd08cbc208c7d50c3a2
+2020-05-11 14:54:57.760  WARN 24408 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2:Cancel@localhost failed with response code 404
+2020-05-11 14:54:57.760  WARN 24408 --- [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:11cdf9c828189cd08cbc208c7d50c3a2:Cancel@localhost: missing entry.
+2020-05-11 14:55:29.450  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19 with status UP (replication=false)
+2020-05-11 14:55:29.962  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19 with status UP (replication=true)
+2020-05-11 14:55:35.341  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19 with status DOWN (replication=false)
+2020-05-11 14:55:35.849  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19 with status DOWN (replication=true)
+2020-05-11 14:55:40.037  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19 (replication=false)
+2020-05-11 14:55:40.550  WARN 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19
+2020-05-11 14:55:40.550  INFO 24408 --- [http-nio-8001-exec-6] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:d70bc13099f9efff4b5d7ccef3a5cb19
+2020-05-11 14:55:40.551  WARN 24408 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19:Cancel@localhost failed with response code 404
+2020-05-11 14:55:40.551  WARN 24408 --- [TaskBatchingWorker-target_localhost-15] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:d70bc13099f9efff4b5d7ccef3a5cb19:Cancel@localhost: missing entry.
+2020-05-11 14:55:41.587  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-11 14:56:11.815  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb with status UP (replication=false)
+2020-05-11 14:56:12.321  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb with status UP (replication=true)
+2020-05-11 14:56:22.894  INFO 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb with status DOWN (replication=false)
+2020-05-11 14:56:23.404  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb with status DOWN (replication=true)
+2020-05-11 14:56:26.753  INFO 24408 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb (replication=false)
+2020-05-11 14:56:27.259  WARN 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb
+2020-05-11 14:56:27.259  INFO 24408 --- [http-nio-8001-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:75ed93789ac509c27695f5fbfdb210cb
+2020-05-11 14:56:27.260  WARN 24408 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb:Cancel@localhost failed with response code 404
+2020-05-11 14:56:27.260  WARN 24408 --- [TaskBatchingWorker-target_localhost-2] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:75ed93789ac509c27695f5fbfdb210cb:Cancel@localhost: missing entry.
+2020-05-11 14:56:41.587  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-11 14:56:58.505  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:539821e879070f42c530b3ebd482c38b with status UP (replication=false)
+2020-05-11 14:56:59.016  INFO 24408 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:539821e879070f42c530b3ebd482c38b with status UP (replication=true)
+2020-05-11 14:57:41.588  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-11 14:57:54.461  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059 with status DOWN (replication=false)
+2020-05-11 14:57:54.964  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059 with status DOWN (replication=true)
+2020-05-11 14:57:58.517  INFO 24408 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059 (replication=false)
+2020-05-11 14:57:59.004  WARN 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059
+2020-05-11 14:57:59.004  INFO 24408 --- [http-nio-8001-exec-6] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CATEGORIES-SERVICE - categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059
+2020-05-11 14:57:59.005  WARN 24408 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059:Cancel@localhost failed with response code 404
+2020-05-11 14:57:59.005  WARN 24408 --- [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : CATEGORIES-SERVICE/categories-service:4ab3d4de74bd2d9f9d27d6df35e7a059:Cancel@localhost: missing entry.
+2020-05-11 14:58:01.030  INFO 24408 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.103:zuul:8011 with status DOWN (replication=false)
+2020-05-11 14:58:01.191  INFO 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.103:zuul:8011 with status DOWN (replication=true)
+2020-05-11 14:58:01.195  WARN 24408 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task ZUUL/192.168.0.103:zuul:8011:Heartbeat@localhost failed with response code 409
+2020-05-11 14:58:01.195  WARN 24408 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : Peer wants us to take the instance information from it, since the timestamp differs,Id : 192.168.0.103:zuul:8011 My Timestamp : 1589188757446, Peer's timestamp: 1589198281027
+2020-05-11 14:58:01.196  INFO 24408 --- [TaskBatchingWorker-target_localhost-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.103:zuul:8011 with status DOWN (replication=true)
+2020-05-11 14:58:05.694  INFO 24408 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.103:zuul:8011 (replication=false)
+2020-05-11 14:58:06.199  WARN 24408 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: ZUUL/192.168.0.103:zuul:8011
+2020-05-11 14:58:06.199  INFO 24408 --- [http-nio-8001-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): ZUUL - 192.168.0.103:zuul:8011
+2020-05-11 14:58:06.200  WARN 24408 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task ZUUL/192.168.0.103:zuul:8011:Cancel@localhost failed with response code 404
+2020-05-11 14:58:06.200  WARN 24408 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : ZUUL/192.168.0.103:zuul:8011:Cancel@localhost: missing entry.
+2020-05-11 14:58:08.552  INFO 24408 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d with status DOWN (replication=false)
+2020-05-11 14:58:09.058  INFO 24408 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d with status DOWN (replication=true)
+2020-05-11 14:58:13.082  INFO 24408 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d (replication=false)
+2020-05-11 14:58:13.590  WARN 24408 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d
+2020-05-11 14:58:13.590  INFO 24408 --- [http-nio-8001-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): CUSTOMERS-SERVICE - customers-service:f3cc32b53a7944878c0d49d40065f19d
+2020-05-11 14:58:13.591  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d:Cancel@localhost failed with response code 404
+2020-05-11 14:58:13.591  WARN 24408 --- [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : CUSTOMERS-SERVICE/customers-service:f3cc32b53a7944878c0d49d40065f19d:Cancel@localhost: missing entry.
+2020-05-11 14:58:41.588  INFO 24408 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
