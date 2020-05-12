@@ -23,10 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 2025019082654076408L;
 
 	@Id
@@ -49,7 +46,7 @@ public class Order implements Serializable{
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
-	private Number sumOfOrder;
+	private Double sumOfOrder;
 	
 	@Column(name = "dateCreated")
 	private Date dateCreated;
@@ -90,11 +87,11 @@ public class Order implements Serializable{
 		this.orderedProducts = orderedProducts;
 	}
 
-	public Number getSumOfOrder() {
+	public Double getSumOfOrder() {
 		return sumOfOrder;
 	}
 
-	public void setSumOfOrder(Number sumOfOrder) {
+	public void setSumOfOrder(Double sumOfOrder) {
 		this.sumOfOrder = sumOfOrder;
 	}
 

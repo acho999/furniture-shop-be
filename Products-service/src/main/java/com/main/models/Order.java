@@ -46,7 +46,7 @@ public class Order implements Serializable{
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
-	private Number sumOfOrder;
+	private Double sumOfOrder;
 	
 	@Column(name = "dateCreated")
 	private Date dateCreated;
@@ -87,11 +87,11 @@ public class Order implements Serializable{
 		this.orderedProducts = orderedProducts;
 	}
 
-	public Number getSumOfOrder() {
+	public Double getSumOfOrder() {
 		return sumOfOrder;
 	}
 
-	public void setSumOfOrder(Number sumOfOrder) {
+	public void setSumOfOrder(Double sumOfOrder) {
 		this.sumOfOrder = sumOfOrder;
 	}
 

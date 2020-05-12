@@ -45,6 +45,8 @@ public class OrdersService implements IOrdersService {
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 			Order entity = mapper.map(order, Order.class);
+			
+			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -111,17 +113,12 @@ public class OrdersService implements IOrdersService {
 	@Override
 	@Transactional(readOnly = false)
 	public boolean delete(String id) {
-		Optional<Order> orderOptional = null;
+		
 
 		try {
+			
 			this.repo.deleteById(id);
-
-			orderOptional = this.repo.findById(id);
-
-			if (orderOptional.get() != null) {
-				return false;
-			}
-
+			
 			return true;
 
 		} catch (Exception e) {
@@ -138,14 +135,14 @@ public class OrdersService implements IOrdersService {
 	public CompletableFuture<OrderDTO> getOrderDetails(String id) {
 
 		OrderDTO orderDetails = null;
-		Order order = null;
+		Optional<Order> order = null;
 		try {
 			
-			order = this.repo.findById(id).get();
+			order = this.repo.findById(id);
 			
-			if (order != null) {
+			if (order.isPresent()) {
 				
-				orderDetails = this.mapper.map(order, OrderDTO.class);
+				orderDetails = this.mapper.map(order.get(), OrderDTO.class);
 				
 				return CompletableFuture.completedFuture(orderDetails);
 				

@@ -68,7 +68,7 @@ public class Product implements Serializable{
 	private List<Sale> sales = new ArrayList<Sale>();
 	
 	@Column(name = "price")
-	private Number price;
+	private Double price;
 	
 	@Column(name = "description")
 	private String description;
@@ -127,11 +127,11 @@ public class Product implements Serializable{
 		this.sales = sales;
 	}
 
-	public Number getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Number price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

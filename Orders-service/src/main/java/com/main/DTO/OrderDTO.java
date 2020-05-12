@@ -24,9 +24,9 @@ public class OrderDTO implements Serializable{
 	
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
-	private Number sumOfOrder;
+	private Double sumOfOrder;
 	
-	//private Customer customer;
+	private Customer customer;
 	
 	private String customerId;
 
@@ -70,11 +70,11 @@ public class OrderDTO implements Serializable{
 		this.orderedProducts = orderedProducts;
 	}
 
-	public Number getSumOfOrder() {
+	public Double getSumOfOrder() {
 		return sumOfOrder;
 	}
 
-	public void setSumOfOrder(Number sumOfOrder) {
+	public void setSumOfOrder(Double sumOfOrder) {
 		this.sumOfOrder = sumOfOrder;
 	}
 

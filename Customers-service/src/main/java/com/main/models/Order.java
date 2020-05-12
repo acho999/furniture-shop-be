@@ -44,10 +44,58 @@ public class Order implements Serializable{
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
-	private Number sumOfOrder;
+	private Double sumOfOrder;
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id",referencedColumnName = "id" )
 	private Customer customer;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Boolean getIsPlased() {
+		return isPlased;
+	}
+
+	public void setIsPlased(Boolean isPlased) {
+		this.isPlased = isPlased;
+	}
+
+	public Boolean getIsPayed() {
+		return isPayed;
+	}
+
+	public void setIsPayed(Boolean isPayed) {
+		this.isPayed = isPayed;
+	}
+
+	public List<Product> getOrderedProducts() {
+		return orderedProducts;
+	}
+
+	public void setOrderedProducts(List<Product> orderedProducts) {
+		this.orderedProducts = orderedProducts;
+	}
+
+	public Double getSumOfOrder() {
+		return sumOfOrder;
+	}
+
+	public void setSumOfOrder(Double sumOfOrder) {
+		this.sumOfOrder = sumOfOrder;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 }

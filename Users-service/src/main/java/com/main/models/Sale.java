@@ -38,7 +38,7 @@ public class Sale implements Serializable{
 	private List<Product> purchasedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
-	private Number sumOfSale;
+	private Double sumOfSale;
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id", referencedColumnName = "id")
@@ -60,11 +60,11 @@ public class Sale implements Serializable{
 		this.purchasedProducts = purchasedProducts;
 	}
 
-	public Number getSumOfSale() {
+	public Double getSumOfSale() {
 		return sumOfSale;
 	}
 
-	public void setSumOfSale(Number sumOfSale) {
+	public void setSumOfSale(Double sumOfSale) {
 		this.sumOfSale = sumOfSale;
 	}
 
