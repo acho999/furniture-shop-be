@@ -22,6 +22,8 @@ import com.main.models.Product;
 import com.main.repositories.CategoriesRepository;
 import com.main.repositories.ProductsRepository;
 
+import javassist.NotFoundException;
+
 @Service
 @Transactional(readOnly = true)
 public class ProductsService implements IProductsService {
@@ -85,7 +87,7 @@ public class ProductsService implements IProductsService {
 
 		try {
 
-			this.mapper.map(productEntity, product);
+			this.mapper.map(product,productEntity);
 			
 			Category category = this.categoriesRepo.findById(product.getCategoryId()).get();
 
@@ -111,16 +113,10 @@ public class ProductsService implements IProductsService {
 	@Transactional(readOnly = false)
 	public boolean delete(String id) {
 
-		Optional<Product> productOptional = null;
 
 		try {
+			
 			this.repo.deleteById(id);
-
-			productOptional = this.repo.findById(id);
-
-			if (productOptional.get() != null) {
-				return false;
-			}
 
 			return true;
 
@@ -138,17 +134,19 @@ public class ProductsService implements IProductsService {
 	public CompletableFuture<ProductDTO> getProductDetails(String id) {
 
 		ProductDTO productDetails = null;
-		Product order = null;
+		Optional<Product> order = null;
 		try {
 
-			order = this.repo.findById(id).get();
+			order = this.repo.findById(id);
 
-			if (order != null) {
+			if (order.isPresent()) {
 
-				productDetails = this.mapper.map(order, ProductDTO.class);
+				productDetails = this.mapper.map(order.get(), ProductDTO.class);
 
 				return CompletableFuture.completedFuture(productDetails);
 
+			} else {
+				throw new NotFoundException("Product not found!");
 			}
 
 		} catch (Exception e) {

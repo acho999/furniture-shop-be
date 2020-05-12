@@ -22,7 +22,8 @@ public class ProductDTO implements Serializable{
 	private Date dateCreated;
 	
 	//@JsonIgnore
-	//private Category category;
+	private Category category;
+	
 	private String categoryId;
 	
 	//@JsonIgnore

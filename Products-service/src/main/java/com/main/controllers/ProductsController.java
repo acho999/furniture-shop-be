@@ -65,8 +65,12 @@ public class ProductsController {
 		CompletableFuture<ProductDTO> future = new CompletableFuture<ProductDTO>();
 
 		future.complete(this.service.getProductDetails(id).get());
+		
+		if (future.get() != null) {
+			return future.thenApply(result -> ResponseEntity.ok().body(result));
+		}
 
-		return future.thenApply(result -> ResponseEntity.ok().body(result));
+		return future.thenApply(result -> ResponseEntity.notFound().build());
 
 	}
 
