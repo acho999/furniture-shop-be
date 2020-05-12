@@ -48,6 +48,8 @@ public class OrdersService implements IOrdersService {
 			
 			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
 
+			entity.setSumOfOrder(sum);
+			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 			String dateString = format.format(new Date());

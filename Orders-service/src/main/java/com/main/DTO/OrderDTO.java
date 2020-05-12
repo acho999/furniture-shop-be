@@ -18,7 +18,7 @@ public class OrderDTO implements Serializable{
 
 	private String id;
 	
-	private Boolean isPlased;
+	private Boolean isPlaced;
 	
 	private Boolean isPayed;
 	
@@ -46,12 +46,12 @@ public class OrderDTO implements Serializable{
 		this.id = id;
 	}
 
-	public Boolean getIsPlased() {
-		return isPlased;
+	public Boolean getIsPlaced() {
+		return isPlaced;
 	}
 
-	public void setIsPlased(Boolean isPlased) {
-		this.isPlased = isPlased;
+	public void setIsPlaced(Boolean isPlaced) {
+		this.isPlaced = isPlaced;
 	}
 
 	public Boolean getIsPayed() {
