@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -40,10 +42,10 @@ public class Sale implements Serializable{
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 	
-	@OneToMany(mappedBy = "sale",
-			   targetEntity = Product.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "Products_Sales",
+	joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
+	inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") })
 	private List<Product> purchasedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")

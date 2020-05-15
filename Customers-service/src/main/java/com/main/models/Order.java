@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -38,15 +40,15 @@ public class Order implements Serializable{
 	private String id;
 	
 	@Column(name = "placedOrders")
-	private Boolean isPlased;
+	private Boolean isPlaced;
 	
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
-	@OneToMany(mappedBy = "order",
-			   targetEntity = Product.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "Products_Orders",
+	joinColumns = { @JoinColumn(name = "order_id",referencedColumnName = "id") }, 
+	inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") })
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
@@ -67,12 +69,12 @@ public class Order implements Serializable{
 		this.id = id;
 	}
 
-	public Boolean getIsPlased() {
-		return isPlased;
+	public Boolean getIsPlaced() {
+		return isPlaced;
 	}
 
-	public void setIsPlased(Boolean isPlased) {
-		this.isPlased = isPlased;
+	public void setIsPlaced(Boolean isPlaced) {
+		this.isPlaced = isPlaced;
 	}
 
 	public Boolean getIsPayed() {

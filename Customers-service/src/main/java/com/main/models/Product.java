@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -56,13 +58,12 @@ public class Product implements Serializable{
 			   orphanRemoval = true)
 	private List<Image> images = new ArrayList<Image>();
 	
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@JoinColumn(name = "order_Id",referencedColumnName = "id")
-	private Order order;
+
+	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class)
+	private List<Order> orders = new ArrayList<Order>();
 	
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@JoinColumn(name = "sale_Id",referencedColumnName = "id")
-	private Sale sale ;
+	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class)
+	private List<Sale> sales = new ArrayList<Sale>();
 	
 	@Column(name = "price")
 	private Double price;
@@ -108,20 +109,20 @@ public class Product implements Serializable{
 		this.images = images;
 	}
 
-	public Order getOrder() {
-		return order;
+	public List<Order> getOrder() {
+		return orders;
 	}
 
-	public void setOrders(Order orders) {
-		this.order = orders;
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
-	public Sale getSale() {
-		return sale;
+	public List<Sale> getSale() {
+		return sales;
 	}
 
-	public void setSale(Sale sale) {
-		this.sale = sale;
+	public void setSale(List<Sale> sales) {
+		this.sales = sales;
 	}
 
 	public Integer getQuantity() {

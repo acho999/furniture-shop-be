@@ -78,5 +78,13 @@ public class OrderDTO implements Serializable{
 		this.sumOfOrder = sumOfOrder;
 	}
 
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 
 }

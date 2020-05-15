@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.main.DTO.OrderDTO;
 import com.main.models.Customer;
 import com.main.models.Order;
+import com.main.models.Product;
 import com.main.repositories.CustomerRepository;
 import com.main.repositories.OrdersRepository;
 
@@ -39,6 +40,10 @@ public class OrdersService implements IOrdersService {
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
 	public CompletableFuture<OrderDTO> createOrder(OrderDTO order) {
+		
+        List<Product> products = new ArrayList<Product>();
+		
+		Type listType = new TypeToken<List<Product>>() {}.getType();
 
 		try {
 
@@ -47,6 +52,10 @@ public class OrdersService implements IOrdersService {
 			Order entity = mapper.map(order, Order.class);
 			
 			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
+			
+			products = this.mapper.map(order.getOrderedProducts(),listType);
+			
+			order.setOrderedProducts(products);
 
 			entity.setSumOfOrder(sum);
 			
@@ -63,8 +72,12 @@ public class OrdersService implements IOrdersService {
 			entity.setCustomer(customer);
 
 			repo.saveAndFlush(entity);
+			
+			System.out.println(entity.getId());
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
+			
+			returnDto.setCustomerId(entity.getId());
 
 			return CompletableFuture.completedFuture(returnDto);
 

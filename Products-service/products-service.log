@@ -521,3 +521,157 @@ Caused by: org.hibernate.AnnotationException: mappedBy reference an unknown targ
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
 	... 69 common frames omitted
 
+2020-05-15 14:49:52.162  INFO [products-service,,,] 24618 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-15 14:49:52.837  INFO [products-service,,,] 24618 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=configuration-server, profiles=[default], label=null, version=c7c9229019e63bdcfe179d14e2b993e53b69bacb, state=null
+2020-05-15 14:49:52.838  INFO [products-service,,,] 24618 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-15 14:49:52.867  INFO [products-service,,,] 24618 --- [restartedMain] com.main.ProductsServiceApplication      : No active profile set, falling back to default profiles: default
+2020-05-15 14:49:53.478  INFO [products-service,,,] 24618 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-15 14:49:53.529  INFO [products-service,,,] 24618 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 2 JPA repository interfaces.
+2020-05-15 14:49:53.704  WARN [products-service,,,] 24618 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-15 14:49:53.954  WARN [products-service,,,] 24618 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-15 14:49:54.012  WARN [products-service,,,] 24618 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-15 14:49:54.314  INFO [products-service,,,] 24618 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e0a7d198-405a-3fc0-8a41-3b9330daf94a
+2020-05-15 14:49:54.517  INFO [products-service,,,] 24618 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-15 14:49:54.522  INFO [products-service,,,] 24618 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-15 14:49:54.526  INFO [products-service,,,] 24618 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-15 14:49:54.782  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:54.787  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:54.822  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:54.836  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:54.847  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:54.853  INFO [products-service,,,] 24618 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-15 14:49:55.445  INFO [products-service,,,] 24618 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-15 14:49:55.452  INFO [products-service,,,] 24618 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-15 14:49:55.452  INFO [products-service,,,] 24618 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-15 14:49:55.556  INFO [products-service,,,] 24618 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-15 14:49:55.557  INFO [products-service,,,] 24618 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2678 ms
+2020-05-15 14:49:55.695  WARN [products-service,,,] 24618 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-15 14:49:55.695  INFO [products-service,,,] 24618 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-15 14:49:55.702  INFO [products-service,,,] 24618 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2e2af9f8
+2020-05-15 14:49:56.226  WARN [products-service,,,] 24618 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@189a4975}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-15 14:49:56.762  INFO [products-service,,,] 24618 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-15 14:49:57.361  INFO [products-service,,,] 24618 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-15 14:49:57.430  INFO [products-service,,,] 24618 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-15 14:49:57.571  INFO [products-service,,,] 24618 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-15 14:50:02.832  INFO [products-service,,,] 24618 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-15 14:50:09.224  INFO [products-service,,,] 24618 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-15 14:50:09.233  INFO [products-service,,,] 24618 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-15 14:50:09.589  WARN [products-service,,,] 24618 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-15 14:50:09.670  INFO [products-service,,,] 24618 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-15 14:50:09.671  INFO [products-service,,,] 24618 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-15 14:50:09.766  INFO [products-service,,,] 24618 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b0306d74-aa96-41d9-9993-881ee04d39f6
+
+2020-05-15 14:50:09.889  INFO [products-service,,,] 24618 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7111fa08, org.springframework.security.web.context.SecurityContextPersistenceFilter@a163804, org.springframework.security.web.header.HeaderWriterFilter@2eae1a8f, org.springframework.security.web.authentication.logout.LogoutFilter@4eb579a0, com.main.security.AuthorizaionFilter@96fdbf6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ab086c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d9302cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ec25378, org.springframework.security.web.session.SessionManagementFilter@71dcfa22, org.springframework.security.web.access.ExceptionTranslationFilter@59eb38a1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2777815f]
+2020-05-15 14:50:09.912  WARN [products-service,,,] 24618 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-15 14:50:09.912  INFO [products-service,,,] 24618 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-15 14:50:11.035  WARN [products-service,,,] 24618 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-15 14:50:11.115  WARN [products-service,,,] 24618 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-15 14:50:11.391  INFO [products-service,,,] 24618 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-15 14:50:11.659  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-15 14:50:11.790  INFO [products-service,,,] 24618 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-15 14:50:11.791  INFO [products-service,,,] 24618 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-15 14:50:11.811  INFO [products-service,,,] 24618 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-05-15 14:50:11.824  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-15 14:50:11.918  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-15 14:50:11.937  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-15 14:50:11.948  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-15 14:50:12.023  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-15 14:50:12.061  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6f47f908
+2020-05-15 14:50:12.147  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-15 14:50:12.147  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-15 14:50:12.147  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-15 14:50:17.195  INFO [products-service,,,] 24618 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-15 14:50:17.799  INFO [products-service,,,] 24618 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=configuration-server, profiles=[default], label=null, version=c7c9229019e63bdcfe179d14e2b993e53b69bacb, state=null
+2020-05-15 14:50:17.800  INFO [products-service,,,] 24618 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-15 14:50:18.001  INFO [products-service,,,] 24618 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-15 14:50:18.041  INFO [products-service,,,] 24618 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#a100e41:0/SimpleConnection@b4c6042 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 51971]
+2020-05-15 14:50:18.080  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-15 14:50:18.126  INFO [products-service,,,] 24618 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw, bound to: springCloudBus
+2020-05-15 14:50:18.147  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw.errors' has 1 subscriber(s).
+2020-05-15 14:50:18.148  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw.errors' has 2 subscriber(s).
+2020-05-15 14:50:18.167  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw'
+2020-05-15 14:50:18.212  INFO [products-service,,,] 24618 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw.errors
+2020-05-15 14:50:18.372  INFO [products-service,,,] 24618 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51972 (http) with context path ''
+2020-05-15 14:50:18.373  INFO [products-service,,,] 24618 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 51972
+2020-05-15 14:50:18.379  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-15 14:50:18.420  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-15 14:50:18.478  INFO [products-service,,,] 24618 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-15 14:50:18.478  INFO [products-service,,,] 24618 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-15 14:50:18.589  INFO [products-service,,,] 24618 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-15 14:50:18.589  INFO [products-service,,,] 24618 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-15 14:50:18.781  INFO [products-service,,,] 24618 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-15 14:50:18.798  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-15 14:50:19.015  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-15 14:50:19.017  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-15 14:50:19.019  INFO [products-service,,,] 24618 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-15 14:50:19.023  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589543419022 with initial instances count: 2
+2020-05-15 14:50:19.032  INFO [products-service,,,] 24618 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application PRODUCTS-SERVICE with eureka with status UP
+2020-05-15 14:50:19.033  INFO [products-service,,,] 24618 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589543419033, current=UP, previous=STARTING]
+2020-05-15 14:50:19.034  INFO [products-service,,,] 24618 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTS-SERVICE/products-service:2d2b57f4df0e2f8917cee8b28fd62b7d: registering service...
+2020-05-15 14:50:19.040  INFO [products-service,,,] 24618 --- [restartedMain] com.main.ProductsServiceApplication      : Started ProductsServiceApplication in 37.538 seconds (JVM running for 43.176)
+2020-05-15 14:50:19.056  INFO [products-service,,,] 24618 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTS-SERVICE/products-service:2d2b57f4df0e2f8917cee8b28fd62b7d - registration status: 204
+2020-05-15 14:55:26.714  INFO [products-service,,,] 24618 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-15 15:00:26.710  INFO [products-service,,,] 24618 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-15 15:05:26.704  INFO [products-service,,,] 24618 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-15 15:10:26.698  INFO [products-service,,,] 24618 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-15 15:15:00.505  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-15 15:15:00.508  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PRODUCTS-SERVICE with eureka with status DOWN
+2020-05-15 15:15:00.508  WARN [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589544900508, current=DOWN, previous=UP]
+2020-05-15 15:15:00.508  INFO [products-service,,,] 24618 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTS-SERVICE/products-service:2d2b57f4df0e2f8917cee8b28fd62b7d: registering service...
+2020-05-15 15:15:00.513  INFO [products-service,,,] 24618 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTS-SERVICE/products-service:2d2b57f4df0e2f8917cee8b28fd62b7d - registration status: 204
+2020-05-15 15:15:00.531  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-15 15:15:00.824  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-15 15:15:00.824  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw'
+2020-05-15 15:15:00.829  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw.errors' has 1 subscriber(s).
+2020-05-15 15:15:00.830  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.FDueElXdQBSWrRaFHFvCKw.errors' has 0 subscriber(s).
+2020-05-15 15:15:00.834  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-15 15:15:00.834  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-15 15:15:00.834  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-15 15:15:00.841  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-15 15:15:00.844  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-15 15:15:01.823  WARN [products-service,,,] 24618 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@189a4975}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-15 15:15:01.828  WARN [products-service,,,] 24618 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@189a4975}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-15 15:15:01.835  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6f47f908
+2020-05-15 15:15:01.836  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-15 15:15:04.837  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-15 15:15:04.843  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PRODUCTS-SERVICE/products-service:2d2b57f4df0e2f8917cee8b28fd62b7d - deregister  status: 200
+2020-05-15 15:15:04.851  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-15 15:15:04.860  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-15 15:15:04.862  INFO [products-service,,,] 24618 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
