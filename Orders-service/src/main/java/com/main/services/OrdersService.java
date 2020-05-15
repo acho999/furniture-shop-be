@@ -146,6 +146,8 @@ public class OrdersService implements IOrdersService {
 				
 				orderDetails = this.mapper.map(order.get(), OrderDTO.class);
 				
+				orderDetails.setOrderedProducts(order.get().getOrderedProducts());
+				
 				return CompletableFuture.completedFuture(orderDetails);
 				
 			}

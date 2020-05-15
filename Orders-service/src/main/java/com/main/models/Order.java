@@ -5,25 +5,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable{
-
+	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 2025019082654076408L;
 
 	@Id
@@ -36,13 +38,15 @@ public class Order implements Serializable{
 	private String id;
 	
 	@Column(name = "placedOrders")
-	private Boolean isPlaced;
+	private Boolean isPlased;
 	
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
-	@JsonIgnore
-	@ManyToMany(mappedBy = "orders",targetEntity = Product.class)
+	@OneToMany(mappedBy = "order",
+			   targetEntity = Image.class,
+			   fetch = FetchType.LAZY,
+			   cascade = CascadeType.ALL)
 	private List<Product> orderedProducts = new ArrayList<Product>();
 	
 	@Column(name = "sum")
@@ -63,12 +67,12 @@ public class Order implements Serializable{
 		this.id = id;
 	}
 
-	public Boolean getIsPlaced() {
-		return isPlaced;
+	public Boolean getIsPlased() {
+		return isPlased;
 	}
 
-	public void setIsPlaced(Boolean isPlaced) {
-		this.isPlaced = isPlaced;
+	public void setIsPlased(Boolean isPlased) {
+		this.isPlased = isPlased;
 	}
 
 	public Boolean getIsPayed() {

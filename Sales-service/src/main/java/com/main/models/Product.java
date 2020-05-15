@@ -12,13 +12,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
+
 
 @Entity
 @Table(name = "products")
@@ -39,6 +39,10 @@ public class Product implements Serializable{
 	@Column(name = "productName")
 	private String name;
 	
+	@Column(name = "quantity")
+	private Integer quantity;
+	
+	
 	//@JsonIgnore
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_Id",referencedColumnName = "id")
@@ -48,24 +52,17 @@ public class Product implements Serializable{
 	@OneToMany(mappedBy = "product",
 			   targetEntity = Image.class,
 			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
+			   cascade = CascadeType.ALL,
+			   orphanRemoval = true)
 	private List<Image> images = new ArrayList<Image>();
 	
-	@ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-        name = "Products_Orders", 
-        joinColumns = { @JoinColumn(name = "order_id",referencedColumnName = "id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
-    )
-	private List<Order> orders = new ArrayList<Order>();
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@JoinColumn(name = "order_Id",referencedColumnName = "id")
+	private Order order;
 	
-	@ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-        name = "Products_Sales", 
-        joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
-        inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") }
-    )
-	private List<Sale> sales = new ArrayList<Sale>();
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@JoinColumn(name = "sale_Id",referencedColumnName = "id")
+	private Sale sale ;
 	
 	@Column(name = "price")
 	private Double price;
@@ -111,20 +108,28 @@ public class Product implements Serializable{
 		this.images = images;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
+	public void setOrders(Order orders) {
+		this.order = orders;
 	}
 
-	public List<Sale> getSales() {
-		return sales;
+	public Sale getSale() {
+		return sale;
 	}
 
-	public void setSales(List<Sale> sales) {
-		this.sales = sales;
+	public void setSale(Sale sale) {
+		this.sale = sale;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 	public Double getPrice() {
