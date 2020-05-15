@@ -44,7 +44,7 @@ public class Order implements Serializable{
 	private Boolean isPayed;
 	
 	@OneToMany(mappedBy = "order",
-			   targetEntity = Image.class,
+			   targetEntity = Product.class,
 			   fetch = FetchType.LAZY,
 			   cascade = CascadeType.ALL)
 	private List<Product> orderedProducts = new ArrayList<Product>();

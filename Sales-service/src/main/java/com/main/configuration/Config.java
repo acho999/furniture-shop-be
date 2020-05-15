@@ -58,7 +58,7 @@ public class Config {
 		
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		
-		adapter.setDatabase(Database.ORACLE);
+		adapter.setDatabase(Database.SQL_SERVER);
 		adapter.setGenerateDdl(true);
 		adapter.setShowSql(true);
 		

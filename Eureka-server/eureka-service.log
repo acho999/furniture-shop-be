@@ -558,3 +558,13 @@ Using generated security password: 462bab18-19ea-4fa5-80aa-1cacc1a93204
 2020-05-15 14:03:01.337  WARN 2521 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.cluster.ReplicationTask       : The replication of task ZUUL/192.168.0.101:zuul:8011:Cancel@localhost failed with response code 404
 2020-05-15 14:03:01.337  WARN 2521 --- [TaskBatchingWorker-target_localhost-9] c.netflix.eureka.cluster.PeerEurekaNode  : ZUUL/192.168.0.101:zuul:8011:Cancel@localhost: missing entry.
 2020-05-15 14:03:25.698  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-15 14:04:25.701  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-15 14:05:25.701  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-15 14:06:25.702  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-15 14:07:25.704  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-15 14:08:25.704  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-15 14:09:18.981  INFO 2521 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
+2020-05-15 14:09:25.704  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-15 14:10:25.705  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-15 14:11:25.705  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-15 14:12:25.705  INFO 2521 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms

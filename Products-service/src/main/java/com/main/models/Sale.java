@@ -41,7 +41,7 @@ public class Sale implements Serializable{
 	private Date dateCreated;
 	
 	@OneToMany(mappedBy = "sale",
-			   targetEntity = Image.class,
+			   targetEntity = Product.class,
 			   fetch = FetchType.LAZY,
 			   cascade = CascadeType.ALL)
 	private List<Product> purchasedProducts = new ArrayList<Product>();
