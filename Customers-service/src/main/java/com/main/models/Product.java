@@ -58,11 +58,10 @@ public class Product implements Serializable{
 			   orphanRemoval = true)
 	private List<Image> images = new ArrayList<Image>();
 	
-
-	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class)
+	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class,cascade = CascadeType.ALL)
 	private List<Order> orders = new ArrayList<Order>();
 	
-	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class)
+	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class,cascade = CascadeType.ALL)
 	private List<Sale> sales = new ArrayList<Sale>();
 	
 	@Column(name = "price")

@@ -887,3 +887,154 @@ Using generated security password: 3f3fda11-8336-45ad-a5c7-b23944a1705c
 2020-05-16 14:59:27.649  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a with status UP (replication=false)
 2020-05-16 14:59:28.158  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a with status UP (replication=true)
 2020-05-16 14:59:55.011  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:00:55.014  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:00:55.014  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=1, evictionLimit=1)
+2020-05-16 15:00:55.014  WARN 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for ORDERS-SERVICE/orders-service:97e2e6c5ee8bd977127c55e35ccba648
+2020-05-16 15:00:55.014  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ORDERS-SERVICE/orders-service:97e2e6c5ee8bd977127c55e35ccba648 (replication=false)
+2020-05-16 15:01:55.015  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:02:55.015  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:03:55.017  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:04:55.018  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:05:55.018  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:06:55.028  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:07:55.032  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:08:48.671  INFO 16812 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 11
+2020-05-16 15:08:55.033  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:09:55.034  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:10:55.034  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:11:55.037  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:12:55.040  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:13:53.003  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a with status DOWN (replication=false)
+2020-05-16 15:13:53.507  INFO 16812 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a with status DOWN (replication=true)
+2020-05-16 15:13:55.041  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:13:57.884  INFO 16812 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a (replication=false)
+2020-05-16 15:13:58.355  WARN 16812 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: ORDERS-SERVICE - orders-service:c4de4a3b43743070a07997e07ad9119a
+2020-05-16 15:13:58.355  WARN 16812 --- [http-nio-8001-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Renew): ORDERS-SERVICE - orders-service:c4de4a3b43743070a07997e07ad9119a
+2020-05-16 15:13:58.356  WARN 16812 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a
+2020-05-16 15:13:58.357  INFO 16812 --- [http-nio-8001-exec-8] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): ORDERS-SERVICE - orders-service:c4de4a3b43743070a07997e07ad9119a
+2020-05-16 15:13:58.358  WARN 16812 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a:Heartbeat@localhost failed with response code 404
+2020-05-16 15:13:58.358  WARN 16812 --- [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a:Heartbeat@localhost: missing entry.
+2020-05-16 15:13:58.358  WARN 16812 --- [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a:Heartbeat@localhost: cannot find instance id orders-service:c4de4a3b43743070a07997e07ad9119a and hence replicating the instance with status DOWN
+2020-05-16 15:13:58.358  WARN 16812 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.cluster.ReplicationTask       : The replication of task ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a:Cancel@localhost failed with response code 404
+2020-05-16 15:13:58.358  WARN 16812 --- [TaskBatchingWorker-target_localhost-17] c.netflix.eureka.cluster.PeerEurekaNode  : ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a:Cancel@localhost: missing entry.
+2020-05-16 15:13:58.868  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a with status DOWN (replication=true)
+2020-05-16 15:14:30.399  INFO 16812 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 with status UP (replication=false)
+2020-05-16 15:14:30.907  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 with status UP (replication=true)
+2020-05-16 15:14:55.041  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:15:55.041  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:16:55.042  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:17:55.043  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:18:55.043  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:19:55.049  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2020-05-16 15:20:55.049  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:21:55.049  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:22:55.050  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 15ms
+2020-05-16 15:23:48.673  INFO 16812 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 13
+2020-05-16 15:23:55.050  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:24:55.053  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:25:55.056  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-16 15:26:55.057  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:27:55.057  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:28:55.058  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:29:55.059  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:30:13.404  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 with status DOWN (replication=false)
+2020-05-16 15:30:13.915  INFO 16812 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 with status DOWN (replication=true)
+2020-05-16 15:30:55.059  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:31:55.059  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:32:55.060  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:33:55.062  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:34:55.062  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:35:55.065  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:36:55.066  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:37:19.531  INFO 16812 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 with status UP (replication=false)
+2020-05-16 15:37:20.038  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 with status UP (replication=true)
+2020-05-16 15:37:55.068  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:38:48.675  INFO 16812 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 15
+2020-05-16 15:38:55.071  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:39:55.072  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:40:55.072  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:41:19.909  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 with status DOWN (replication=false)
+2020-05-16 15:41:20.008  INFO 16812 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 with status DOWN (replication=true)
+2020-05-16 15:41:20.011  WARN 16812 --- [TaskBatchingWorker-target_localhost-7] c.n.eureka.cluster.ReplicationTask       : The replication of task ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927:Heartbeat@localhost failed with response code 409
+2020-05-16 15:41:20.011  WARN 16812 --- [TaskBatchingWorker-target_localhost-7] c.netflix.eureka.cluster.PeerEurekaNode  : Peer wants us to take the instance information from it, since the timestamp differs,Id : orders-service:25ef713642edfa00627fd02df034a927 My Timestamp : 1589632639486, Peer's timestamp: 1589632879905
+2020-05-16 15:41:20.011  INFO 16812 --- [TaskBatchingWorker-target_localhost-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 with status DOWN (replication=true)
+2020-05-16 15:41:55.074  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:42:55.075  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:43:55.077  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:44:55.077  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:45:55.077  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-16 15:46:55.078  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:47:55.079  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:48:55.079  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:49:29.485  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:49:31.098  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-discovery-service, profiles=[default], label=null, version=8c35bc17ebb24b72588f97c1468179e900dbd7da, state=null
+2020-05-16 15:49:31.099  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/eureka-discovery-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:49:31.109  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.boot.SpringApplication               : No active profile set, falling back to default profiles: default
+2020-05-16 15:49:31.119  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.boot.SpringApplication               : Started application in 1.812 seconds (JVM running for 6068.545)
+2020-05-16 15:49:31.299  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-16 15:49:31.299  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-16 15:49:31.306  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-16 15:49:31.306  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-16 15:49:31.306  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2020-05-16 15:49:31.307  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589633371307 with initial instances count: 0
+2020-05-16 15:49:31.309  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-DISCOVERY-SERVICE with eureka with status DOWN
+2020-05-16 15:49:31.309  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-DISCOVERY-SERVICE with eureka with status UP
+2020-05-16 15:49:31.310  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request. Keys refreshed [config.client.version, gateway.ip, spring.jpa.hibernate.ddl-auto]
+2020-05-16 15:49:31.320  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-16 15:49:31.326  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory.publisher#47700185:0/SimpleConnection@480b1afd [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52224]
+2020-05-16 15:49:31.327  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (springCloudBus.anonymous.UJh723u_TyScST_34ZYptg) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2020-05-16 15:49:33.495  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:49:33.788  INFO 16812 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.100:zuul:8011 (replication=false)
+2020-05-16 15:49:33.990  INFO 16812 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=false)
+2020-05-16 15:49:33.993  INFO 16812 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=false)
+2020-05-16 15:49:34.295  INFO 16812 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.100:zuul:8011 (replication=true)
+2020-05-16 15:49:34.295  INFO 16812 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=true)
+2020-05-16 15:49:34.987  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:c60e3aec2d7c679b8807117e90af69bb (replication=false)
+2020-05-16 15:49:35.089  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-discovery-service, profiles=[default], label=null, version=8c35bc17ebb24b72588f97c1468179e900dbd7da, state=null
+2020-05-16 15:49:35.090  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/eureka-discovery-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:49:35.101  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.boot.SpringApplication               : No active profile set, falling back to default profiles: default
+2020-05-16 15:49:35.120  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.boot.SpringApplication               : Started application in 1.769 seconds (JVM running for 6072.546)
+2020-05-16 15:49:35.292  INFO 16812 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:cb32579645be0263083791e0822823de with status UP (replication=false)
+2020-05-16 15:49:35.315  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-16 15:49:35.315  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-16 15:49:35.317  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-16 15:49:35.317  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-16 15:49:35.318  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2020-05-16 15:49:35.318  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589633375318 with initial instances count: 0
+2020-05-16 15:49:35.320  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-DISCOVERY-SERVICE with eureka with status DOWN
+2020-05-16 15:49:35.321  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-DISCOVERY-SERVICE with eureka with status UP
+2020-05-16 15:49:35.321  INFO 16812 --- [springCloudBus.anonymous.UJh723u_TyScST_34ZYptg-1] o.s.cloud.bus.event.RefreshListener      : Received remote refresh request. Keys refreshed []
+2020-05-16 15:49:35.367  INFO 16812 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:cb32579645be0263083791e0822823de with status UP (replication=false)
+2020-05-16 15:49:35.492  WARN 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:c60e3aec2d7c679b8807117e90af69bb
+2020-05-16 15:49:35.493  INFO 16812 --- [http-nio-8001-exec-7] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:c60e3aec2d7c679b8807117e90af69bb
+2020-05-16 15:49:35.493  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:cb32579645be0263083791e0822823de with status UP (replication=true)
+2020-05-16 15:49:35.493  WARN 16812 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:c60e3aec2d7c679b8807117e90af69bb:Cancel@localhost failed with response code 404
+2020-05-16 15:49:35.493  WARN 16812 --- [TaskBatchingWorker-target_localhost-18] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:c60e3aec2d7c679b8807117e90af69bb:Cancel@localhost: missing entry.
+2020-05-16 15:49:38.855  INFO 16812 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.100:zuul:8011 (replication=false)
+2020-05-16 15:49:39.028  INFO 16812 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=false)
+2020-05-16 15:49:39.329  INFO 16812 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:cb32579645be0263083791e0822823de (replication=false)
+2020-05-16 15:49:39.364  INFO 16812 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance ZUUL/192.168.0.100:zuul:8011 (replication=true)
+2020-05-16 15:49:39.365  INFO 16812 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=true)
+2020-05-16 15:49:39.365  WARN 16812 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:cb32579645be0263083791e0822823de
+2020-05-16 15:49:39.365  INFO 16812 --- [http-nio-8001-exec-5] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:cb32579645be0263083791e0822823de
+2020-05-16 15:49:39.366  WARN 16812 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:cb32579645be0263083791e0822823de:Cancel@localhost failed with response code 404
+2020-05-16 15:49:39.366  WARN 16812 --- [TaskBatchingWorker-target_localhost-5] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:cb32579645be0263083791e0822823de:Cancel@localhost: missing entry.
+2020-05-16 15:49:39.544  INFO 16812 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 with status UP (replication=false)
+2020-05-16 15:49:39.548  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 with status UP (replication=false)
+2020-05-16 15:49:40.060  INFO 16812 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 with status UP (replication=true)
+2020-05-16 15:49:55.080  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:50:55.080  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:51:55.081  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-16 15:52:01.549  INFO 16812 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 with status DOWN (replication=false)
+2020-05-16 15:52:02.061  INFO 16812 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 with status DOWN (replication=true)
+2020-05-16 15:52:05.315  INFO 16812 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2 (replication=false)
+2020-05-16 15:52:05.818  WARN 16812 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2
+2020-05-16 15:52:05.818  INFO 16812 --- [http-nio-8001-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USERS-SERVICE - users-service:1295740ddb0c6253dc69e9866f96dcf2
+2020-05-16 15:52:05.819  WARN 16812 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2:Cancel@localhost failed with response code 404
+2020-05-16 15:52:05.819  WARN 16812 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : USERS-SERVICE/users-service:1295740ddb0c6253dc69e9866f96dcf2:Cancel@localhost: missing entry.
+2020-05-16 15:52:37.513  INFO 16812 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:21a33c378318e2d2053df597154a293a with status UP (replication=false)
+2020-05-16 15:52:38.024  INFO 16812 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:21a33c378318e2d2053df597154a293a with status UP (replication=true)
+2020-05-16 15:52:55.083  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-16 15:53:48.676  INFO 16812 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 15
+2020-05-16 15:53:55.084  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-16 15:54:55.085  INFO 16812 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms

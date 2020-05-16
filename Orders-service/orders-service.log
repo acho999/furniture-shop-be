@@ -1828,3 +1828,855 @@ Using generated security password: 94db6751-781a-4b2e-b85b-9f6def593727
 2020-05-16 14:59:27.626  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a: registering service...
 2020-05-16 14:59:27.631  INFO [orders-service,,,] 26381 --- [restartedMain] com.main.OrdersServiceApplication        : Started OrdersServiceApplication in 38.128 seconds (JVM running for 43.94)
 2020-05-16 14:59:27.650  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a - registration status: 204
+2020-05-16 15:01:30.844  WARN [orders-service,2f5f5a2d20235a01,a0aeebbeb12a2d8c,true] 26381 --- [AsynchThread-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 547, SQLState: 23000
+2020-05-16 15:01:30.845 ERROR [orders-service,2f5f5a2d20235a01,a0aeebbeb12a2d8c,true] 26381 --- [AsynchThread-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : The INSERT statement conflicted with the FOREIGN KEY constraint "FKk5cvheuwk7e9l9ftdx9lyop7g". The conflict occurred in database "FurnitureShopDb", table "dbo.orders", column 'id'.
+2020-05-16 15:01:30.846  INFO [orders-service,2f5f5a2d20235a01,a0aeebbeb12a2d8c,true] 26381 --- [AsynchThread-1] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-05-16 15:01:30.899 ERROR [orders-service,2f5f5a2d20235a01,2f5f5a2d20235a01,true] 26381 --- [http-nio-auto-1-exec-1] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:65) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.main.security.AuthorizaionFilter.doFilterInternal(AuthorizaionFilter.java:60) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:82) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) [spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:109) [spring-boot-actuator-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357) ~[na:1.8.0_241]
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908) ~[na:1.8.0_241]
+	at com.main.controllers.OrdersController.createOrder(OrdersController.java:54) ~[classes/:na]
+	at com.main.controllers.OrdersController$$FastClassBySpringCGLIB$$75c4820.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at com.main.controllers.OrdersController$$EnhancerBySpringCGLIB$$8ef6fffd.createOrder(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 85 common frames omitted
+Caused by: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.lambda$doSubmit$3(AsyncExecutionAspectSupport.java:276) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604) ~[na:1.8.0_241]
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:67) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	... 1 common frames omitted
+
+2020-05-16 15:01:30.908 ERROR [orders-service,,,] 26381 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only] with root cause
+
+org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.lambda$doSubmit$3(AsyncExecutionAspectSupport.java:276) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604) ~[na:1.8.0_241]
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:67) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-16 15:01:31.148  WARN [orders-service,,,] 26381 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@24639346}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-16 15:01:31.149  WARN [orders-service,,,] 26381 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@24639346}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 2 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-16 15:04:27.380  INFO [orders-service,,,] 26381 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:05:34.874  WARN [orders-service,e037a8546e67090e,0537072c69daec55,true] 26381 --- [AsynchThread-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 547, SQLState: 23000
+2020-05-16 15:05:34.883 ERROR [orders-service,e037a8546e67090e,0537072c69daec55,true] 26381 --- [AsynchThread-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : The INSERT statement conflicted with the FOREIGN KEY constraint "FKk5cvheuwk7e9l9ftdx9lyop7g". The conflict occurred in database "FurnitureShopDb", table "dbo.orders", column 'id'.
+2020-05-16 15:05:34.893  INFO [orders-service,e037a8546e67090e,0537072c69daec55,true] 26381 --- [AsynchThread-2] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-05-16 15:09:27.381  INFO [orders-service,,,] 26381 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:10:30.819 ERROR [orders-service,e037a8546e67090e,e037a8546e67090e,true] 26381 --- [http-nio-auto-1-exec-2] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:65) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.main.security.AuthorizaionFilter.doFilterInternal(AuthorizaionFilter.java:60) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:82) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) [spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:109) [spring-boot-actuator-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357) ~[na:1.8.0_241]
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1908) ~[na:1.8.0_241]
+	at com.main.controllers.OrdersController.createOrder(OrdersController.java:54) ~[classes/:na]
+	at com.main.controllers.OrdersController$$FastClassBySpringCGLIB$$75c4820.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:769) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at com.main.controllers.OrdersController$$EnhancerBySpringCGLIB$$8ef6fffd.createOrder(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 85 common frames omitted
+Caused by: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.lambda$doSubmit$3(AsyncExecutionAspectSupport.java:276) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604) ~[na:1.8.0_241]
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:67) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	... 1 common frames omitted
+
+2020-05-16 15:10:30.823 ERROR [orders-service,,,] 26381 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.concurrent.ExecutionException: org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only] with root cause
+
+org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:752) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:747) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionAspectSupport.lambda$doSubmit$3(AsyncExecutionAspectSupport.java:276) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604) ~[na:1.8.0_241]
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:67) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[na:1.8.0_241]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-16 15:10:30.830 ERROR [orders-service,e037a8546e67090e,e037a8546e67090e,true] 26381 --- [http-nio-auto-1-exec-2] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1153) ~[jackson-core-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:923) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:294) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:287) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:226) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:65) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) [spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_241]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_241]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_241]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_241]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[na:1.8.0_241]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1279) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:694) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:684) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:564) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:217) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1142) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:400) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	... 79 common frames omitted
+
+2020-05-16 15:10:30.832 ERROR [orders-service,,,] 26381 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:309) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:272) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:118) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1153) ~[jackson-core-2.10.2.jar:2.10.2]
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:923) ~[jackson-databind-2.10.2.jar:2.10.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:294) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:287) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:226) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:84) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:65) ~[brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:461) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:348) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:173) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[na:1.8.0_241]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[na:1.8.0_241]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[na:1.8.0_241]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[na:1.8.0_241]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[na:1.8.0_241]
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:138) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1279) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:694) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:684) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:564) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:217) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1142) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:400) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.Response.action(Response.java:209) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	... 79 common frames omitted
+
+2020-05-16 15:13:52.996  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERS-SERVICE with eureka with status DOWN
+2020-05-16 15:13:52.998  WARN [orders-service,,,] 26381 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589631232998, current=DOWN, previous=UP]
+2020-05-16 15:13:52.999  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a: registering service...
+2020-05-16 15:13:53.004  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a - registration status: 204
+2020-05-16 15:13:53.022  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-16 15:13:53.866  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-16 15:13:53.867  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.EBIErzkDTgCtxNM4c_H6AQ'
+2020-05-16 15:13:53.877  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.EBIErzkDTgCtxNM4c_H6AQ.errors' has 1 subscriber(s).
+2020-05-16 15:13:53.878  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.EBIErzkDTgCtxNM4c_H6AQ.errors' has 0 subscriber(s).
+2020-05-16 15:13:53.882  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-16 15:13:53.883  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-16 15:13:53.883  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-16 15:13:53.891  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-16 15:13:53.895  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-16 15:13:54.872  INFO [orders-service,,,] 26381 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6e52b2ed
+2020-05-16 15:13:54.873  INFO [orders-service,,,] 26381 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-16 15:13:57.880  INFO [orders-service,,,] 26381 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-16 15:13:57.880  WARN [orders-service,,,] 26381 --- [DiscoveryClient-0] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2020-05-16 15:13:57.885  INFO [orders-service,,,] 26381 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:c4de4a3b43743070a07997e07ad9119a - deregister  status: 200
+2020-05-16 15:13:57.894  INFO [orders-service,,,] 26381 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-16 15:14:08.453  INFO [orders-service,,,] 26381 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:14:09.568  INFO [orders-service,,,] 26381 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-service, profiles=[default], label=null, version=ca5b3c35ea61f77215743107acc631aa26573ad9, state=null
+2020-05-16 15:14:09.568  INFO [orders-service,,,] 26381 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/orders-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:14:09.577  INFO [orders-service,,,] 26381 --- [restartedMain] com.main.OrdersServiceApplication        : No active profile set, falling back to default profiles: default
+2020-05-16 15:14:09.952  INFO [orders-service,,,] 26381 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-16 15:14:09.965  INFO [orders-service,,,] 26381 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 3 JPA repository interfaces.
+2020-05-16 15:14:10.284  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f9269902-40d5-316e-930f-95599b8b978b
+2020-05-16 15:14:10.325  INFO [orders-service,,,] 26381 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-16 15:14:10.326  INFO [orders-service,,,] 26381 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-16 15:14:10.328  INFO [orders-service,,,] 26381 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-16 15:14:10.379  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.381  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.398  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.404  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.409  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.412  INFO [orders-service,,,] 26381 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:14:10.657  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-16 15:14:10.658  INFO [orders-service,,,] 26381 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-16 15:14:10.658  INFO [orders-service,,,] 26381 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-16 15:14:10.668  INFO [orders-service,,,] 26381 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-16 15:14:10.669  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1088 ms
+2020-05-16 15:14:11.049  WARN [orders-service,,,] 26381 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@9bba6f8}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-16 15:14:11.426  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-16 15:14:11.752  INFO [orders-service,,,] 26381 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-16 15:14:16.792  INFO [orders-service,,,] 26381 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-16 15:14:22.475  INFO [orders-service,,,] 26381 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-16 15:14:22.475  INFO [orders-service,,,] 26381 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 15:14:22.680  WARN [orders-service,,,] 26381 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-16 15:14:22.757  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-16 15:14:22.758  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-16 15:14:22.824  INFO [orders-service,,,] 26381 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bf58e35a-e72c-44c8-87ab-ac078180ba25
+
+2020-05-16 15:14:22.872  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e6a82f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@48db1f17, org.springframework.security.web.header.HeaderWriterFilter@710d914a, org.springframework.security.web.authentication.logout.LogoutFilter@7f5c857f, com.main.security.AuthorizaionFilter@44f72f62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@58529c65, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f2ae351, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75fe7ad, org.springframework.security.web.session.SessionManagementFilter@2361d6a3, org.springframework.security.web.access.ExceptionTranslationFilter@29ef1bb6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ae42890]
+2020-05-16 15:14:22.890  WARN [orders-service,,,] 26381 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-16 15:14:22.890  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-16 15:14:23.561  WARN [orders-service,,,] 26381 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-16 15:14:23.622  WARN [orders-service,,,] 26381 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-16 15:14:23.796  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-16 15:14:23.926  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-16 15:14:23.953  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-16 15:14:23.961  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-16 15:14:23.969  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-16 15:14:23.976  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-16 15:14:23.990  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@5d9616c5
+2020-05-16 15:14:23.998  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-16 15:14:24.012  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-16 15:14:24.012  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-16 15:14:24.013  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-16 15:14:29.063  INFO [orders-service,,,] 26381 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:14:29.976  INFO [orders-service,,,] 26381 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-service, profiles=[default], label=null, version=ca5b3c35ea61f77215743107acc631aa26573ad9, state=null
+2020-05-16 15:14:29.976  INFO [orders-service,,,] 26381 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/orders-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:14:30.035  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-16 15:14:30.043  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1a091e50:0/SimpleConnection@414459c8 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 51794]
+2020-05-16 15:14:30.047  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-16 15:14:30.073  INFO [orders-service,,,] 26381 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw, bound to: springCloudBus
+2020-05-16 15:14:30.077  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw.errors' has 1 subscriber(s).
+2020-05-16 15:14:30.077  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw.errors' has 2 subscriber(s).
+2020-05-16 15:14:30.079  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw'
+2020-05-16 15:14:30.105  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw.errors
+2020-05-16 15:14:30.151  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51795 (http) with context path ''
+2020-05-16 15:14:30.152  INFO [orders-service,,,] 26381 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 51795
+2020-05-16 15:14:30.154  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-16 15:14:30.160  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-16 15:14:30.162  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-16 15:14:30.162  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-16 15:14:30.162  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-16 15:14:30.162  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-16 15:14:30.271  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:14:30.276  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-16 15:14:30.277  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-16 15:14:30.381  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-16 15:14:30.381  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-16 15:14:30.382  INFO [orders-service,,,] 26381 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-16 15:14:30.383  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589631270383 with initial instances count: 3
+2020-05-16 15:14:30.394  INFO [orders-service,,,] 26381 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDERS-SERVICE with eureka with status UP
+2020-05-16 15:14:30.394  INFO [orders-service,,,] 26381 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589631270394, current=UP, previous=STARTING]
+2020-05-16 15:14:30.394  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512: registering service...
+2020-05-16 15:14:30.398  INFO [orders-service,,,] 26381 --- [restartedMain] com.main.OrdersServiceApplication        : Started OrdersServiceApplication in 32.167 seconds (JVM running for 946.725)
+2020-05-16 15:14:30.400  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 - registration status: 204
+2020-05-16 15:14:30.402  INFO [orders-service,,,] 26381 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-16 15:19:30.270  INFO [orders-service,,,] 26381 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:24:30.251  INFO [orders-service,,,] 26381 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:29:30.244  INFO [orders-service,,,] 26381 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:30:13.400  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERS-SERVICE with eureka with status DOWN
+2020-05-16 15:30:13.400  WARN [orders-service,,,] 26381 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589632213400, current=DOWN, previous=UP]
+2020-05-16 15:30:13.400  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512: registering service...
+2020-05-16 15:30:13.405  INFO [orders-service,,,] 26381 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:27c51f00674554cb042ddaff1b6f9512 - registration status: 204
+2020-05-16 15:30:13.422  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-16 15:30:14.331  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-16 15:30:14.331  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw'
+2020-05-16 15:30:14.339  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw.errors' has 1 subscriber(s).
+2020-05-16 15:30:14.339  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Y5QpRq3ITLO4jGNMOg2ZHw.errors' has 0 subscriber(s).
+2020-05-16 15:30:14.341  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-16 15:30:14.342  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-16 15:30:14.342  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-16 15:30:14.345  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-16 15:30:14.346  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@5d9616c5
+2020-05-16 15:30:14.583  INFO [orders-service,,,] 26381 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-16 15:30:14.584  INFO [orders-service,,,] 26381 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-16 15:36:50.863  INFO [orders-service,,,] 33588 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:36:51.628  INFO [orders-service,,,] 33588 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-service, profiles=[default], label=null, version=ca5b3c35ea61f77215743107acc631aa26573ad9, state=null
+2020-05-16 15:36:51.629  INFO [orders-service,,,] 33588 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/orders-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:36:51.661  INFO [orders-service,,,] 33588 --- [restartedMain] com.main.OrdersServiceApplication        : No active profile set, falling back to default profiles: default
+2020-05-16 15:36:52.464  INFO [orders-service,,,] 33588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-16 15:36:52.537  INFO [orders-service,,,] 33588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63ms. Found 3 JPA repository interfaces.
+2020-05-16 15:36:52.764  WARN [orders-service,,,] 33588 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:36:53.086  WARN [orders-service,,,] 33588 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:36:53.168  WARN [orders-service,,,] 33588 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:36:53.557  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f9269902-40d5-316e-930f-95599b8b978b
+2020-05-16 15:36:53.803  INFO [orders-service,,,] 33588 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-16 15:36:53.809  INFO [orders-service,,,] 33588 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-16 15:36:53.815  INFO [orders-service,,,] 33588 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-16 15:36:54.121  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.126  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.164  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.180  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.193  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.199  INFO [orders-service,,,] 33588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:36:54.882  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-16 15:36:54.892  INFO [orders-service,,,] 33588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-16 15:36:54.892  INFO [orders-service,,,] 33588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-16 15:36:55.040  INFO [orders-service,,,] 33588 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-16 15:36:55.041  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3366 ms
+2020-05-16 15:36:55.225  WARN [orders-service,,,] 33588 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-16 15:36:55.225  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-16 15:36:55.234  INFO [orders-service,,,] 33588 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@273d41ea
+2020-05-16 15:36:55.891  WARN [orders-service,,,] 33588 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@3d0653b4}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-16 15:36:56.541  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-16 15:36:57.268  INFO [orders-service,,,] 33588 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-16 15:36:57.350  INFO [orders-service,,,] 33588 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-16 15:36:57.556  INFO [orders-service,,,] 33588 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-16 15:37:02.872  INFO [orders-service,,,] 33588 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-16 15:37:09.542  INFO [orders-service,,,] 33588 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-16 15:37:09.552  INFO [orders-service,,,] 33588 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 15:37:10.017  WARN [orders-service,,,] 33588 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-16 15:37:10.109  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-16 15:37:10.110  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-16 15:37:10.214  INFO [orders-service,,,] 33588 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a11394a8-b824-45b2-908b-a5ddf3f53a8b
+
+2020-05-16 15:37:10.349  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@477b2fe0, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e6f3a6e, org.springframework.security.web.header.HeaderWriterFilter@cb4345a, org.springframework.security.web.authentication.logout.LogoutFilter@72dcc866, com.main.security.AuthorizaionFilter@27428657, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4089c685, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2929f62b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e2b029e, org.springframework.security.web.session.SessionManagementFilter@484b6f57, org.springframework.security.web.access.ExceptionTranslationFilter@1d40c1e4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58f08568]
+2020-05-16 15:37:10.376  WARN [orders-service,,,] 33588 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-16 15:37:10.376  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-16 15:37:11.456  WARN [orders-service,,,] 33588 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-16 15:37:11.559  WARN [orders-service,,,] 33588 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-16 15:37:11.866  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-16 15:37:12.127  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-16 15:37:12.270  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-16 15:37:12.367  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-16 15:37:12.421  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-16 15:37:12.429  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-16 15:37:12.455  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@4f6d0959
+2020-05-16 15:37:12.548  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-16 15:37:12.586  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-16 15:37:12.586  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-16 15:37:12.586  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-16 15:37:17.648  INFO [orders-service,,,] 33588 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:37:18.234  INFO [orders-service,,,] 33588 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-service, profiles=[default], label=null, version=ca5b3c35ea61f77215743107acc631aa26573ad9, state=null
+2020-05-16 15:37:18.234  INFO [orders-service,,,] 33588 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/orders-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:37:18.415  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-16 15:37:18.452  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3582c865:0/SimpleConnection@79cbf893 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 52047]
+2020-05-16 15:37:18.488  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-16 15:37:18.528  INFO [orders-service,,,] 33588 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.qSeNMgvGRACTI-79flfjqQ, bound to: springCloudBus
+2020-05-16 15:37:18.545  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.qSeNMgvGRACTI-79flfjqQ.errors' has 1 subscriber(s).
+2020-05-16 15:37:18.546  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.qSeNMgvGRACTI-79flfjqQ.errors' has 2 subscriber(s).
+2020-05-16 15:37:18.563  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.qSeNMgvGRACTI-79flfjqQ'
+2020-05-16 15:37:18.595  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.qSeNMgvGRACTI-79flfjqQ.errors
+2020-05-16 15:37:18.708  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52048 (http) with context path ''
+2020-05-16 15:37:18.709  INFO [orders-service,,,] 33588 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52048
+2020-05-16 15:37:18.715  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-16 15:37:18.752  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-16 15:37:18.810  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-16 15:37:18.810  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-16 15:37:18.928  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-16 15:37:18.929  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-16 15:37:19.186  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-16 15:37:19.205  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-16 15:37:19.206  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-16 15:37:19.464  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-16 15:37:19.467  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-16 15:37:19.469  INFO [orders-service,,,] 33588 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-16 15:37:19.474  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1589632639473 with initial instances count: 4
+2020-05-16 15:37:19.485  INFO [orders-service,,,] 33588 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDERS-SERVICE with eureka with status UP
+2020-05-16 15:37:19.486  INFO [orders-service,,,] 33588 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589632639486, current=UP, previous=STARTING]
+2020-05-16 15:37:19.488  INFO [orders-service,,,] 33588 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927: registering service...
+2020-05-16 15:37:19.493  INFO [orders-service,,,] 33588 --- [restartedMain] com.main.OrdersServiceApplication        : Started OrdersServiceApplication in 39.55 seconds (JVM running for 45.388)
+2020-05-16 15:37:19.534  INFO [orders-service,,,] 33588 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 - registration status: 204
+2020-05-16 15:39:17.814  INFO [orders-service,,,] 33588 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-16 15:39:17.815  INFO [orders-service,,,] 33588 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-16 15:39:17.833  INFO [orders-service,,,] 33588 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-05-16 15:39:53.625  WARN [orders-service,7d8a24660c4d7a85,f120fab2935a08b0,true] 33588 --- [AsynchThread-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 547, SQLState: 23000
+2020-05-16 15:39:53.634 ERROR [orders-service,7d8a24660c4d7a85,f120fab2935a08b0,true] 33588 --- [AsynchThread-1] o.h.engine.jdbc.spi.SqlExceptionHelper   : The INSERT statement conflicted with the FOREIGN KEY constraint "FKk5cvheuwk7e9l9ftdx9lyop7g". The conflict occurred in database "FurnitureShopDb", table "dbo.orders", column 'id'.
+2020-05-16 15:39:53.685  INFO [orders-service,7d8a24660c4d7a85,f120fab2935a08b0,true] 33588 --- [AsynchThread-1] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2020-05-16 15:41:19.905  INFO [orders-service,,,] 33588 --- [Thread-2] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERS-SERVICE with eureka with status DOWN
+2020-05-16 15:41:19.905  WARN [orders-service,,,] 33588 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1589632879905, current=DOWN, previous=UP]
+2020-05-16 15:41:19.905  INFO [orders-service,,,] 33588 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927: registering service...
+2020-05-16 15:41:19.910  INFO [orders-service,,,] 33588 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:25ef713642edfa00627fd02df034a927 - registration status: 204
+2020-05-16 15:41:19.927  INFO [orders-service,,,] 33588 --- [Thread-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-16 15:54:45.773  INFO [orders-service,,,] 37064 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-16 15:54:46.506  INFO [orders-service,,,] 37064 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=orders-service, profiles=[default], label=null, version=8c35bc17ebb24b72588f97c1468179e900dbd7da, state=null
+2020-05-16 15:54:46.508  INFO [orders-service,,,] 37064 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/orders-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-16 15:54:46.540  INFO [orders-service,,,] 37064 --- [restartedMain] com.main.OrdersServiceApplication        : No active profile set, falling back to default profiles: default
+2020-05-16 15:54:47.292  INFO [orders-service,,,] 37064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-16 15:54:47.362  INFO [orders-service,,,] 37064 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 3 JPA repository interfaces.
+2020-05-16 15:54:47.573  WARN [orders-service,,,] 37064 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:54:47.879  WARN [orders-service,,,] 37064 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:54:47.954  WARN [orders-service,,,] 37064 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-16 15:54:48.314  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f9269902-40d5-316e-930f-95599b8b978b
+2020-05-16 15:54:48.552  INFO [orders-service,,,] 37064 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-16 15:54:48.558  INFO [orders-service,,,] 37064 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-16 15:54:48.563  INFO [orders-service,,,] 37064 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-16 15:54:48.869  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:48.875  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:48.912  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:48.927  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:48.942  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:48.948  INFO [orders-service,,,] 37064 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-16 15:54:49.578  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-16 15:54:49.587  INFO [orders-service,,,] 37064 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-16 15:54:49.587  INFO [orders-service,,,] 37064 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-16 15:54:49.713  INFO [orders-service,,,] 37064 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-16 15:54:49.714  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3160 ms
+2020-05-16 15:54:49.887  WARN [orders-service,,,] 37064 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-16 15:54:49.887  INFO [orders-service,,,] 37064 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-16 15:54:49.895  INFO [orders-service,,,] 37064 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2e78f3e4
+2020-05-16 15:54:50.478  WARN [orders-service,,,] 37064 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@235133b9}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-16 15:54:51.078  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-16 15:54:51.739  INFO [orders-service,,,] 37064 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-16 15:54:51.817  INFO [orders-service,,,] 37064 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-16 15:54:52.009  INFO [orders-service,,,] 37064 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-16 15:54:57.301  INFO [orders-service,,,] 37064 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-16 15:55:03.893  INFO [orders-service,,,] 37064 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-16 15:55:03.902  INFO [orders-service,,,] 37064 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 15:55:04.348  WARN [orders-service,,,] 37064 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-16 15:55:04.438  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-16 15:55:04.439  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-16 15:55:04.540  INFO [orders-service,,,] 37064 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: fb614926-8cbf-46b7-a5bf-5ba64af4d927
+
+2020-05-16 15:55:04.669  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73a9c430, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a363a4d, org.springframework.security.web.header.HeaderWriterFilter@6296173a, org.springframework.security.web.authentication.logout.LogoutFilter@65b8fa1, com.main.security.AuthorizaionFilter@42520aa6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7269faba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34eab6a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@606f971e, org.springframework.security.web.session.SessionManagementFilter@378f9f4a, org.springframework.security.web.access.ExceptionTranslationFilter@30affc56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4cb8a1f1]
+2020-05-16 15:55:04.695  WARN [orders-service,,,] 37064 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-16 15:55:04.696  INFO [orders-service,,,] 37064 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-16 15:55:05.820  WARN [orders-service,,,] 37064 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-16 15:55:05.909  WARN [orders-service,,,] 37064 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-16 15:55:06.200  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-16 15:55:06.478  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-16 15:55:06.633  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-16 15:55:06.736  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-16 15:55:06.748  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-16 15:55:06.766  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-16 15:55:06.836  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6c05334d
+2020-05-16 15:55:06.936  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
