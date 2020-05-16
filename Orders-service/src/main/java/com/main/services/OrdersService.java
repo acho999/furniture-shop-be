@@ -4,10 +4,16 @@ import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import org.hibernate.cfg.SetSimpleValueTypeSecondPass;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
@@ -22,6 +28,7 @@ import com.main.models.Order;
 import com.main.models.Product;
 import com.main.repositories.CustomerRepository;
 import com.main.repositories.OrdersRepository;
+import com.main.repositories.ProductsRepository;
 
 @Service
 @Transactional(readOnly = true)
@@ -29,6 +36,9 @@ public class OrdersService implements IOrdersService {
 
 	@Autowired
 	private OrdersRepository repo;
+	
+	@Autowired
+	private ProductsRepository productRepo;
 	
 	@Autowired
 	private CustomerRepository customerRepo;
@@ -41,21 +51,25 @@ public class OrdersService implements IOrdersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<OrderDTO> createOrder(OrderDTO order) {
 		
-        List<Product> products = new ArrayList<Product>();
-		
-		Type listType = new TypeToken<List<Product>>() {}.getType();
+        List<String> products = new ArrayList<>();
+        
+        order.getOrderedProducts().forEach(x->products.add(x.getId()));
+        
+        List<Product> entities = productRepo.findAllById(products);
+        
+		//Type listType = new TypeToken<List<Product>>() {}.getType();
 
 		try {
-
+			
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 			Order entity = mapper.map(order, Order.class);
 			
 			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
 			
-			products = this.mapper.map(order.getOrderedProducts(),listType);
+			//products = this.mapper.map(order.getOrderedProducts(),listType);
 			
-			order.setOrderedProducts(products);
+			entity.setOrderedProducts(entities);
 
 			entity.setSumOfOrder(sum);
 			
@@ -72,8 +86,6 @@ public class OrdersService implements IOrdersService {
 			entity.setCustomer(customer);
 
 			repo.saveAndFlush(entity);
-			
-			System.out.println(entity.getId());
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
 			
