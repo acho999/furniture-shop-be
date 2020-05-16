@@ -38,7 +38,7 @@ public class Image implements Serializable{
 	@Column(name = "imageBytes")
 	private Blob imageBytes;
 
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_Id", referencedColumnName = "id")
 	private Product product;
 
