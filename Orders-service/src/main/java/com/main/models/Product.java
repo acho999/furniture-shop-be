@@ -53,9 +53,8 @@ public class Product implements Serializable{
 	//@JsonIgnore
 	@OneToMany(mappedBy = "product",
 			   targetEntity = Image.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL,
-			   orphanRemoval = true)
+			   fetch = FetchType.EAGER,
+			   cascade = CascadeType.ALL)
 	private List<Image> images = new ArrayList<Image>();
 	
 	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class,cascade = CascadeType.ALL)

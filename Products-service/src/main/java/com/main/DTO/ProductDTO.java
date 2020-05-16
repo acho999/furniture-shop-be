@@ -26,6 +26,8 @@ public class ProductDTO implements Serializable{
 	
 	private String categoryId;
 	
+	private Integer quantity;
+	
 	//@JsonIgnore
 	//private List<Image> images = new ArrayList<Image>();
 	
@@ -125,6 +127,22 @@ public class ProductDTO implements Serializable{
 
 	public void setCategoryId(String category) {
 		this.categoryId = category;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 }
