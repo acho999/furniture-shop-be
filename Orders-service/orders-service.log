@@ -2680,3 +2680,6 @@ Using generated security password: fb614926-8cbf-46b7-a5bf-5ba64af4d927
 2020-05-16 15:55:06.766  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
 2020-05-16 15:55:06.836  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6c05334d
 2020-05-16 15:55:06.936  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-16 15:55:06.986  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-16 15:55:06.987  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-16 15:55:06.987  INFO [orders-service,,,] 37064 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
