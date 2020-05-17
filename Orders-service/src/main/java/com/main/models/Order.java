@@ -21,12 +21,14 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity
 @Table(name = "orders")
+@Transactional
 public class Order implements Serializable{
 	
 	/**

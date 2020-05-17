@@ -17,6 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,6 +25,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "products")
+@Transactional
 public class Product implements Serializable{
 	
 	
@@ -53,14 +55,14 @@ public class Product implements Serializable{
 	//@JsonIgnore
 	@OneToMany(mappedBy = "product",
 			   targetEntity = Image.class,
-			   fetch = FetchType.EAGER,
+			   fetch = FetchType.LAZY,
 			   cascade = CascadeType.ALL)
 	private List<Image> images = new ArrayList<Image>();
 	
-	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class,cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Order> orders = new ArrayList<Order>();
 	
-	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class,cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Sale> sales = new ArrayList<Sale>();
 	
 	@Column(name = "price")

@@ -11,13 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import oracle.sql.BlobDBAccess;
-
 @Entity
 @Table(name = "images")
+@Transactional
 public class Image implements Serializable{
 	
 	/**

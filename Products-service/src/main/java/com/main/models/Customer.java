@@ -14,48 +14,43 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.transaction.Transactional;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "customers")
+@Transactional
 public class Customer {
-	
+
 	@Id
-	@GeneratedValue//(strategy = GenerationType.IDENTITY)
-	@Column(name="id", nullable = false, unique = true)
+	@GeneratedValue // (strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false, unique = true)
 	private String id;
-	
+
 	@Column(name = "firstName", nullable = false)
 	private String first_name;
-	
+
 	@Column(name = "lastName", nullable = false)
 	private String last_name;
-	
-	@Column(name = "userName", nullable = false,unique = true)
+
+	@Column(name = "userName", nullable = false, unique = true)
 	public String userName;
-	
+
 	@Column(name = "encryptedPassword", nullable = false)
 	private String encryptedPassword;
-	
-	@Column(name = "email", nullable = false,unique = true)
+
+	@Column(name = "email", nullable = false, unique = true)
 	private String email;
-	
+
 	@Column(name = "date_created", nullable = false)
 	private Date date_created;
-	
-	@OneToMany(mappedBy = "customer",
-			   targetEntity = Order.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
-			private List<Order> orders = new ArrayList<Order>();
-			
-			
-			@OneToMany(mappedBy = "customer",
-			   targetEntity = Sale.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
-			private List<Sale> sales = new ArrayList<Sale>();
+
+	@OneToMany(mappedBy = "customer", targetEntity = Order.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Order> orders = new ArrayList<Order>();
+
+	@OneToMany(mappedBy = "customer", targetEntity = Sale.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Sale> sales = new ArrayList<Sale>();
 
 	public String getId() {
 		return id;
@@ -113,7 +108,4 @@ public class Customer {
 		this.userName = userName;
 	}
 
-
-
 }
-

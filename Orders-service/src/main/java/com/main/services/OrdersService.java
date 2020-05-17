@@ -31,7 +31,7 @@ import com.main.repositories.OrdersRepository;
 import com.main.repositories.ProductsRepository;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 public class OrdersService implements IOrdersService {
 
 	@Autowired
@@ -91,7 +91,7 @@ public class OrdersService implements IOrdersService {
 			
 			returnDto.setCustomerId(entity.getId());
 
-			return CompletableFuture.completedFuture(returnDto);
+			return CompletableFuture.completedFuture(new OrderDTO());
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
