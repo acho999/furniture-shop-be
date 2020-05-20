@@ -203,13 +203,17 @@ public class OrdersService implements IOrdersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<List<OrderDTO>> getOrders() {
 		
+		List<Order> currentOrders = this.repo.findAll();
+		
 		List<OrderDTO> orders = new ArrayList<OrderDTO>();
 		
 		Type listType = new TypeToken<List<OrderDTO>>() {}.getType();
 		
 		try {
+			
+			Hibernate.initialize(currentOrders.stream().map(x->x.getOrderedProducts()));
 		
-			orders = this.mapper.map(this.repo.findAll(),listType);
+			orders = this.mapper.map(currentOrders,listType);
 			
 			return CompletableFuture.completedFuture(orders);
 			
