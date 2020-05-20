@@ -13,6 +13,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.hibernate.Hibernate;
 import org.hibernate.cfg.SetSimpleValueTypeSecondPass;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -29,6 +30,8 @@ import com.main.models.Product;
 import com.main.repositories.CustomerRepository;
 import com.main.repositories.OrdersRepository;
 import com.main.repositories.ProductsRepository;
+
+import javassist.NotFoundException;
 
 @Service
 @Transactional(readOnly = false)
@@ -84,14 +87,21 @@ public class OrdersService implements IOrdersService {
 			Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
 			
 			entity.setCustomer(customer);
+			
+			Hibernate.initialize(entity.getOrderedProducts());
+			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getImages()));
+			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getOrders()));
+			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getSales()));
 
 			repo.saveAndFlush(entity);
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
 			
-			returnDto.setCustomerId(entity.getId());
+			//returnDto.getOrderedProducts().clear();
+			
+			returnDto.setCustomerId(customer.getId());
 
-			return CompletableFuture.completedFuture(new OrderDTO());
+			return CompletableFuture.completedFuture(returnDto);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -175,6 +185,8 @@ public class OrdersService implements IOrdersService {
 				
 				return CompletableFuture.completedFuture(orderDetails);
 				
+			} else {
+				throw new NotFoundException("Order not found!");
 			}
 		
 			

@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.main.models.Customer;
 import com.main.models.Product;
 

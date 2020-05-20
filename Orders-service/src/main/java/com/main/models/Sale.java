@@ -21,6 +21,8 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "sales")
@@ -44,6 +46,7 @@ public class Sale implements Serializable{
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 	
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Products_Sales",
 	joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
