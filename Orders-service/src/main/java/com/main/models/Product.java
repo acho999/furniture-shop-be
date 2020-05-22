@@ -45,10 +45,14 @@ public class Product implements Serializable {
 	@OneToMany(mappedBy = "product", targetEntity = Image.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<Image> images = new ArrayList<Image>();
-
-	@ManyToMany(mappedBy = "orderedProducts", targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	
+	@OneToMany(mappedBy = "product", targetEntity = OrderedProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
-	private List<Order> orders = new ArrayList<Order>();
+	private List<OrderedProduct> orders = new ArrayList<OrderedProduct>();
+
+	/*@ManyToMany(mappedBy = "orderedProducts", targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private List<Order> orders = new ArrayList<Order>();*/
 
 	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnore
@@ -97,14 +101,14 @@ public class Product implements Serializable {
 	public void setImages(List<Image> images) {
 		this.images = images;
 	}
-
+/*
 	public List<Order> getOrders() {
 		return orders;
 	}
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
-	}
+	}*/
 
 	public List<Sale> getSales() {
 		return sales;

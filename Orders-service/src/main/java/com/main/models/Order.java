@@ -53,12 +53,15 @@ public class Order implements Serializable{
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
-	@JsonIgnore
+	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
+	
+	/*@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Products_Orders",
 	joinColumns = { @JoinColumn(name = "order_id",referencedColumnName = "id") }, 
 	inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") })
-	private List<Product> orderedProducts = new ArrayList<Product>();
+	private List<Product> orderedProducts = new ArrayList<Product>();*/
 	
 	@Column(name = "sum")
 	private Double sumOfOrder;
@@ -93,14 +96,14 @@ public class Order implements Serializable{
 	public void setIsPayed(Boolean isPayed) {
 		this.isPayed = isPayed;
 	}
-
+/*
 	public List<Product> getOrderedProducts() {
 		return orderedProducts;
 	}
 
 	public void setOrderedProducts(List<Product> orderedProducts) {
 		this.orderedProducts = orderedProducts;
-	}
+	}*/
 
 	public Double getSumOfOrder() {
 		return sumOfOrder;
