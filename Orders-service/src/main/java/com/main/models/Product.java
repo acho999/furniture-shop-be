@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "products")
-@Transactional
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1123019031040034555L;
@@ -37,9 +36,6 @@ public class Product implements Serializable {
 
 	@Column(name = "productName")
 	private String name;
-
-	@Column(name = "quantity")
-	private Integer quantity;
 
 	// @JsonIgnore
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
@@ -116,14 +112,6 @@ public class Product implements Serializable {
 
 	public void setSales(List<Sale> sales) {
 		this.sales = sales;
-	}
-
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
 	}
 
 	public Double getPrice() {

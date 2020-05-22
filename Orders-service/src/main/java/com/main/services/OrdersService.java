@@ -133,6 +133,18 @@ public class OrdersService implements IOrdersService {
 			orderEntity.setCustomer(customer);
 
 			this.mapper.map(order, returnObject);
+			
+			orderEntity.getOrderedProducts().clear();
+			
+			this.repo.saveAndFlush(orderEntity);
+			
+			List<String> products = new ArrayList<>();
+	        
+	        order.getOrderedProducts().forEach(x->products.add(x.getId()));
+	        
+	        List<Product> entities = productRepo.findAllById(products);
+			
+			orderEntity.setOrderedProducts(entities);
 
 			this.repo.saveAndFlush(orderEntity);
 
