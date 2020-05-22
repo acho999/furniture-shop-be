@@ -49,14 +49,20 @@ public class Product implements Serializable {
 	@OneToMany(mappedBy = "product", targetEntity = OrderedProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<OrderedProduct> orders = new ArrayList<OrderedProduct>();
+	
+	@OneToMany(mappedBy = "product", targetEntity = SoldProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<SoldProduct> sales = new ArrayList<SoldProduct>();
+
 
 	/*@ManyToMany(mappedBy = "orderedProducts", targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<Order> orders = new ArrayList<Order>();*/
 
+	/*
 	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonIgnore
-	private List<Sale> sales = new ArrayList<Sale>();
+	private List<Sale> sales = new ArrayList<Sale>();*/
 
 	@Column(name = "price")
 	private Double price;
@@ -108,7 +114,7 @@ public class Product implements Serializable {
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
-	}*/
+	}
 
 	public List<Sale> getSales() {
 		return sales;
@@ -116,7 +122,7 @@ public class Product implements Serializable {
 
 	public void setSales(List<Sale> sales) {
 		this.sales = sales;
-	}
+	}*/
 
 	public Double getPrice() {
 		return price;

@@ -45,13 +45,16 @@ public class Sale implements Serializable{
 	
 	@Column(name = "dateCreated")
 	private Date dateCreated;
-	
+	/*
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Products_Sales",
 	joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
 	inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") })
-	private List<Product> purchasedProducts = new ArrayList<Product>();
+	private List<Product> purchasedProducts = new ArrayList<Product>();*/
+	
+	@OneToMany(mappedBy = "sale",targetEntity = SoldProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private List<SoldProduct> sale = new ArrayList<SoldProduct>();
 	
 	@Column(name = "sum")
 	private Double sumOfSale;
@@ -76,13 +79,14 @@ public class Sale implements Serializable{
 		this.dateCreated = date;
 	}
 
+	/*
 	public List<Product> getPurchasedProducts() {
 		return purchasedProducts;
 	}
 
 	public void setPurchasedProducts(List<Product> purchasedProducts) {
 		this.purchasedProducts = purchasedProducts;
-	}
+	}*/
 
 	public Double getSumOfSale() {
 		return sumOfSale;
