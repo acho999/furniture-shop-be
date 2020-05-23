@@ -12,8 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -21,15 +19,14 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "sales")
 @Transactional
 public class Sale implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7783074861833597371L;
 
 	@Id
@@ -44,11 +41,8 @@ public class Sale implements Serializable{
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "Products_Sales",
-	joinColumns = { @JoinColumn(name = "sale_id",referencedColumnName = "id") }, 
-	inverseJoinColumns = { @JoinColumn(name = "product_id",referencedColumnName = "id") })
-	private List<Product> purchasedProducts = new ArrayList<Product>();
+	@OneToMany(mappedBy = "sale",targetEntity = SoldProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private List<SoldProduct> sale = new ArrayList<SoldProduct>();
 	
 	@Column(name = "sum")
 	private Double sumOfSale;
@@ -71,14 +65,6 @@ public class Sale implements Serializable{
 
 	public void setDateCreated(Date date) {
 		this.dateCreated = date;
-	}
-
-	public List<Product> getPurchasedProducts() {
-		return purchasedProducts;
-	}
-
-	public void setPurchasedProducts(List<Product> purchasedProducts) {
-		this.purchasedProducts = purchasedProducts;
 	}
 
 	public Double getSumOfSale() {

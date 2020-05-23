@@ -53,17 +53,7 @@ public class Product implements Serializable {
 	@OneToMany(mappedBy = "product", targetEntity = SoldProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<SoldProduct> sales = new ArrayList<SoldProduct>();
-
-
-	/*@ManyToMany(mappedBy = "orderedProducts", targetEntity = Order.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JsonIgnore
-	private List<Order> orders = new ArrayList<Order>();*/
-
-	/*
-	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JsonIgnore
-	private List<Sale> sales = new ArrayList<Sale>();*/
-
+	
 	@Column(name = "price")
 	private Double price;
 

@@ -12,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -21,59 +20,49 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "products")
-@Transactional
-public class Product implements Serializable{
-	
-	
+public class Product implements Serializable {
+
 	private static final long serialVersionUID = 1123019031040034555L;
 
 	@Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-        name = "UUID",
-    strategy = "org.hibernate.id.UUIDGenerator"
-    )
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(name = "id")
 	private String id;
-	
+
 	@Column(name = "productName")
 	private String name;
-	
-	@Column(name = "quantity")
-	private Integer quantity;
-	
-	
-	//@JsonIgnore
+
+	// @JsonIgnore
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@JoinColumn(name = "category_Id",referencedColumnName = "id")
+	@JoinColumn(name = "category_Id", referencedColumnName = "id")
 	private Category category;
-	
-	//@JsonIgnore
-	@OneToMany(mappedBy = "product",
-			   targetEntity = Image.class,
-			   fetch = FetchType.LAZY,
-			   cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "product", targetEntity = Image.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Image> images = new ArrayList<Image>();
 	
-	@ManyToMany(mappedBy = "orderedProducts",targetEntity = Order.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Order> orders = new ArrayList<Order>();
+	@OneToMany(mappedBy = "product", targetEntity = OrderedProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<OrderedProduct> orders = new ArrayList<OrderedProduct>();
 	
-	@ManyToMany(mappedBy = "purchasedProducts", targetEntity = Sale.class,cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Sale> sales = new ArrayList<Sale>();
+	@OneToMany(mappedBy = "product", targetEntity = SoldProduct.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<SoldProduct> sales = new ArrayList<SoldProduct>();
 	
 	@Column(name = "price")
 	private Double price;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "material")
 	private String material;
-	
+
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 
@@ -108,8 +97,8 @@ public class Product implements Serializable{
 	public void setImages(List<Image> images) {
 		this.images = images;
 	}
-
-	public List<Order> getOrder() {
+/*
+	public List<Order> getOrders() {
 		return orders;
 	}
 
@@ -117,21 +106,13 @@ public class Product implements Serializable{
 		this.orders = orders;
 	}
 
-	public List<Sale> getSale() {
+	public List<Sale> getSales() {
 		return sales;
 	}
 
-	public void setSale(List<Sale> sales) {
+	public void setSales(List<Sale> sales) {
 		this.sales = sales;
-	}
-
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+	}*/
 
 	public Double getPrice() {
 		return price;
@@ -164,6 +145,5 @@ public class Product implements Serializable{
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
-	
-}
 
+}
