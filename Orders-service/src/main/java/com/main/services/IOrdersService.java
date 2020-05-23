@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import com.main.DTO.OrderDTO;
+import com.main.models.OrderedProduct;
 
 
 public interface IOrdersService {
@@ -17,5 +18,7 @@ public interface IOrdersService {
 		public CompletableFuture<OrderDTO> getOrderDetails(String id);
 		
 		public CompletableFuture<List<OrderDTO>> getOrders();
+		
+		public void saveOrderedProduct(OrderedProduct product);
 
 }

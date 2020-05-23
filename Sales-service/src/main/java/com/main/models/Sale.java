@@ -83,6 +83,14 @@ public class Sale implements Serializable{
 		this.customer = customer;
 	}
 
+	public List<SoldProduct> getSale() {
+		return sale;
+	}
+
+	public void setSale(List<SoldProduct> sale) {
+		this.sale = sale;
+	}
+
 }
 
 

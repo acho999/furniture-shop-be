@@ -106,4 +106,12 @@ public class Order implements Serializable{
 		this.dateCreated = dateCreated;
 	}
 
+	public List<OrderedProduct> getOrderedProducts() {
+		return orderedProducts;
+	}
+
+	public void setOrderedProducts(List<OrderedProduct> orderedProducts) {
+		this.orderedProducts = orderedProducts;
+	}
+
 }

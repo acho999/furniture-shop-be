@@ -26,8 +26,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.main.DTO.OrderDTO;
 import com.main.models.Customer;
 import com.main.models.Order;
+import com.main.models.OrderedProduct;
 import com.main.models.Product;
 import com.main.repositories.CustomerRepository;
+import com.main.repositories.OrderedProductsRepository;
 import com.main.repositories.OrdersRepository;
 import com.main.repositories.ProductsRepository;
 
@@ -45,6 +47,9 @@ public class OrdersService implements IOrdersService {
 	
 	@Autowired
 	private CustomerRepository customerRepo;
+	
+	@Autowired
+	private OrderedProductsRepository orderedProductsRepo;
 
 	@Autowired
 	private ModelMapper mapper;
@@ -58,7 +63,7 @@ public class OrdersService implements IOrdersService {
         
         order.getOrderedProducts().forEach(x->products.add(x.getId()));
         
-        List<Product> entities = productRepo.findAllById(products);
+        List<Product> productsEntities = productRepo.findAllById(products);
         
 		//Type listType = new TypeToken<List<Product>>() {}.getType();
 
@@ -70,10 +75,6 @@ public class OrdersService implements IOrdersService {
 			
 			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
 			
-			//products = this.mapper.map(order.getOrderedProducts(),listType);
-			
-			entity.setOrderedProducts(entities);
-
 			entity.setSumOfOrder(sum);
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -84,14 +85,25 @@ public class OrdersService implements IOrdersService {
 
 			entity.setDateCreated(date);
 			
+			for (int i = 0; i < productsEntities.size(); i++) {
+				
+				OrderedProduct currentProd = new OrderedProduct();
+				
+				currentProd.setDateCreated(date);
+				
+				currentProd.setProduct(productsEntities.get(i));
+				
+				this.saveOrderedProduct(currentProd);
+				
+				entity.getOrderedProducts().add(currentProd);
+				
+			}
+			
 			Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
 			
 			entity.setCustomer(customer);
 			
 			Hibernate.initialize(entity.getOrderedProducts());
-			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getImages()));
-			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getOrders()));
-			//Hibernate.initialize(entity.getOrderedProducts().stream().map(x->x.getSales()));
 
 			repo.saveAndFlush(entity);
 
@@ -236,6 +248,13 @@ public class OrdersService implements IOrdersService {
 		}
 
 		return null;
+	}
+
+	@Override
+	public void saveOrderedProduct(OrderedProduct product) {
+
+		this.orderedProductsRepo.saveAndFlush(product);
+		
 	}
 
 }
