@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.main.models.Customer;
+import com.main.models.OrderedProduct;
 import com.main.models.Product;
 
 public class OrderDTO implements Serializable{
@@ -26,7 +27,7 @@ public class OrderDTO implements Serializable{
 	
 	private Boolean isPayed;
 	
-	private List<Product> orderedProducts = new ArrayList<Product>();
+	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
 	
 	private Double sumOfOrder;
 	
@@ -66,11 +67,11 @@ public class OrderDTO implements Serializable{
 		this.isPayed = isPayed;
 	}
 
-	public List<Product> getOrderedProducts() {
+	public List<OrderedProduct> getOrderedProducts() {
 		return orderedProducts;
 	}
 
-	public void setOrderedProducts(List<Product> orderedProducts) {
+	public void setOrderedProducts(List<OrderedProduct> orderedProducts) {
 		this.orderedProducts = orderedProducts;
 	}
 

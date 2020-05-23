@@ -73,7 +73,7 @@ public class OrdersService implements IOrdersService {
 
 			Order entity = mapper.map(order, Order.class);
 			
-			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getPrice()).sum();
+			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getProduct().getPrice()).sum();
 			
 			entity.setSumOfOrder(sum);
 			
@@ -109,8 +109,6 @@ public class OrdersService implements IOrdersService {
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
 			
-			//returnDto.getOrderedProducts().clear();
-			
 			returnDto.setCustomerId(customer.getId());
 
 			return CompletableFuture.completedFuture(returnDto);
@@ -129,14 +127,16 @@ public class OrdersService implements IOrdersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<OrderDTO> update(OrderDTO order) {
 
-		this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		/*this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 		Order orderEntity = this.repo.findById(order.getId()).get();
-		OrderDTO returnObject = null;
+		OrderDTO returnObject = null;*/
 
 		try {
+			
+			this.repo.deleteById(order.getId());
 
-			this.mapper.map(orderEntity, order);
+			/*this.mapper.map(orderEntity, order);
 
 			returnObject = new OrderDTO();
 			
@@ -154,20 +154,22 @@ public class OrdersService implements IOrdersService {
 	        
 	        order.getOrderedProducts().forEach(x->products.add(x.getId()));
 	        
-	        List<Product> entities = productRepo.findAllById(products);
+	        List<Product> productsEntities = productRepo.findAllById(products);
+	        
+	        
 			
 			orderEntity.setOrderedProducts(entities);
 
-			this.repo.saveAndFlush(orderEntity);
+			this.repo.saveAndFlush(orderEntity);*/
 
-			return CompletableFuture.completedFuture(returnObject);
+			return CompletableFuture.completedFuture(this.createOrder(order).get());
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getStackTrace());
 		}
 
-		return CompletableFuture.completedFuture(returnObject);
+		return CompletableFuture.completedFuture(null);
 
 	}
 
