@@ -19,6 +19,8 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "orders")
@@ -45,6 +47,7 @@ public class Order implements Serializable{
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
 	

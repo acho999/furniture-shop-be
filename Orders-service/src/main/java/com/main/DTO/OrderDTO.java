@@ -27,7 +27,9 @@ public class OrderDTO implements Serializable{
 	
 	private Boolean isPayed;
 	
-	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
+	private List<Product> orderedProducts = new ArrayList<Product>();
+	
+	private List<OrderedProduct> orderedProductEntities = new ArrayList<OrderedProduct>();
 	
 	private Double sumOfOrder;
 	
@@ -67,11 +69,11 @@ public class OrderDTO implements Serializable{
 		this.isPayed = isPayed;
 	}
 
-	public List<OrderedProduct> getOrderedProducts() {
+	public List<Product> getOrderedProducts() {
 		return orderedProducts;
 	}
 
-	public void setOrderedProducts(List<OrderedProduct> orderedProducts) {
+	public void setOrderedProducts(List<Product> orderedProducts) {
 		this.orderedProducts = orderedProducts;
 	}
 
@@ -89,6 +91,14 @@ public class OrderDTO implements Serializable{
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public List<OrderedProduct> getOrderedProductEntities() {
+		return orderedProductEntities;
+	}
+
+	public void setOrderedProductEntities(List<OrderedProduct> orderedProductEntities) {
+		this.orderedProductEntities = orderedProductEntities;
 	}
 
 

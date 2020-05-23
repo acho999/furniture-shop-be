@@ -41,13 +41,13 @@ public class OrdersService implements IOrdersService {
 
 	@Autowired
 	private OrdersRepository repo;
-	
+
 	@Autowired
 	private ProductsRepository productRepo;
-	
+
 	@Autowired
 	private CustomerRepository customerRepo;
-	
+
 	@Autowired
 	private OrderedProductsRepository orderedProductsRepo;
 
@@ -58,25 +58,25 @@ public class OrdersService implements IOrdersService {
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
 	public CompletableFuture<OrderDTO> createOrder(OrderDTO order) {
-		
-        List<String> products = new ArrayList<>();
-        
-        order.getOrderedProducts().forEach(x->products.add(x.getId()));
-        
-        List<Product> productsEntities = productRepo.findAllById(products);
-        
-		//Type listType = new TypeToken<List<Product>>() {}.getType();
+
+		List<String> products = new ArrayList<>();
+
+		order.getOrderedProducts().forEach(x -> products.add(x.getId()));
+
+		List<Product> productsEntities = productRepo.findAllById(products);
+
+		// Type listType = new TypeToken<List<Product>>() {}.getType();
 
 		try {
-			
+
 			this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
 			Order entity = mapper.map(order, Order.class);
-			
-			double sum = order.getOrderedProducts().stream().mapToDouble(x->x.getProduct().getPrice()).sum();
-			
+
+			double sum = order.getOrderedProducts().stream().mapToDouble(x -> x.getPrice()).sum();
+
 			entity.setSumOfOrder(sum);
-			
+
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 			String dateString = format.format(new Date());
@@ -84,31 +84,37 @@ public class OrdersService implements IOrdersService {
 			Date date = format.parse(dateString);
 
 			entity.setDateCreated(date);
-			
-			for (int i = 0; i < productsEntities.size(); i++) {
-				
-				OrderedProduct currentProd = new OrderedProduct();
-				
-				currentProd.setDateCreated(date);
-				
-				currentProd.setProduct(productsEntities.get(i));
-				
-				this.saveOrderedProduct(currentProd);
-				
-				entity.getOrderedProducts().add(currentProd);
-				
-			}
-			
+
 			Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
-			
+
 			entity.setCustomer(customer);
-			
+
 			Hibernate.initialize(entity.getOrderedProducts());
 
 			repo.saveAndFlush(entity);
+			
+			for (int i = 0; i < productsEntities.size(); i++) {
+
+				OrderedProduct currentProd = new OrderedProduct();
+
+				currentProd.setDateCreated(date);
+
+				currentProd.setProduct(productsEntities.get(i));
+				
+				currentProd.setOrder(entity);
+
+				this.saveOrderedProduct(currentProd);
+
+				entity.getOrderedProducts().add(currentProd);
+
+			}
+			
+			repo.saveAndFlush(entity);
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
-			
+
+			returnDto.setOrderedProductEntities(entity.getOrderedProducts());
+
 			returnDto.setCustomerId(customer.getId());
 
 			return CompletableFuture.completedFuture(returnDto);
@@ -127,40 +133,45 @@ public class OrdersService implements IOrdersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<OrderDTO> update(OrderDTO order) {
 
-		/*this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-
-		Order orderEntity = this.repo.findById(order.getId()).get();
-		OrderDTO returnObject = null;*/
+		/*
+		 * this.mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT)
+		 * ;
+		 * 
+		 * Order orderEntity = this.repo.findById(order.getId()).get(); OrderDTO
+		 * returnObject = null;
+		 */
 
 		try {
-			
+
 			this.repo.deleteById(order.getId());
 
-			/*this.mapper.map(orderEntity, order);
-
-			returnObject = new OrderDTO();
-			
-            Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
-			
-			orderEntity.setCustomer(customer);
-
-			this.mapper.map(order, returnObject);
-			
-			orderEntity.getOrderedProducts().clear();
-			
-			this.repo.saveAndFlush(orderEntity);
-			
-			List<String> products = new ArrayList<>();
-	        
-	        order.getOrderedProducts().forEach(x->products.add(x.getId()));
-	        
-	        List<Product> productsEntities = productRepo.findAllById(products);
-	        
-	        
-			
-			orderEntity.setOrderedProducts(entities);
-
-			this.repo.saveAndFlush(orderEntity);*/
+			/*
+			 * this.mapper.map(orderEntity, order);
+			 * 
+			 * returnObject = new OrderDTO();
+			 * 
+			 * Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
+			 * 
+			 * orderEntity.setCustomer(customer);
+			 * 
+			 * this.mapper.map(order, returnObject);
+			 * 
+			 * orderEntity.getOrderedProducts().clear();
+			 * 
+			 * this.repo.saveAndFlush(orderEntity);
+			 * 
+			 * List<String> products = new ArrayList<>();
+			 * 
+			 * order.getOrderedProducts().forEach(x->products.add(x.getId()));
+			 * 
+			 * List<Product> productsEntities = productRepo.findAllById(products);
+			 * 
+			 * 
+			 * 
+			 * orderEntity.setOrderedProducts(entities);
+			 * 
+			 * this.repo.saveAndFlush(orderEntity);
+			 */
 
 			return CompletableFuture.completedFuture(this.createOrder(order).get());
 
@@ -176,12 +187,11 @@ public class OrdersService implements IOrdersService {
 	@Override
 	@Transactional(readOnly = false)
 	public boolean delete(String id) {
-		
 
 		try {
-			
+
 			this.repo.deleteById(id);
-			
+
 			return true;
 
 		} catch (Exception e) {
@@ -200,27 +210,26 @@ public class OrdersService implements IOrdersService {
 		OrderDTO orderDetails = null;
 		Optional<Order> order = null;
 		try {
-			
+
 			order = this.repo.findById(id);
-			
+
 			if (order.isPresent()) {
-				
+
 				orderDetails = this.mapper.map(order.get(), OrderDTO.class);
-				
-				orderDetails.setOrderedProducts(order.get().getOrderedProducts());
-				
+
+				orderDetails.setOrderedProductEntities(order.get().getOrderedProducts());
+
 				return CompletableFuture.completedFuture(orderDetails);
-				
+
 			} else {
 				throw new NotFoundException("Order not found!");
 			}
-		
-			
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getStackTrace());
 		}
-		
+
 		return null;
 	}
 
@@ -228,22 +237,22 @@ public class OrdersService implements IOrdersService {
 	@Transactional(readOnly = false)
 	@Async("asyncExecutor")
 	public CompletableFuture<List<OrderDTO>> getOrders() {
-		
+
 		List<Order> currentOrders = this.repo.findAll();
-		
+
 		List<OrderDTO> orders = new ArrayList<OrderDTO>();
-		
-		Type listType = new TypeToken<List<OrderDTO>>() {}.getType();
-		
+
+		Type listType = new TypeToken<List<OrderDTO>>() {
+		}.getType();
+
 		try {
-			
-			Hibernate.initialize(currentOrders.stream().map(x->x.getOrderedProducts()));
-		
-			orders = this.mapper.map(currentOrders,listType);
-			
+
+			Hibernate.initialize(currentOrders.stream().map(x -> x.getOrderedProducts()));
+
+			orders = this.mapper.map(currentOrders, listType);
+
 			return CompletableFuture.completedFuture(orders);
-			
-			
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getStackTrace());
@@ -256,7 +265,7 @@ public class OrdersService implements IOrdersService {
 	public void saveOrderedProduct(OrderedProduct product) {
 
 		this.orderedProductsRepo.saveAndFlush(product);
-		
+
 	}
 
 }
