@@ -27,9 +27,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Transactional
 public class Order implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2025019082654076408L;
 
 	@Id
@@ -48,7 +45,7 @@ public class Order implements Serializable{
 	private Boolean isPayed;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.REMOVE})
 	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
 	
 	@Column(name = "sum")

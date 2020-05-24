@@ -4,17 +4,11 @@ import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.hibernate.Hibernate;
-import org.hibernate.cfg.SetSimpleValueTypeSecondPass;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.modelmapper.convention.MatchingStrategies;
@@ -88,10 +82,10 @@ public class OrdersService implements IOrdersService {
 			Customer customer = this.customerRepo.findById(order.getCustomerId()).get();
 
 			entity.setCustomer(customer);
-
-			Hibernate.initialize(entity.getOrderedProducts());
-
+			
 			repo.saveAndFlush(entity);
+			
+			List<OrderedProduct> currentProducts = new ArrayList<>();
 			
 			for (int i = 0; i < productsEntities.size(); i++) {
 
@@ -105,11 +99,15 @@ public class OrdersService implements IOrdersService {
 
 				this.saveOrderedProduct(currentProd);
 
-				entity.getOrderedProducts().add(currentProd);
+				currentProducts.add(this.orderedProductsRepo.findById(currentProd.getId()).get());
 
 			}
 			
+			entity.setOrderedProducts(currentProducts);
+			
 			repo.saveAndFlush(entity);
+			
+			//Hibernate.initialize(entity.getOrderedProducts());
 
 			OrderDTO returnDto = mapper.map(entity, OrderDTO.class);
 
@@ -212,9 +210,12 @@ public class OrdersService implements IOrdersService {
 		try {
 
 			order = this.repo.findById(id);
+			
 
 			if (order.isPresent()) {
 
+				Hibernate.initialize(order.get().getOrderedProducts());
+				
 				orderDetails = this.mapper.map(order.get(), OrderDTO.class);
 
 				orderDetails.setOrderedProductEntities(order.get().getOrderedProducts());

@@ -3,6 +3,7 @@ package com.main.models;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "OrderedProducts")
@@ -30,11 +33,13 @@ public class OrderedProduct implements Serializable{
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER)
+	
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "order_id",referencedColumnName = "id")
 	private Order order;
 
-	@ManyToOne(optional = false,fetch = FetchType.EAGER)
+	
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "product_id",referencedColumnName = "id")
 	private Product product;
 
