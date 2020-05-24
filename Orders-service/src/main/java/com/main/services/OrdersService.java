@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
+import javax.persistence.Id;
+
 import org.hibernate.Hibernate;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -17,6 +19,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ctc.wstx.dtd.DTDCdataAttr;
 import com.main.DTO.OrderDTO;
 import com.main.models.Customer;
 import com.main.models.Order;
@@ -214,7 +217,7 @@ public class OrdersService implements IOrdersService {
 
 			if (order.isPresent()) {
 
-				Hibernate.initialize(order.get().getOrderedProducts());
+				//Hibernate.initialize(order.get().getOrderedProducts());
 				
 				orderDetails = this.mapper.map(order.get(), OrderDTO.class);
 
@@ -239,18 +242,35 @@ public class OrdersService implements IOrdersService {
 	@Async("asyncExecutor")
 	public CompletableFuture<List<OrderDTO>> getOrders() {
 
-		List<Order> currentOrders = this.repo.findAll();
-
-		List<OrderDTO> orders = new ArrayList<OrderDTO>();
-
-		Type listType = new TypeToken<List<OrderDTO>>() {
-		}.getType();
-
 		try {
+			
+			List<Order> currentOrders = this.repo.findAll();
 
-			Hibernate.initialize(currentOrders.stream().map(x -> x.getOrderedProducts()));
+			List<OrderDTO> orders = new ArrayList<OrderDTO>();
 
-			orders = this.mapper.map(currentOrders, listType);
+			//Type listType = new TypeToken<List<OrderDTO>>() {
+			//}.getType();
+
+			
+
+			//orders = this.mapper.map(currentOrders, listType);
+			
+			for (int i = 0; i < currentOrders.size(); i++) {
+				
+				Hibernate.initialize(currentOrders.get(i).getOrderedProducts());
+				
+				OrderDTO dto = new OrderDTO();
+				
+				dto.setCustomer(currentOrders.get(i).getCustomer());
+				dto.setId(currentOrders.get(i).getId());
+				dto.setIsPayed(currentOrders.get(i).getIsPayed());
+				dto.setIsPlaced(currentOrders.get(i).getIsPlaced());
+				dto.setOrderedProductEntities(currentOrders.get(i).getOrderedProducts());
+				dto.setSumOfOrder(currentOrders.get(i).getSumOfOrder());
+				
+				orders.add(dto);
+				
+			}
 
 			return CompletableFuture.completedFuture(orders);
 
