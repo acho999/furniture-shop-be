@@ -371,3 +371,196 @@
 2020-05-25 13:03:23.100  INFO 51883 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
 2020-05-25 13:03:23.107  INFO 51883 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2020-05-25 13:03:23.109  INFO 51883 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-05-25 13:32:17.096  INFO 78642 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:32:18.159  INFO 78642 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-discovery-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:32:18.160  INFO 78642 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/eureka-discovery-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:32:18.187  INFO 78642 --- [main] com.main.EurekaServerApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 13:32:18.688  WARN 78642 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:32:18.887  WARN 78642 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:32:18.934  WARN 78642 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:32:19.112  INFO 78642 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=94c7d2ee-9b4d-3279-a7b6-093335aa68d1
+2020-05-25 13:32:19.179  INFO 78642 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 13:32:19.184  INFO 78642 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 13:32:19.187  INFO 78642 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 13:32:19.245  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.249  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.263  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.265  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.273  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.278  INFO 78642 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:32:19.536  INFO 78642 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2020-05-25 13:32:19.543  INFO 78642 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 13:32:19.543  INFO 78642 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 13:32:19.620  INFO 78642 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 13:32:19.620  INFO 78642 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1422 ms
+2020-05-25 13:32:19.697  WARN 78642 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:32:19.697  INFO 78642 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:32:19.703  INFO 78642 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2676dc05
+2020-05-25 13:32:20.301  INFO 78642 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 13:32:20.491  INFO 78642 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2020-05-25 13:32:20.543  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 13:32:20.544  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 13:32:20.631  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 13:32:20.632  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 13:32:21.082  INFO 78642 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72a3462f, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a122e68, org.springframework.security.web.header.HeaderWriterFilter@6b9a1205, org.springframework.security.web.authentication.logout.LogoutFilter@4bf8b77, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f99d8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c2a7d53, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aab7195, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ffa7041, org.springframework.security.web.session.SessionManagementFilter@72f3f14c, org.springframework.security.web.access.ExceptionTranslationFilter@2807cf3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68a5aadd]
+2020-05-25 13:32:21.093  WARN 78642 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:32:21.094  INFO 78642 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:32:21.180  INFO 78642 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-25 13:32:21.612  WARN 78642 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-25 13:32:21.659  INFO 78642 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-25 13:32:21.684  INFO 78642 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-25 13:32:21.684  INFO 78642 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2020-05-25 13:32:21.688  INFO 78642 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1590402741687 with initial instances count: 0
+2020-05-25 13:32:21.714  INFO 78642 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2020-05-25 13:32:21.715  INFO 78642 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://acho999:acho999@localhost:8001/eureka/]
+2020-05-25 13:32:21.746  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 13:32:21.746  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 13:32:21.746  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 13:32:21.746  INFO 78642 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 13:32:26.841  INFO 78642 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://acho999:acho999@localhost:8001/eureka/
+2020-05-25 13:32:26.850  INFO 78642 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2020-05-25 13:32:26.851  INFO 78642 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2020-05-25 13:32:26.878  INFO 78642 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-25 13:32:26.932  INFO 78642 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-25 13:32:26.934  INFO 78642 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-25 13:32:27.017  INFO 78642 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 83 ms
+2020-05-25 13:32:27.047  INFO 78642 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-25 13:32:27.299  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-25 13:32:27.384  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-25 13:32:27.431  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-25 13:32:27.442  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-25 13:32:27.481  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@7bc8ffbc
+2020-05-25 13:32:27.551  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-25 13:32:27.581  INFO 78642 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:32:27.581  INFO 78642 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-25 13:32:27.581  INFO 78642 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:32:32.629  INFO 78642 --- [main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:32:33.231  INFO 78642 --- [main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=eureka-discovery-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:32:33.231  INFO 78642 --- [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/eureka-discovery-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:32:33.408  INFO 78642 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-25 13:32:33.437  INFO 78642 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#1cbc5693:0/SimpleConnection@5d4a34ff [delegate=amqp://guest@127.0.0.1:5672/, localPort= 56909]
+2020-05-25 13:32:33.467  INFO 78642 --- [main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-25 13:32:33.473  INFO 78642 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-DISCOVERY-SERVICE with eureka with status UP
+2020-05-25 13:32:33.476  INFO 78642 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2020-05-25 13:32:33.477  INFO 78642 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
+2020-05-25 13:32:33.477  INFO 78642 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
+2020-05-25 13:32:33.486  INFO 78642 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2020-05-25 13:32:33.487  INFO 78642 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2020-05-25 13:32:33.487  INFO 78642 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2020-05-25 13:32:33.487  INFO 78642 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2020-05-25 13:32:33.487  INFO 78642 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2020-05-25 13:32:33.497  INFO 78642 --- [Thread-13] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2020-05-25 13:32:33.515  INFO 78642 --- [main] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.BB1eH_gPSMqk-Hyd1cL0wg, bound to: springCloudBus
+2020-05-25 13:32:33.532  INFO 78642 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.BB1eH_gPSMqk-Hyd1cL0wg.errors' has 1 subscriber(s).
+2020-05-25 13:32:33.532  INFO 78642 --- [main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.BB1eH_gPSMqk-Hyd1cL0wg.errors' has 2 subscriber(s).
+2020-05-25 13:32:33.547  INFO 78642 --- [main] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.BB1eH_gPSMqk-Hyd1cL0wg'
+2020-05-25 13:32:33.555  INFO 78642 --- [main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.BB1eH_gPSMqk-Hyd1cL0wg.errors
+2020-05-25 13:32:33.865  INFO 78642 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2020-05-25 13:32:33.865  INFO 78642 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8001
+2020-05-25 13:32:33.869  INFO 78642 --- [main] com.main.EurekaServerApplication         : Started EurekaServerApplication in 27.506 seconds (JVM running for 33.007)
+2020-05-25 13:33:33.488  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2020-05-25 13:34:33.489  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 13:35:03.368  INFO 78642 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b with status UP (replication=false)
+2020-05-25 13:35:04.048  INFO 78642 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b with status UP (replication=true)
+2020-05-25 13:35:33.490  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 13:36:33.492  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 13:37:33.494  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 13:38:17.412  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 with status UP (replication=false)
+2020-05-25 13:38:17.926  INFO 78642 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 with status UP (replication=true)
+2020-05-25 13:38:33.496  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 13:39:19.007  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=false)
+2020-05-25 13:39:19.513  INFO 78642 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=true)
+2020-05-25 13:39:33.497  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 13:40:33.499  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 13:41:33.500  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:42:33.500  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:43:33.500  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 13:44:33.500  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:44:34.779  INFO 78642 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 with status DOWN (replication=false)
+2020-05-25 13:44:35.286  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 with status DOWN (replication=true)
+2020-05-25 13:44:38.523  INFO 78642 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 (replication=false)
+2020-05-25 13:44:39.033  WARN 78642 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0
+2020-05-25 13:44:39.033  INFO 78642 --- [http-nio-8001-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): SALES-SERVICE - sales-service:53f1d80172eb3ff7135cc92a11b8edc0
+2020-05-25 13:44:39.034  WARN 78642 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.cluster.ReplicationTask       : The replication of task SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0:Cancel@localhost failed with response code 404
+2020-05-25 13:44:39.035  WARN 78642 --- [TaskBatchingWorker-target_localhost-10] c.netflix.eureka.cluster.PeerEurekaNode  : SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0:Cancel@localhost: missing entry.
+2020-05-25 13:45:10.492  INFO 78642 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c with status UP (replication=false)
+2020-05-25 13:45:11.001  INFO 78642 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c with status UP (replication=true)
+2020-05-25 13:45:33.503  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 13:46:33.505  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 13:47:26.855  INFO 78642 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2020-05-25 13:47:33.505  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:48:33.505  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 13:49:33.506  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:50:33.508  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 13:51:33.509  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 14:43:42.859  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 14:43:42.859  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2020-05-25 14:43:42.859  WARN 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b
+2020-05-25 14:43:42.860  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b (replication=false)
+2020-05-25 14:43:42.986  WARN 78642 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: USERS-SERVICE - users-service:49992a22dd00509056990cf025c51a8b
+2020-05-25 14:43:42.986  WARN 78642 --- [http-nio-8001-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Renew): USERS-SERVICE - users-service:49992a22dd00509056990cf025c51a8b
+2020-05-25 14:43:42.992  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b with status UP (replication=false)
+2020-05-25 14:43:43.604  INFO 78642 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USERS-SERVICE/users-service:49992a22dd00509056990cf025c51a8b with status UP (replication=true)
+2020-05-25 14:44:42.859  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:45:42.860  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:46:09.911  INFO 78642 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c with status DOWN (replication=false)
+2020-05-25 14:46:10.424  INFO 78642 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c with status DOWN (replication=true)
+2020-05-25 14:46:14.722  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c (replication=false)
+2020-05-25 14:46:15.233  WARN 78642 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c
+2020-05-25 14:46:15.234  INFO 78642 --- [http-nio-8001-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): SALES-SERVICE - sales-service:9c4ed43978f2e9685eaa83db0270a27c
+2020-05-25 14:46:15.234  WARN 78642 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.cluster.ReplicationTask       : The replication of task SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c:Cancel@localhost failed with response code 404
+2020-05-25 14:46:15.235  WARN 78642 --- [TaskBatchingWorker-target_localhost-12] c.netflix.eureka.cluster.PeerEurekaNode  : SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c:Cancel@localhost: missing entry.
+2020-05-25 14:46:42.862  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 14:46:46.580  INFO 78642 --- [http-nio-8001-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 with status UP (replication=false)
+2020-05-25 14:46:47.092  INFO 78642 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 with status UP (replication=true)
+2020-05-25 14:47:23.742  INFO 78642 --- [http-nio-8001-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 with status DOWN (replication=false)
+2020-05-25 14:47:24.247  INFO 78642 --- [http-nio-8001-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 with status DOWN (replication=true)
+2020-05-25 14:47:27.679  INFO 78642 --- [http-nio-8001-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 (replication=false)
+2020-05-25 14:47:28.185  WARN 78642 --- [http-nio-8001-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134
+2020-05-25 14:47:28.185  INFO 78642 --- [http-nio-8001-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): SALES-SERVICE - sales-service:16a7f340470bc3c6bb66c07cbfffc134
+2020-05-25 14:47:28.186  WARN 78642 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.cluster.ReplicationTask       : The replication of task SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134:Cancel@localhost failed with response code 404
+2020-05-25 14:47:28.186  WARN 78642 --- [TaskBatchingWorker-target_localhost-6] c.netflix.eureka.cluster.PeerEurekaNode  : SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134:Cancel@localhost: missing entry.
+2020-05-25 14:47:42.863  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 14:47:59.471  INFO 78642 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde with status UP (replication=false)
+2020-05-25 14:47:59.977  INFO 78642 --- [http-nio-8001-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde with status UP (replication=true)
+2020-05-25 14:48:24.460  INFO 78642 --- [http-nio-8001-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde with status DOWN (replication=false)
+2020-05-25 14:48:24.972  INFO 78642 --- [http-nio-8001-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde with status DOWN (replication=true)
+2020-05-25 14:48:42.864  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:49:42.864  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:50:42.865  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:51:42.866  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:52:42.867  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 14:53:36.177  INFO 78642 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-25 14:53:42.867  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:54:42.868  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:55:42.868  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:56:42.868  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:57:42.869  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 14:58:42.870  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 14:59:42.870  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 15:00:42.872  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 15:01:42.872  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:02:42.874  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 15:03:42.875  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 15:04:42.875  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 15:05:42.878  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 15:06:42.878  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:07:42.878  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 15:08:36.177  INFO 78642 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-25 15:08:42.879  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 15:09:42.879  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 15:10:42.880  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 15:11:42.880  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:12:42.883  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-25 15:13:42.884  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 15:14:42.884  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 15:15:42.887  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-25 15:16:42.890  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2020-05-25 15:17:42.892  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 15:18:42.892  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:19:42.892  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:20:42.893  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 15:21:42.895  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2020-05-25 15:22:42.896  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2020-05-25 15:23:36.177  INFO 78642 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 8
+2020-05-25 15:23:42.897  INFO 78642 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms

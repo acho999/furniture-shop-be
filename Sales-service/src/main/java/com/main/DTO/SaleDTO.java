@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.main.models.Customer;
 import com.main.models.Product;
 import com.main.models.SoldProduct;
 
@@ -21,6 +22,8 @@ public class SaleDTO implements Serializable{
 	private Number sumOfSale;
 	
 	private String customerId;
+	
+	private Customer customer;
 
 	private Date dateCreated;
 	
@@ -70,6 +73,14 @@ public class SaleDTO implements Serializable{
 
 	public void setSoldProducts(List<SoldProduct> soldProducts) {
 		this.soldProducts = soldProducts;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

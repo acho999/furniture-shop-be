@@ -80,7 +80,7 @@ public class SalesController {
 
 	}
 	
-	@GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
+	/*@GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<ResponseEntity<List<SaleDTO>>> getAllForCurrentUser(String userId) throws InterruptedException, ExecutionException {
 
 		CompletableFuture<List<SaleDTO>> future = new CompletableFuture<List<SaleDTO>>();
@@ -89,7 +89,7 @@ public class SalesController {
 
 		return future.thenApply(result -> ResponseEntity.ok().body(result));
 
-	}
+	}*/
 
 	@PostMapping(value = "/update", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<ResponseEntity<SaleDTO>> update(@Valid @RequestBody SaleDTO sale)

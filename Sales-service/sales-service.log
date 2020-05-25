@@ -1,0 +1,840 @@
+2020-05-25 13:35:08.682  INFO [sales-service,,,] 79180 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:35:09.389  INFO [sales-service,,,] 79180 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:35:09.391  INFO [sales-service,,,] 79180 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:35:09.418  INFO [sales-service,,,] 79180 --- [restartedMain] com.main.SalesServiceApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 13:35:10.024  INFO [sales-service,,,] 79180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 13:35:10.074  INFO [sales-service,,,] 79180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42ms. Found 2 JPA repository interfaces.
+2020-05-25 13:35:10.247  WARN [sales-service,,,] 79180 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:35:10.502  WARN [sales-service,,,] 79180 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:35:10.563  WARN [sales-service,,,] 79180 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:35:10.859  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c666f223-c23e-32ab-b0f0-c828bf08a5db
+2020-05-25 13:35:11.061  INFO [sales-service,,,] 79180 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 13:35:11.066  INFO [sales-service,,,] 79180 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 13:35:11.070  INFO [sales-service,,,] 79180 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 13:35:11.319  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.324  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.358  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.371  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.381  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.387  INFO [sales-service,,,] 79180 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:35:11.937  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-25 13:35:11.945  INFO [sales-service,,,] 79180 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 13:35:11.945  INFO [sales-service,,,] 79180 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 13:35:12.046  INFO [sales-service,,,] 79180 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 13:35:12.046  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2616 ms
+2020-05-25 13:35:12.182  WARN [sales-service,,,] 79180 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:35:12.182  INFO [sales-service,,,] 79180 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:35:12.189  INFO [sales-service,,,] 79180 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@33763411
+2020-05-25 13:35:12.699  WARN [sales-service,,,] 79180 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@66527e39}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-25 13:35:13.201  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 13:35:13.735  INFO [sales-service,,,] 79180 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 13:35:13.796  INFO [sales-service,,,] 79180 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-25 13:35:13.940  INFO [sales-service,,,] 79180 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-25 13:35:19.202  INFO [sales-service,,,] 79180 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-25 13:35:25.586  INFO [sales-service,,,] 79180 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 13:35:25.594  INFO [sales-service,,,] 79180 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 13:35:25.943  WARN [sales-service,,,] 79180 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 13:35:26.018  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-25 13:35:26.019  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-25 13:35:26.108  INFO [sales-service,,,] 79180 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7a819795-6e21-497b-aa41-eb4c805e252c
+
+2020-05-25 13:35:26.214  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c0a26de, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ddabe24, org.springframework.security.web.header.HeaderWriterFilter@19211d54, org.springframework.security.web.authentication.logout.LogoutFilter@3b593fb3, com.main.security.AuthorizaionFilter@336636a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@250e416d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61c465d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29e34cc9, org.springframework.security.web.session.SessionManagementFilter@211f84d5, org.springframework.security.web.access.ExceptionTranslationFilter@3909b35c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75802432]
+2020-05-25 13:35:26.236  WARN [sales-service,,,] 79180 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:35:26.236  INFO [sales-service,,,] 79180 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:35:26.462  WARN [sales-service,,,] 79180 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'salesController' method 
+com.main.controllers.SalesController#getAllForCurrentUser(String)
+to {GET /sales/getAll, produces [application/json]}: There is already 'salesController' bean method
+com.main.controllers.SalesController#getAll() mapped.
+2020-05-25 13:35:26.464  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 13:35:26.465  INFO [sales-service,,,] 79180 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 13:35:26.734  WARN [sales-service,,,] 79180 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@66527e39}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-25 13:35:26.739  WARN [sales-service,,,] 79180 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@66527e39}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-25 13:35:26.744  INFO [sales-service,,,] 79180 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-25 13:35:26.764  INFO [sales-service,,,] 79180 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-25 13:35:26.772 ERROR [sales-service,,,] 79180 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'salesController' method 
+com.main.controllers.SalesController#getAllForCurrentUser(String)
+to {GET /sales/getAll, produces [application/json]}: There is already 'salesController' bean method
+com.main.controllers.SalesController#getAll() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) ~[spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at com.main.SalesServiceApplication.main(SalesServiceApplication.java:12) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'salesController' method 
+com.main.controllers.SalesController#getAllForCurrentUser(String)
+to {GET /sales/getAll, produces [application/json]}: There is already 'salesController' bean method
+com.main.controllers.SalesController#getAll() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:632) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:599) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:318) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:379) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:78) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:288) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_241]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:286) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:258) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:217) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:205) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:190) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792) ~[spring-beans-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 21 common frames omitted
+
+2020-05-25 13:37:49.830  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:37:50.542  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:37:50.544  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:37:50.574  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 13:37:51.326  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 13:37:51.385  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 2 JPA repository interfaces.
+2020-05-25 13:37:51.600  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:37:51.896  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:37:51.971  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-05-25 13:37:52.329  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c666f223-c23e-32ab-b0f0-c828bf08a5db
+2020-05-25 13:37:52.541  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 13:37:52.547  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 13:37:52.552  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 13:37:52.855  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:52.861  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:52.897  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:52.911  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:52.923  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:52.931  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:37:53.584  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-25 13:37:53.593  INFO [sales-service,,,] 79685 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 13:37:53.593  INFO [sales-service,,,] 79685 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 13:37:53.707  INFO [sales-service,,,] 79685 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 13:37:53.707  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3118 ms
+2020-05-25 13:37:53.869  WARN [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:37:53.869  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:37:53.877  INFO [sales-service,,,] 79685 --- [restartedMain] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@9aa9216
+2020-05-25 13:37:54.451  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@13c545c4}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-25 13:37:55.011  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 13:37:55.623  INFO [sales-service,,,] 79685 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 13:37:55.697  INFO [sales-service,,,] 79685 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-25 13:37:55.876  INFO [sales-service,,,] 79685 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-25 13:38:01.163  INFO [sales-service,,,] 79685 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-25 13:38:07.698  INFO [sales-service,,,] 79685 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 13:38:07.707  INFO [sales-service,,,] 79685 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 13:38:08.101  WARN [sales-service,,,] 79685 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 13:38:08.189  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-25 13:38:08.189  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-25 13:38:08.287  INFO [sales-service,,,] 79685 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 5d860954-589e-466c-b1d3-fb52250fa733
+
+2020-05-25 13:38:08.409  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ee87f57, org.springframework.security.web.context.SecurityContextPersistenceFilter@2da3ee03, org.springframework.security.web.header.HeaderWriterFilter@27c5a497, org.springframework.security.web.authentication.logout.LogoutFilter@317463b, com.main.security.AuthorizaionFilter@17ad784b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@347c31d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17f54a3c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1052bd92, org.springframework.security.web.session.SessionManagementFilter@615470cd, org.springframework.security.web.access.ExceptionTranslationFilter@32bd2e7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49a10925]
+2020-05-25 13:38:08.433  WARN [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:38:08.433  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:38:09.430  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-25 13:38:09.512  WARN [sales-service,,,] 79685 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-25 13:38:09.816  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-25 13:38:10.006  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-25 13:38:10.144  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-25 13:38:10.244  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-25 13:38:10.262  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-25 13:38:10.312  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-25 13:38:10.330  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-25 13:38:10.356  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6cc71d3e
+2020-05-25 13:38:10.461  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:38:10.461  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-25 13:38:10.461  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:38:15.519  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:38:16.099  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:38:16.099  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:38:16.278  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-25 13:38:16.312  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3177e3a5:0/SimpleConnection@6f840acd [delegate=amqp://guest@127.0.0.1:5672/, localPort= 56978]
+2020-05-25 13:38:16.352  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-25 13:38:16.418  INFO [sales-service,,,] 79685 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA, bound to: springCloudBus
+2020-05-25 13:38:16.445  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA.errors' has 1 subscriber(s).
+2020-05-25 13:38:16.446  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA.errors' has 2 subscriber(s).
+2020-05-25 13:38:16.465  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA'
+2020-05-25 13:38:16.499  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA.errors
+2020-05-25 13:38:16.606  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56979 (http) with context path ''
+2020-05-25 13:38:16.608  INFO [sales-service,,,] 79685 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 56979
+2020-05-25 13:38:16.615  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-25 13:38:16.651  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-25 13:38:16.708  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 13:38:16.709  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 13:38:16.822  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 13:38:16.823  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 13:38:17.092  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:38:17.111  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-25 13:38:17.111  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-25 13:38:17.111  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-25 13:38:17.111  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-25 13:38:17.112  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-25 13:38:17.112  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-25 13:38:17.112  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-25 13:38:17.365  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-25 13:38:17.368  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-25 13:38:17.371  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-25 13:38:17.376  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1590403097375 with initial instances count: 1
+2020-05-25 13:38:17.386  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SALES-SERVICE with eureka with status UP
+2020-05-25 13:38:17.387  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590403097387, current=UP, previous=STARTING]
+2020-05-25 13:38:17.389  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0: registering service...
+2020-05-25 13:38:17.394  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : Started SalesServiceApplication in 38.306 seconds (JVM running for 44.097)
+2020-05-25 13:38:17.414  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 - registration status: 204
+2020-05-25 13:40:21.206 ERROR [sales-service,ecd4309201a98bef,ecd4309201a98bef,true] 79685 --- [http-nio-auto-1-exec-1] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+
+java.lang.IllegalArgumentException: Failed to parse addressnull
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.parseAddress(IpAddressMatcher.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.<init>(IpAddressMatcher.java:58) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebSecurityExpressionRoot.hasIpAddress(WebSecurityExpressionRoot.java:50) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:129) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:139) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:117) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:308) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.access.expression.ExpressionUtils.evaluateAsBoolean(ExpressionUtils.java:26) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebExpressionVoter.vote(WebExpressionVoter.java:52) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebExpressionVoter.vote(WebExpressionVoter.java:33) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.access.vote.AffirmativeBased.decide(AffirmativeBased.java:63) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.access.intercept.AbstractSecurityInterceptor.beforeInvocation(AbstractSecurityInterceptor.java:233) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:123) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.main.security.AuthorizaionFilter.doFilterInternal(AuthorizaionFilter.java:60) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:82) [brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) [spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:109) [spring-boot-actuator-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.net.UnknownHostException: null: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_241]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_241]
+	at java.net.InetAddress.getByName(InetAddress.java:1077) ~[na:1.8.0_241]
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.parseAddress(IpAddressMatcher.java:102) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 88 common frames omitted
+
+2020-05-25 13:40:21.221 ERROR [sales-service,,,] 79685 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.lang.IllegalArgumentException: Failed to parse addressnull
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.parseAddress(IpAddressMatcher.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.<init>(IpAddressMatcher.java:58) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebSecurityExpressionRoot.hasIpAddress(WebSecurityExpressionRoot.java:50) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_241]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_241]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_241]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_241]
+	at org.springframework.expression.spel.support.ReflectiveMethodExecutor.execute(ReflectiveMethodExecutor.java:129) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:139) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:95) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getTypedValue(SpelNodeImpl.java:117) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:308) ~[spring-expression-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.access.expression.ExpressionUtils.evaluateAsBoolean(ExpressionUtils.java:26) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebExpressionVoter.vote(WebExpressionVoter.java:52) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.expression.WebExpressionVoter.vote(WebExpressionVoter.java:33) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.access.vote.AffirmativeBased.decide(AffirmativeBased.java:63) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.access.intercept.AbstractSecurityInterceptor.beforeInvocation(AbstractSecurityInterceptor.java:233) ~[spring-security-core-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:123) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.main.security.AuthorizaionFilter.doFilterInternal(AuthorizaionFilter.java:60) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.cloud.sleuth.instrument.web.ExceptionLoggingFilter.doFilter(ExceptionLoggingFilter.java:50) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at brave.servlet.TracingFilter.doFilter(TracingFilter.java:82) ~[brave-instrumentation-servlet-5.9.0.jar:na]
+	at org.springframework.cloud.sleuth.instrument.web.LazyTracingFilter.doFilter(TraceWebServletAutoConfiguration.java:138) ~[spring-cloud-sleuth-core-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:109) ~[spring-boot-actuator-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_241]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_241]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.net.UnknownHostException: null: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:1.8.0_241]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193) ~[na:1.8.0_241]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[na:1.8.0_241]
+	at java.net.InetAddress.getByName(InetAddress.java:1077) ~[na:1.8.0_241]
+	at org.springframework.security.web.util.matcher.IpAddressMatcher.parseAddress(IpAddressMatcher.java:102) ~[spring-security-web-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	... 88 common frames omitted
+
+2020-05-25 13:40:21.916  WARN [sales-service,,,] 79685 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@13c545c4}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-25 13:40:21.918  WARN [sales-service,,,] 79685 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@13c545c4}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-25 13:43:17.105  INFO [sales-service,,,] 79685 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:44:34.773  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SALES-SERVICE with eureka with status DOWN
+2020-05-25 13:44:34.773  WARN [sales-service,,,] 79685 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590403474773, current=DOWN, previous=UP]
+2020-05-25 13:44:34.774  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0: registering service...
+2020-05-25 13:44:34.780  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 - registration status: 204
+2020-05-25 13:44:34.799  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 13:44:35.382  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 13:44:35.382  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA'
+2020-05-25 13:44:35.390  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA.errors' has 1 subscriber(s).
+2020-05-25 13:44:35.392  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Zc4Xm2FQTEOK5uTRcPf9aA.errors' has 0 subscriber(s).
+2020-05-25 13:44:35.397  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:44:35.398  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 13:44:35.398  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:44:35.406  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 13:44:35.409  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 13:44:35.513  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 13:44:35.513  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 13:44:35.513  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 13:44:35.513  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 13:44:35.513  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 13:44:35.514  INFO [sales-service,,,] 79685 --- [Thread-2] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@6cc71d3e
+2020-05-25 13:44:35.514  INFO [sales-service,,,] 79685 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-25 13:44:38.516  INFO [sales-service,,,] 79685 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-25 13:44:38.524  INFO [sales-service,,,] 79685 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:53f1d80172eb3ff7135cc92a11b8edc0 - deregister  status: 200
+2020-05-25 13:44:38.532  INFO [sales-service,,,] 79685 --- [Thread-2] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-25 13:44:48.997  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:44:49.585  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:44:49.586  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:44:49.593  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 13:44:49.988  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 13:44:50.001  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 2 JPA repository interfaces.
+2020-05-25 13:44:50.402  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c666f223-c23e-32ab-b0f0-c828bf08a5db
+2020-05-25 13:44:50.421  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 13:44:50.421  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 13:44:50.424  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 13:44:50.495  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.499  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.520  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.527  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.535  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.539  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 13:44:50.828  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-25 13:44:50.829  INFO [sales-service,,,] 79685 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 13:44:50.830  INFO [sales-service,,,] 79685 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 13:44:50.839  INFO [sales-service,,,] 79685 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 13:44:50.840  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1242 ms
+2020-05-25 13:44:51.312  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@6db655a6}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-25 13:44:51.717  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 13:44:52.098  INFO [sales-service,,,] 79685 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 13:44:57.144  INFO [sales-service,,,] 79685 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-25 13:45:02.764  INFO [sales-service,,,] 79685 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 13:45:02.765  INFO [sales-service,,,] 79685 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 13:45:02.951  WARN [sales-service,,,] 79685 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 13:45:03.033  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-25 13:45:03.033  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-25 13:45:03.105  INFO [sales-service,,,] 79685 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7e42617c-cc85-4785-a331-56049652a47d
+
+2020-05-25 13:45:03.152  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ce97cb2, org.springframework.security.web.context.SecurityContextPersistenceFilter@2b9c89b6, org.springframework.security.web.header.HeaderWriterFilter@f00ff6c, org.springframework.security.web.authentication.logout.LogoutFilter@5e7496aa, com.main.security.AuthorizaionFilter@3a8153e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e6fde8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2458c97a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9984166, org.springframework.security.web.session.SessionManagementFilter@1db65e8f, org.springframework.security.web.access.ExceptionTranslationFilter@71c8f785, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1085f260]
+2020-05-25 13:45:03.174  WARN [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 13:45:03.174  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 13:45:03.931  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-25 13:45:03.993  WARN [sales-service,,,] 79685 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-25 13:45:04.176  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-25 13:45:04.309  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-25 13:45:04.337  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-25 13:45:04.346  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-25 13:45:04.354  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-25 13:45:04.362  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-25 13:45:04.376  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2537b214
+2020-05-25 13:45:04.384  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-25 13:45:04.399  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:45:04.399  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-25 13:45:04.399  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:45:09.450  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 13:45:10.042  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 13:45:10.043  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 13:45:10.108  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-25 13:45:10.114  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#24b8e3d9:0/SimpleConnection@7350548c [delegate=amqp://guest@127.0.0.1:5672/, localPort= 57063]
+2020-05-25 13:45:10.118  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-25 13:45:10.145  INFO [sales-service,,,] 79685 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew, bound to: springCloudBus
+2020-05-25 13:45:10.149  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew.errors' has 1 subscriber(s).
+2020-05-25 13:45:10.149  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew.errors' has 2 subscriber(s).
+2020-05-25 13:45:10.151  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew'
+2020-05-25 13:45:10.178  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew.errors
+2020-05-25 13:45:10.230  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 57064 (http) with context path ''
+2020-05-25 13:45:10.231  INFO [sales-service,,,] 79685 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 57064
+2020-05-25 13:45:10.232  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-25 13:45:10.239  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-25 13:45:10.241  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 13:45:10.241  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 13:45:10.241  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 13:45:10.241  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 13:45:10.359  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-25 13:45:10.366  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-25 13:45:10.474  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-25 13:45:10.475  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-25 13:45:10.476  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-25 13:45:10.477  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1590403510477 with initial instances count: 2
+2020-05-25 13:45:10.486  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SALES-SERVICE with eureka with status UP
+2020-05-25 13:45:10.486  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590403510486, current=UP, previous=STARTING]
+2020-05-25 13:45:10.487  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c: registering service...
+2020-05-25 13:45:10.490  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : Started SalesServiceApplication in 31.615 seconds (JVM running for 457.207)
+2020-05-25 13:45:10.494  INFO [sales-service,,,] 79685 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-25 13:45:10.495  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c - registration status: 204
+2020-05-25 13:48:47.653  INFO [sales-service,,,] 79685 --- [http-nio-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-25 13:48:47.653  INFO [sales-service,,,] 79685 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-25 13:48:47.676  INFO [sales-service,,,] 79685 --- [http-nio-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2020-05-25 13:48:53.039  WARN [sales-service,,,] 79685 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@6db655a6}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-25 13:48:53.040  WARN [sales-service,,,] 79685 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@6db655a6}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-25 13:50:10.361  INFO [sales-service,,,] 79685 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 14:46:09.907  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SALES-SERVICE with eureka with status DOWN
+2020-05-25 14:46:09.907  WARN [sales-service,,,] 79685 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590407169907, current=DOWN, previous=UP]
+2020-05-25 14:46:09.907  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c: registering service...
+2020-05-25 14:46:09.912  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c - registration status: 204
+2020-05-25 14:46:09.927  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 14:46:10.706  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 14:46:10.706  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew'
+2020-05-25 14:46:10.710  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew.errors' has 1 subscriber(s).
+2020-05-25 14:46:10.710  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.N45MCnxjS_eNRUnf72jNew.errors' has 0 subscriber(s).
+2020-05-25 14:46:10.712  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 14:46:10.712  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 14:46:10.713  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 14:46:10.715  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 14:46:10.717  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 14:46:11.715  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 14:46:11.715  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 14:46:11.716  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 14:46:11.716  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 14:46:11.716  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@2537b214
+2020-05-25 14:46:11.716  INFO [sales-service,,,] 79685 --- [Thread-12] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 14:46:11.716  INFO [sales-service,,,] 79685 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-25 14:46:14.717  INFO [sales-service,,,] 79685 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-25 14:46:14.724  INFO [sales-service,,,] 79685 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:9c4ed43978f2e9685eaa83db0270a27c - deregister  status: 200
+2020-05-25 14:46:14.730  INFO [sales-service,,,] 79685 --- [Thread-12] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-25 14:46:25.416  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 14:46:26.062  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 14:46:26.062  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 14:46:26.068  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 14:46:26.429  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 14:46:26.438  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 2 JPA repository interfaces.
+2020-05-25 14:46:26.769  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=c666f223-c23e-32ab-b0f0-c828bf08a5db
+2020-05-25 14:46:26.784  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 14:46:26.784  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 14:46:26.787  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 14:46:26.840  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:26.844  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:26.863  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:26.869  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:26.875  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:26.879  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:46:27.139  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-25 14:46:27.140  INFO [sales-service,,,] 79685 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 14:46:27.140  INFO [sales-service,,,] 79685 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 14:46:27.149  INFO [sales-service,,,] 79685 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 14:46:27.149  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1077 ms
+2020-05-25 14:46:27.545  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@2f2ae674}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-25 14:46:27.946  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 14:46:28.289  INFO [sales-service,,,] 79685 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 14:46:33.326  INFO [sales-service,,,] 79685 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-25 14:46:38.914  INFO [sales-service,,,] 79685 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 14:46:38.915  INFO [sales-service,,,] 79685 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 14:46:39.079  WARN [sales-service,,,] 79685 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 14:46:39.145  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-25 14:46:39.145  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-25 14:46:39.206  INFO [sales-service,,,] 79685 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6635f617-921f-483f-b306-4226d8275c0a
+
+2020-05-25 14:46:39.250  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25119e30, org.springframework.security.web.context.SecurityContextPersistenceFilter@181ca96c, org.springframework.security.web.header.HeaderWriterFilter@76827f9e, org.springframework.security.web.authentication.logout.LogoutFilter@49000808, com.main.security.AuthorizaionFilter@7f8c2aad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@438248e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62009a9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12192eee, org.springframework.security.web.session.SessionManagementFilter@65d81050, org.springframework.security.web.access.ExceptionTranslationFilter@c3e697c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4846f342]
+2020-05-25 14:46:39.267  WARN [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 14:46:39.267  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 14:46:39.979  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-25 14:46:40.051  WARN [sales-service,,,] 79685 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-25 14:46:40.307  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-25 14:46:40.439  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-25 14:46:40.464  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-25 14:46:40.471  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-25 14:46:40.479  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-25 14:46:40.486  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-25 14:46:40.500  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@1f71cc5
+2020-05-25 14:46:40.507  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-25 14:46:40.522  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 14:46:40.522  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-25 14:46:40.522  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-25 14:46:45.570  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 14:46:46.145  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 14:46:46.146  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 14:46:46.207  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-25 14:46:46.215  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#cbb23a1:0/SimpleConnection@42ec1f06 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 57173]
+2020-05-25 14:46:46.219  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-25 14:46:46.245  INFO [sales-service,,,] 79685 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA, bound to: springCloudBus
+2020-05-25 14:46:46.249  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA.errors' has 1 subscriber(s).
+2020-05-25 14:46:46.249  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA.errors' has 2 subscriber(s).
+2020-05-25 14:46:46.251  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA'
+2020-05-25 14:46:46.277  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA.errors
+2020-05-25 14:46:46.329  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 57174 (http) with context path ''
+2020-05-25 14:46:46.329  INFO [sales-service,,,] 79685 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 57174
+2020-05-25 14:46:46.331  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-25 14:46:46.335  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-25 14:46:46.340  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 14:46:46.340  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 14:46:46.340  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 14:46:46.340  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 14:46:46.456  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-25 14:46:46.457  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-25 14:46:46.563  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-25 14:46:46.564  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-25 14:46:46.565  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-25 14:46:46.565  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1590407206565 with initial instances count: 2
+2020-05-25 14:46:46.574  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SALES-SERVICE with eureka with status UP
+2020-05-25 14:46:46.575  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590407206575, current=UP, previous=STARTING]
+2020-05-25 14:46:46.575  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134: registering service...
+2020-05-25 14:46:46.579  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : Started SalesServiceApplication in 31.267 seconds (JVM running for 1083.966)
+2020-05-25 14:46:46.581  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 - registration status: 204
+2020-05-25 14:46:46.582  INFO [sales-service,,,] 79685 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-25 14:47:23.737  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SALES-SERVICE with eureka with status DOWN
+2020-05-25 14:47:23.737  WARN [sales-service,,,] 79685 --- [Thread-22] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590407243737, current=DOWN, previous=UP]
+2020-05-25 14:47:23.737  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134: registering service...
+2020-05-25 14:47:23.743  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 - registration status: 204
+2020-05-25 14:47:23.754  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 14:47:24.357  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 14:47:24.357  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA'
+2020-05-25 14:47:24.363  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA.errors' has 1 subscriber(s).
+2020-05-25 14:47:24.364  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.V1uFO5qdS-yNyXzhuuCKLA.errors' has 0 subscriber(s).
+2020-05-25 14:47:24.366  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 14:47:24.366  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 14:47:24.367  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 14:47:24.369  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 14:47:24.371  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@1f71cc5
+2020-05-25 14:47:24.672  INFO [sales-service,,,] 79685 --- [Thread-22] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 14:47:24.673  INFO [sales-service,,,] 79685 --- [Thread-22] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-25 14:47:27.675  INFO [sales-service,,,] 79685 --- [Thread-22] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-25 14:47:27.681  INFO [sales-service,,,] 79685 --- [Thread-22] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:16a7f340470bc3c6bb66c07cbfffc134 - deregister  status: 200
+2020-05-25 14:47:27.686  INFO [sales-service,,,] 79685 --- [Thread-22] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-25 14:47:38.260  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 14:47:38.853  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 14:47:38.853  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 14:47:38.859  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : No active profile set, falling back to default profiles: default
+2020-05-25 14:47:39.212  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 14:47:39.224  INFO [sales-service,,,] 79685 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 3 JPA repository interfaces.
+2020-05-25 14:47:39.550  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3f0166de-fef9-3b7d-8ad6-a41e754e0e87
+2020-05-25 14:47:39.563  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-05-25 14:47:39.563  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-05-25 14:47:39.565  INFO [sales-service,,,] 79685 --- [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-05-25 14:47:39.619  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.622  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.639  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.645  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.650  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.653  INFO [sales-service,,,] 79685 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 14:47:39.903  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2020-05-25 14:47:39.904  INFO [sales-service,,,] 79685 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-25 14:47:39.904  INFO [sales-service,,,] 79685 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-25 14:47:39.912  INFO [sales-service,,,] 79685 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-25 14:47:39.912  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1049 ms
+2020-05-25 14:47:40.327  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@19c18acd}] contains an error [CheckResult{ok=false, error=java.lang.NullPointerException}]
+2020-05-25 14:47:40.734  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-25 14:47:41.081  INFO [sales-service,,,] 79685 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 14:47:46.119  INFO [sales-service,,,] 79685 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-05-25 14:47:51.708  INFO [sales-service,,,] 79685 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 14:47:51.708  INFO [sales-service,,,] 79685 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 14:47:51.878  WARN [sales-service,,,] 79685 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 14:47:51.952  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-05-25 14:47:51.952  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'asyncExecutor'
+2020-05-25 14:47:52.036  INFO [sales-service,,,] 79685 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 555c929e-8ce7-4ef2-8862-842120df1028
+
+2020-05-25 14:47:52.080  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48449850, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dcd23f9, org.springframework.security.web.header.HeaderWriterFilter@1fcd3815, org.springframework.security.web.authentication.logout.LogoutFilter@2cdfa40c, com.main.security.AuthorizaionFilter@21701d53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ef87f65, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c464ffb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ef0c74, org.springframework.security.web.session.SessionManagementFilter@3056125c, org.springframework.security.web.access.ExceptionTranslationFilter@16e9cf52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50559e13]
+2020-05-25 14:47:52.097  WARN [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-05-25 14:47:52.098  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-05-25 14:47:52.818  WARN [sales-service,,,] 79685 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-05-25 14:47:52.884  WARN [sales-service,,,] 79685 --- [restartedMain] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-05-25 14:47:53.074  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 23 endpoint(s) beneath base path '/actuator'
+2020-05-25 14:47:53.205  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+2020-05-25 14:47:53.235  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2020-05-25 14:47:53.242  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2020-05-25 14:47:53.252  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusInput
+2020-05-25 14:47:53.260  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBusOutput
+2020-05-25 14:47:53.277  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler errorLogger
+2020-05-25 14:47:53.285  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@3e4613bb
+2020-05-25 14:47:53.304  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 14:47:53.305  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 1 subscriber(s).
+2020-05-25 14:47:53.305  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2020-05-25 14:47:58.372  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8012
+2020-05-25 14:47:58.955  INFO [sales-service,,,] 79685 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=sales-service, profiles=[default], label=null, version=4f876a14706a0489088a4783ef1f4efeeceebe61, state=null
+2020-05-25 14:47:58.955  INFO [sales-service,,,] 79685 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/sales-service.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/acho999/Configuration.git/application.properties'}]
+2020-05-25 14:47:59.019  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2020-05-25 14:47:59.025  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#618108d2:0/SimpleConnection@2aa081f [delegate=amqp://guest@127.0.0.1:5672/, localPort= 57186]
+2020-05-25 14:47:59.030  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'application-1.springCloudBusOutput' has 1 subscriber(s).
+2020-05-25 14:47:59.059  INFO [sales-service,,,] 79685 --- [restartedMain] c.s.b.r.p.RabbitExchangeQueueProvisioner : declaring queue for inbound: springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ, bound to: springCloudBus
+2020-05-25 14:47:59.063  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ.errors' has 1 subscriber(s).
+2020-05-25 14:47:59.063  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.stream.binder.BinderErrorChannel   : Channel 'springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ.errors' has 2 subscriber(s).
+2020-05-25 14:47:59.065  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.a.i.AmqpInboundChannelAdapter      : started bean 'inbound.springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ'
+2020-05-25 14:47:59.095  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ.errors
+2020-05-25 14:47:59.152  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 57187 (http) with context path ''
+2020-05-25 14:47:59.153  INFO [sales-service,,,] 79685 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 57187
+2020-05-25 14:47:59.154  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-05-25 14:47:59.160  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-05-25 14:47:59.161  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-05-25 14:47:59.161  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-05-25 14:47:59.161  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-05-25 14:47:59.161  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-05-25 14:47:59.295  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-05-25 14:47:59.296  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-05-25 14:47:59.399  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-05-25 14:47:59.400  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-05-25 14:47:59.401  INFO [sales-service,,,] 79685 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-05-25 14:47:59.456  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1590407279456 with initial instances count: 2
+2020-05-25 14:47:59.466  INFO [sales-service,,,] 79685 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SALES-SERVICE with eureka with status UP
+2020-05-25 14:47:59.466  INFO [sales-service,,,] 79685 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590407279466, current=UP, previous=STARTING]
+2020-05-25 14:47:59.467  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde: registering service...
+2020-05-25 14:47:59.470  INFO [sales-service,,,] 79685 --- [restartedMain] com.main.SalesServiceApplication         : Started SalesServiceApplication in 31.317 seconds (JVM running for 1156.86)
+2020-05-25 14:47:59.472  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde - registration status: 204
+2020-05-25 14:47:59.473  INFO [sales-service,,,] 79685 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-25 14:48:24.454  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application SALES-SERVICE with eureka with status DOWN
+2020-05-25 14:48:24.456  WARN [sales-service,,,] 79685 --- [Thread-31] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590407304456, current=DOWN, previous=UP]
+2020-05-25 14:48:24.457  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde: registering service...
+2020-05-25 14:48:24.461  INFO [sales-service,,,] 79685 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SALES-SERVICE/sales-service:ebc9234c8a452f4f55eaf6a60e29bcde - registration status: 204
+2020-05-25 14:48:24.473  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 14:48:25.137  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 14:48:25.138  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ'
+2020-05-25 14:48:25.144  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ.errors' has 1 subscriber(s).
+2020-05-25 14:48:25.144  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.1GdDPPcuR_WKS2fWMSLXkQ.errors' has 0 subscriber(s).
+2020-05-25 14:48:25.146  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 14:48:25.146  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 14:48:25.146  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 14:48:25.148  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 14:48:25.150  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@3e4613bb
+2020-05-25 14:48:25.429  INFO [sales-service,,,] 79685 --- [Thread-31] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
