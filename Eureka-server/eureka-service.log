@@ -323,3 +323,5 @@
 2020-05-25 12:58:30.912  INFO 51883 --- [http-nio-8001-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=false)
 2020-05-25 12:58:31.416  INFO 51883 --- [http-nio-8001-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ZUUL/192.168.0.100:zuul:8011 with status UP (replication=true)
 2020-05-25 12:59:29.746  INFO 51883 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2020-05-25 13:00:29.746  INFO 51883 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2020-05-25 13:01:29.748  INFO 51883 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms

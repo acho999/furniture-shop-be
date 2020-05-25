@@ -499,3 +499,4 @@ java.lang.NullPointerException: null
 2020-05-25 12:49:36.985  INFO [users-service,,,] 58378 --- [restartedMain] com.main.UsersServiceApplication         : Started UsersServiceApplication in 30.914 seconds (JVM running for 4176.633)
 2020-05-25 12:49:36.986  INFO [users-service,,,] 58378 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-SERVICE/users-service:ec5156f1078c8b249d988399ef0b2674 - registration status: 204
 2020-05-25 12:49:36.989  INFO [users-service,,,] 58378 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-05-25 13:00:50.453  INFO [users-service,,,] 58378 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
