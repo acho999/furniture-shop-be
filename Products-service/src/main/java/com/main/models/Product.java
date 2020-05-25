@@ -97,22 +97,6 @@ public class Product implements Serializable {
 	public void setImages(List<Image> images) {
 		this.images = images;
 	}
-/*
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-
-	public List<Sale> getSales() {
-		return sales;
-	}
-
-	public void setSales(List<Sale> sales) {
-		this.sales = sales;
-	}*/
 
 	public Double getPrice() {
 		return price;

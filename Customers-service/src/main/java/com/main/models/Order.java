@@ -19,15 +19,14 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(name = "orders")
 @Transactional
 public class Order implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2025019082654076408L;
 
 	@Id
@@ -45,7 +44,8 @@ public class Order implements Serializable{
 	@Column(name = "payedOrders")
 	private Boolean isPayed;
 	
-	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JsonIgnore
+	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.REMOVE})
 	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
 	
 	@Column(name = "sum")

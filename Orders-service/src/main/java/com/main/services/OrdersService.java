@@ -145,6 +145,8 @@ public class OrdersService implements IOrdersService {
 		try {
 
 			this.repo.deleteById(order.getId());
+			
+			order.setId(null);
 
 			/*
 			 * this.mapper.map(orderEntity, order);

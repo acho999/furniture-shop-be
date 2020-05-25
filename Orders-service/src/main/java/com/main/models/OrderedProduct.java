@@ -15,7 +15,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "OrderedProducts")
@@ -34,12 +33,12 @@ public class OrderedProduct implements Serializable{
 	private Date dateCreated;
 	
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "order_id",referencedColumnName = "id")
 	private Order order;
 
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
 	@JoinColumn(name = "product_id",referencedColumnName = "id")
 	private Product product;
 

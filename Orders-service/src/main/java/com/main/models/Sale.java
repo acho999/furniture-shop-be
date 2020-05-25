@@ -41,7 +41,7 @@ public class Sale implements Serializable{
 	@Column(name = "dateCreated")
 	private Date dateCreated;
 	
-	@OneToMany(mappedBy = "sale",targetEntity = SoldProduct.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "sale",targetEntity = SoldProduct.class,fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.REMOVE})
 	private List<SoldProduct> sale = new ArrayList<SoldProduct>();
 	
 	@Column(name = "sum")
