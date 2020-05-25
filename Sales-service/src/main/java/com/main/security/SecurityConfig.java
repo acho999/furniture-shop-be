@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
 		.antMatchers("/sales/**").hasIpAddress(this.env.getProperty("gatewy.ip"))
+		.antMatchers("/sales/hello").hasAnyRole("ADMIN")
 		.antMatchers("/sales/details/{id}").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/sales/create").hasAnyRole("ADMIN","CUSTOMER")
 		.antMatchers("/sales/getAll").hasAnyRole("ADMIN")

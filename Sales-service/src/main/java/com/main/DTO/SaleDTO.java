@@ -5,27 +5,24 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import com.main.models.Customer;
 import com.main.models.Product;
+import com.main.models.SoldProduct;
 
 public class SaleDTO implements Serializable{
 	
-	
 	private static final long serialVersionUID = 5121390665718527368L;
 
-	
 	private String id;
 	
 	private List<Product> purchasedProducts = new ArrayList<Product>();
+	
+	private List<SoldProduct> soldProducts = new ArrayList<SoldProduct>();
 	
 	private Number sumOfSale;
 	
 	private String customerId;
 
 	private Date dateCreated;
-	
-	
 	
 	public String getCustomerId() {
 		return customerId;
@@ -65,6 +62,14 @@ public class SaleDTO implements Serializable{
 
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
+	}
+
+	public List<SoldProduct> getSoldProducts() {
+		return soldProducts;
+	}
+
+	public void setSoldProducts(List<SoldProduct> soldProducts) {
+		this.soldProducts = soldProducts;
 	}
 
 }

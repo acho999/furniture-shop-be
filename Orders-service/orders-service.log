@@ -3684,3 +3684,31 @@ java.lang.NullPointerException: null
 2020-05-25 12:41:12.489  INFO [orders-service,,,] 63568 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-05-25 12:46:42.005  INFO [orders-service,,,] 63568 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2020-05-25 12:51:42.333  INFO [orders-service,,,] 63568 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:02:55.915  INFO [orders-service,,,] 63568 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:03:00.537  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-25 13:03:00.537  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDERS-SERVICE with eureka with status DOWN
+2020-05-25 13:03:00.538  WARN [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590400980538, current=DOWN, previous=UP]
+2020-05-25 13:03:00.538  INFO [orders-service,,,] 63568 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:e8fc764f97af9bfd7696081a6a0e5bfd: registering service...
+2020-05-25 13:03:00.541  INFO [orders-service,,,] 63568 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:e8fc764f97af9bfd7696081a6a0e5bfd - registration status: 204
+2020-05-25 13:03:00.555  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 13:03:01.005  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 13:03:01.006  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous._Y_vY1-1QwmzEh479IBFGg'
+2020-05-25 13:03:01.010  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous._Y_vY1-1QwmzEh479IBFGg.errors' has 1 subscriber(s).
+2020-05-25 13:03:01.010  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous._Y_vY1-1QwmzEh479IBFGg.errors' has 0 subscriber(s).
+2020-05-25 13:03:01.012  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:03:01.012  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 13:03:01.012  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:03:01.014  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 13:03:01.016  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 13:03:02.003  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@4fab8379
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 13:03:02.004  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-25 13:03:05.007  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-25 13:03:05.012  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDERS-SERVICE/orders-service:e8fc764f97af9bfd7696081a6a0e5bfd - deregister  status: 200
+2020-05-25 13:03:05.017  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-25 13:03:05.025  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-25 13:03:05.027  INFO [orders-service,,,] 63568 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'

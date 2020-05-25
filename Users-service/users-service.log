@@ -500,3 +500,55 @@ java.lang.NullPointerException: null
 2020-05-25 12:49:36.986  INFO [users-service,,,] 58378 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-SERVICE/users-service:ec5156f1078c8b249d988399ef0b2674 - registration status: 204
 2020-05-25 12:49:36.989  INFO [users-service,,,] 58378 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2020-05-25 13:00:50.453  INFO [users-service,,,] 58378 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-05-25 13:03:14.328  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-05-25 13:03:14.328  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USERS-SERVICE with eureka with status DOWN
+2020-05-25 13:03:14.328  WARN [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1590400994328, current=DOWN, previous=UP]
+2020-05-25 13:03:14.329  INFO [users-service,,,] 58378 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-SERVICE/users-service:ec5156f1078c8b249d988399ef0b2674: registering service...
+2020-05-25 13:03:14.332  INFO [users-service,,,] 58378 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-SERVICE/users-service:ec5156f1078c8b249d988399ef0b2674 - registration status: 204
+2020-05-25 13:03:14.347  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-05-25 13:03:15.051  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-05-25 13:03:15.051  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped bean 'inbound.springCloudBus.anonymous.ZDWWxzmJR3O7DCPK7RIZ7g'
+2020-05-25 13:03:15.057  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.ZDWWxzmJR3O7DCPK7RIZ7g.errors' has 1 subscriber(s).
+2020-05-25 13:03:15.057  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.ZDWWxzmJR3O7DCPK7RIZ7g.errors' has 0 subscriber(s).
+2020-05-25 13:03:15.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-05-25 13:03:15.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-05-25 13:03:15.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2020-05-25 13:03:15.061  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'asyncExecutor'
+2020-05-25 13:03:15.064  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-25 13:03:16.050  WARN [users-service,,,] 58378 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@454036c1}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2020-05-25 13:03:16.056  WARN [users-service,,,] 58378 --- [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@454036c1}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 0 spans due to NullPointerException()
+
+java.lang.NullPointerException: null
+	at java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936) ~[na:1.8.0_241]
+	at java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964) ~[na:1.8.0_241]
+	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:98) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getContext(SpringClientFactory.java:131) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:145) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getInstance(SpringClientFactory.java:121) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.SpringClientFactory.getLoadBalancer(SpringClientFactory.java:65) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.getLoadBalancer(RibbonLoadBalancerClient.java:193) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:88) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.ribbon.RibbonLoadBalancerClient.choose(RibbonLoadBalancerClient.java:78) ~[spring-cloud-netflix-ribbon-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.LoadBalancerClientZipkinLoadBalancer.instance(LoadBalancerClientZipkinLoadBalancer.java:43) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration$CachingZipkinUrlExtractor.zipkinUrl(ZipkinRestTemplateSenderConfiguration.java:93) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateSenderConfiguration.java:226) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:641) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender.post(RestTemplateSender.java:129) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:142) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:132) ~[spring-cloud-sleuth-zipkin-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at zipkin2.Call$Base.execute(Call.java:380) ~[zipkin-2.19.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:285) ~[zipkin-reporter-2.11.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:354) [zipkin-reporter-2.11.0.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'errorChannel'
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusInput'
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean 'springCloudBusOutput'
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@7284008a
+2020-05-25 13:03:16.059  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-05-25 13:03:19.060  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-05-25 13:03:19.064  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-SERVICE/users-service:ec5156f1078c8b249d988399ef0b2674 - deregister  status: 200
+2020-05-25 13:03:19.070  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-05-25 13:03:19.078  INFO [users-service,,,] 58378 --- [RMI TCP Connection(5)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
