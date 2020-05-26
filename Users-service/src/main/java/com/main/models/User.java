@@ -13,8 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -42,12 +45,15 @@ public class User implements Serializable{
 	private String last_name;
 	
 	@Column(name = "userName", nullable = false,unique = true)
+	@Range(min = 5,max = 25,message = "Minimum characters 5, maximum characters 25!")
 	public String userName;
 	
-	@Column(name = "encryptedPassword", nullable = false)
+	@Column(name = "encryptedPassword", nullable = false,unique = true)
 	private String encryptedPassword;
 	
 	@Column(name = "email", nullable = false,unique = true)
+	@Range(min = 5,max = 25,message = "Minimum characters 5, maximum characters 50!")
+	@Email
 	private String email;
 	
 	@Column(name = "date_created", nullable = false)

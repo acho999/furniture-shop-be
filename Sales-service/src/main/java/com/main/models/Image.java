@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "images")
@@ -31,10 +32,11 @@ public class Image implements Serializable{
         name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator"
     )
-	@Column(name = "id")
+	@Column(name = "id",nullable = false,unique = true)
 	private String id;
 	
-	@Column(name = "name")
+	@Column(name = "name",nullable = false,unique = true)
+	@Range(min = 2,max = 50,message = "Minimum characters 2, maximum characters 50!")
 	private String name;
 	
 	@Column(name = "imageBytes")

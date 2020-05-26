@@ -13,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.transaction.Transactional;
+import javax.validation.constraints.Min;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Range;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -32,10 +34,11 @@ public class Category implements Serializable{
         name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator"
     )
-	@Column(name = "id")
+	@Column(name = "id",nullable = false,unique = true)
 	private String id;
 	
 	@Column(name = "categoryName")
+	@Range(min = 2,max = 50,message = "Minimum characters 2, maximum characters 50!")
 	private String name;
 	
 	@JsonIgnore

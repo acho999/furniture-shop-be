@@ -31,10 +31,10 @@ public class Product implements Serializable {
 	@Id
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "id")
+	@Column(name = "id",unique = true,nullable = false)
 	private String id;
 
-	@Column(name = "productName")
+	@Column(name = "productName",nullable = false)
 	private String name;
 
 	// @JsonIgnore
@@ -54,16 +54,16 @@ public class Product implements Serializable {
 	@JsonIgnore
 	private List<SoldProduct> sales = new ArrayList<SoldProduct>();
 	
-	@Column(name = "price")
+	@Column(name = "price",nullable = false)
 	private Double price;
 
-	@Column(name = "description")
+	@Column(name = "description",nullable = false)
 	private String description;
 
-	@Column(name = "material")
+	@Column(name = "material",nullable = false)
 	private String material;
 
-	@Column(name = "dateCreated")
+	@Column(name = "dateCreated",nullable = false)
 	private Date dateCreated;
 
 	public String getId() {

@@ -3,6 +3,7 @@ package com.main.models;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,17 +24,17 @@ public class SoldProduct implements Serializable{
 	@Id
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "id")
+	@Column(name = "id",nullable = false,unique = true)
 	private String id;
 
-	@Column(name = "dateCreated")
+	@Column(name = "dateCreated",nullable = false)
 	private Date dateCreated;
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER)
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "sale_id",referencedColumnName = "id")
 	private Sale sale;
 	
-	@ManyToOne(optional = false,fetch = FetchType.EAGER)
+	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
 	@JoinColumn(name = "product_id",referencedColumnName = "id")
 	private Product product;
 

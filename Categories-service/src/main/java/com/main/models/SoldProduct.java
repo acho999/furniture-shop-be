@@ -24,10 +24,10 @@ public class SoldProduct implements Serializable{
 	@Id
 	@GeneratedValue(generator = "UUID")
 	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-	@Column(name = "id")
+	@Column(name = "id",nullable = false,unique = true)
 	private String id;
 
-	@Column(name = "dateCreated")
+	@Column(name = "dateCreated",nullable = false)
 	private Date dateCreated;
 	
 	@ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)

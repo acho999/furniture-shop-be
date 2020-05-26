@@ -35,20 +35,20 @@ public class Order implements Serializable{
         name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator"
     )
-	@Column(name = "id")
+	@Column(name = "id",nullable = false,unique = true)
 	private String id;
 	
-	@Column(name = "placedOrders")
+	@Column(name = "placedOrders",nullable = false)
 	private Boolean isPlaced;
 	
-	@Column(name = "payedOrders")
+	@Column(name = "payedOrders",nullable = false)
 	private Boolean isPayed;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order",targetEntity = OrderedProduct.class,fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.REMOVE})
 	private List<OrderedProduct> orderedProducts = new ArrayList<OrderedProduct>();
 	
-	@Column(name = "sum")
+	@Column(name = "sum",nullable = false)
 	private Double sumOfOrder;
 	
 	@Column(name = "dateCreated")

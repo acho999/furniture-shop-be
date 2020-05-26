@@ -97,13 +97,13 @@ public class SalesService implements ISalesService {
 
 			}
 
-			entity.setSale(currentProducts);
+			entity.setSoldProducts(currentProducts);
 
 			repo.saveAndFlush(entity);
 
 			SaleDTO returnDto = mapper.map(entity, SaleDTO.class);
 
-			returnDto.setSoldProducts(entity.getSale());
+			returnDto.setSoldProducts(entity.getSoldProducts());
 
 			returnDto.setCustomerId(entity.getCustomer().getId());
 
@@ -130,7 +130,7 @@ public class SalesService implements ISalesService {
 		 */
 		try {
 
-			this.soldProdRepo.deleteById(sale.getId());
+			this.repo.deleteById(sale.getId());
 
 			sale.setId(null);
 			/*
@@ -185,12 +185,14 @@ public class SalesService implements ISalesService {
 		try {
 
 			sale = this.repo.findById(id);
+			
+			//Hibernate.initialize(sale.get().getSoldProducts());
 
 			if (sale.isPresent()) {
 
 				saleDetails = this.mapper.map(sale.get(), SaleDTO.class);
 
-				saleDetails.setSoldProducts(sale.get().getSale());
+				saleDetails.setSoldProducts(sale.get().getSoldProducts());
 
 				return CompletableFuture.completedFuture(saleDetails);
 
@@ -222,7 +224,7 @@ public class SalesService implements ISalesService {
 
 			for (int i = 0; i < currentSales.size(); i++) {
 
-				Hibernate.initialize(currentSales.get(i).getSale());
+				Hibernate.initialize(currentSales.get(i).getSoldProducts());
 
 				SaleDTO dto = new SaleDTO();
 
@@ -230,7 +232,7 @@ public class SalesService implements ISalesService {
 				dto.setCustomerId(currentSales.get(i).getCustomer().getId());
 				dto.setDateCreated(currentSales.get(i).getDateCreated());
 				dto.setId(currentSales.get(i).getId());
-				dto.setSoldProducts(currentSales.get(i).getSale());
+				dto.setSoldProducts(currentSales.get(i).getSoldProducts());
 				dto.setSumOfSale(currentSales.get(i).getSumOfSale());
 
 				sales.add(dto);

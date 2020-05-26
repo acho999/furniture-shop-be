@@ -35,16 +35,17 @@ public class Sale implements Serializable{
         name = "UUID",
     strategy = "org.hibernate.id.UUIDGenerator"
     )
-	@Column(name = "id")
+	@Column(name = "id",unique = true,nullable = false)
 	private String id;
 	
-	@Column(name = "dateCreated")
+	@Column(name = "dateCreated",nullable = false)
 	private Date dateCreated;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "sale",targetEntity = SoldProduct.class,fetch = FetchType.LAZY,cascade = {CascadeType.MERGE,CascadeType.REMOVE})
-	private List<SoldProduct> sale = new ArrayList<SoldProduct>();
+	private List<SoldProduct> soldProducts = new ArrayList<SoldProduct>();
 	
-	@Column(name = "sum")
+	@Column(name = "sum",nullable = false)
 	private Double sumOfSale;
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
@@ -83,12 +84,12 @@ public class Sale implements Serializable{
 		this.customer = customer;
 	}
 
-	public List<SoldProduct> getSale() {
-		return sale;
+	public List<SoldProduct> getSoldProducts() {
+		return soldProducts;
 	}
 
-	public void setSale(List<SoldProduct> sale) {
-		this.sale = sale;
+	public void setSoldProducts(List<SoldProduct> sale) {
+		this.soldProducts = sale;
 	}
 
 }

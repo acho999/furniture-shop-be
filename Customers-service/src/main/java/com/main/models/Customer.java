@@ -15,6 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.transaction.Transactional;
+import javax.validation.constraints.Email;
+
+import org.hibernate.validator.constraints.Range;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -35,12 +38,15 @@ public class Customer {
 	private String last_name;
 
 	@Column(name = "userName", nullable = false, unique = true)
+	@Range(min = 5,max = 25,message = "Minimum characters 5, maximum characters 25!")
 	public String userName;
 
 	@Column(name = "encryptedPassword", nullable = false)
 	private String encryptedPassword;
 
 	@Column(name = "email", nullable = false, unique = true)
+	@Range(min = 5,max = 50,message = "Minimum characters 5, maximum characters 50!")
+	@Email
 	private String email;
 
 	@Column(name = "date_created", nullable = false)

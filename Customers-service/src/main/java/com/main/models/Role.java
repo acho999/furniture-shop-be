@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -30,6 +31,7 @@ public class Role implements GrantedAuthority,Serializable{
 	private long id;
 
 	@Column(name = "roleName", nullable = false)
+	@Range(min  = 2,max = 50, message = "Minimum characters 2,maximum characters 50!")
 	private String roleName;
 	
 	@JsonIgnore
